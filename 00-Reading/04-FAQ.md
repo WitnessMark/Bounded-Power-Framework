@@ -98,4 +98,4 @@ No. The draft stays with you. Nothing is sent to this project, and v1 has no pla
 No system is final. This is a structured attempt to state clear limits on power, published so others can find what is wrong with it.
 
 **How can I comment on the framework?**
-GitHub Issues are temporarily closed while a review process is set up. A short review-comment form is ready for when they reopen. The maintainer's public contact is the GitHub account WitnessMark; there is no project email address. It is for comments on the framework itself, not for reports about real institutions or people.
+GitHub Issues are temporarily closed while a review process is set up. A short review-comment form is ready for when they reopen. The maintainer's public contact is the GitHub account WitnessMark and the project email address WitnessMarkGitHub@proton.me. Both are for comments on the framework itself, not for reports about real institutions or people.

@@ -107,7 +107,7 @@ Everything else in the framework serves that aim.
 
 **GitHub Issues are temporarily closed** while a review process is set up. The review-comment form is ready for when they reopen: reviewers will use it to point out errors, gaps, and hard questions about the framework. Comments are about the framework itself; this repository does not accept reports or records about real institutions or people.
 
-The maintainer's public contact is the GitHub account **WitnessMark**. There is no project email address.
+The maintainer's public contact is the GitHub account **WitnessMark** and the project email address **WitnessMarkGitHub@proton.me**. Please don't send personal information about yourself or others, or reports about real people or institutions; this repository doesn't publish them.
 
 ---
 

@@ -45,7 +45,7 @@ The same applies to witness reports and authority responses you write with the f
 - **Institutions answer beside the record.** An institution that thinks a record about it is wrong files an **authority response** (`02-Forms/`). The response is published beside the record and never replaces it. Readers see both. Anyone who publishes a record is asked to publish any authority response beside it.
 - **Framework documents.** Changes to the Core Requirements and other framework documents are published as new versions, and superseded versions stay public (Core Requirements 6.5). A change that weakens a protection must be stated separately with its reasons (6.6).
 
-**Reporting an error in this repository.** The maintainer's public contact is the GitHub account **WitnessMark**; there is no project email address. GitHub Issues are temporarily closed. Comments open when Issues reopen, through the review-comment form described in the README.
+**Reporting an error in this repository.** The maintainer's public contact is the GitHub account **WitnessMark** and the project email address **WitnessMarkGitHub@proton.me**. GitHub Issues are temporarily closed. Please don't send personal information about yourself or others, or reports about real people or institutions; this repository doesn't publish them. Comments open when Issues reopen, through the review-comment form described in the README.
 
 When you report an error, please name the file and the statement, and say what you think is wrong. Corrections, where warranted, are made by a new version with a note of the change.
 
