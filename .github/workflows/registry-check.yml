@@ -1,0 +1,65 @@
+name: Record check
+
+# Runs the BPF record checker (02-Forms/validate_record.py) on every change to
+# the forms, the worked examples, or BPF's own record.
+#
+# What it does, in plain terms:
+#   1. Tests the checker itself: the fictional good test file must pass, and the
+#      fictional bad test file must fail.
+#   2. Checks every record, report, and response in 03-Examples/ and 04-Registry/.
+# Only ERROR lines fail the job. WARN and REVIEW lines are advice for a person.
+# The checker confirms that each number has a source tag; it cannot confirm that
+# the source says what the record claims. A person must still check sources.
+#
+# Nothing is committed back to the repository.
+
+on:
+  push:
+    paths:
+      - '02-Forms/**'
+      - '03-Examples/**'
+      - '04-Registry/**'
+      - '.github/workflows/registry-check.yml'
+  pull_request:
+    paths:
+      - '02-Forms/**'
+      - '03-Examples/**'
+      - '04-Registry/**'
+      - '.github/workflows/registry-check.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check-records:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install PyYAML
+        run: python -m pip install pyyaml
+
+      - name: Test the checker (good file passes, bad file fails)
+        run: |
+          python 02-Forms/validate_record.py 02-Forms/tests/TEST-GOOD-EXAMPLE.md 02-Forms/tests/SCBP-WR-EXLIB-XX-2026-10-01.md
+          if python 02-Forms/validate_record.py 02-Forms/tests/TEST-BAD-EXAMPLE.md; then
+            echo "The bad test file passed. The checker is not catching errors."
+            exit 1
+          fi
+          echo "Checker self-test passed."
+
+      - name: Check worked examples and BPF's own record
+        # Only record files are checked: registrations (SCBP-REG-*),
+        # witness reports (SCBP-WR-*), and authority responses (SCBP-RSP-*).
+        run: |
+          shopt -s nullglob
+          files=(03-Examples/SCBP-REG-*.md 03-Examples/SCBP-WR-*.md 03-Examples/*/SCBP-WR-*.md 03-Examples/SCBP-RSP-*.md \
+                 04-Registry/SCBP-REG-*.md 04-Registry/SCBP-WR-*.md 04-Registry/SCBP-RSP-*.md)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No record files found."
+            exit 1
+          fi
+          python 02-Forms/validate_record.py "${files[@]}"

@@ -1,0 +1,73 @@
+# Shared vocabulary for BPF forms, bundle, and validator.
+# One list per field. Forms, bundle, and validator must all use these exact values.
+vocab_version: 1.0.0
+vocab_date: 2026-10-13
+
+record_type: [observed, authorization, example]   # example = generic worked example; figures tagged [EX] are illustrative
+prepared_by: [person, ai_assisted, authority]
+institution_type: [government, tribal, private_company, nonprofit, international, other]
+adoption_status: [adopted, not_adopted, UNKNOWN]
+
+# How a power counts as authority (Core Requirements, Definitions: Authority)
+authority_basis: [direct, indirect_a_operationalized, indirect_b_directive_control, influence_only, UNKNOWN]
+
+# Plain-language power categories (institution in, powers out)
+power_category:
+  - fines_fees_or_charges
+  - arrest_detention_or_confinement
+  - use_of_force
+  - inspection_search_or_surveillance
+  - data_collection_or_records
+  - scoring_ranking_or_classification
+  - benefits_eligibility_or_allocation
+  - licensing_permits_or_access
+  - rules_standards_or_prices
+  - property_land_or_seizure
+  - removal_custody_or_placement
+  - employment_or_discipline
+  - information_control_or_visibility
+  - other
+
+# Three-answer rule for every factual field
+answer_special: [UNKNOWN, NONE EXISTS]
+
+# Finding labels (Core Requirements, Force and Status; SCBP-03 Step 0.3b)
+finding: [conforming, not_conforming, not_demonstrated, not_applicable]
+
+# Requirement rows in the observed-vs-required table (fixed order)
+requirement_rows:
+  - authorization        # 3.A.1, 3.A.2
+  - maximum_term         # 3.E.1, 7.2
+  - harm_thresholds      # 3.A.5
+  - stop_paths           # 3.A.7, 3.C.1
+  - ending_plan          # 3.A.9
+  - remedy               # 3.A.10
+  - data_limits          # 2.D.12-2.D.14
+  - visibility           # 3.B.9
+  - floors               # Part II
+  - evasion              # Part IV
+
+floors: [ecological, economic, agency, human_rights]
+
+# Harm categories (Core Requirements 3.A.5)
+harm_category: [bodily, psychological, economic, ecological, informational, communicative, agency, generational, non_participant]
+
+# What a stop path can stop (SCBP-03 Step 0.4)
+stop_reach: [whole_power, one_practice, one_case, UNKNOWN]
+holder_independence: [independent, partly_independent, not_independent, UNKNOWN]
+
+# Sources
+source_kind: [quote, data_point, first_hand]
+source_verified: [yes, tool_text, unverified]   # yes = read the original; tool_text = exact text returned by a fetch tool; unverified = summary only
+
+# Witness reports
+report_type: [incident, stop_signal, challenge, change_request, review_petition]
+stop_signal_basis: [defined_condition, credible_pathway, NONE]
+identity_disclosure: [identified, pseudonymous, anonymous]
+report_status: [ongoing, resolved, unknown]
+location_precision: [exact, approximate, locality, region, withheld]
+# Authority responses
+response_type: [correction, added_information, disagreement, adoption_notice]
+
+claim_type: [adjudicated_or_admitted_fact, settled_without_admission, my_observation, allegation_or_estimate]
+floor_answer: [yes, no, UNKNOWN, NONE EXISTS, not_applicable]

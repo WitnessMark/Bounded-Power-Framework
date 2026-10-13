@@ -1,0 +1,83 @@
+# GitHub Action: keep the hash registry (Core Requirements 6.5) up to date.
+#
+# WHAT IT DOES, IN PLAIN TERMS:
+#   Computes a SHA-256 fingerprint of every published file in the folders listed
+#   below (the same value `sha256sum FILE` gives) and writes them to
+#   05-Reference/05-Maintainer-Resources/00-SCBP-Hash-Registry.txt.
+#   On a push to main it commits the refreshed list if any fingerprint changed.
+#   Anyone can check a file later with:  sha256sum FILE
+#   Rule 6.5: a file that differs from its registered hash is not an official version.
+#
+#   No Python script is needed; it uses standard shell tools only.
+#   The file's own commit history shows when each fingerprint was recorded.
+#
+# HOW TO RUN IT BY HAND (optional):
+#   On GitHub, open the "Actions" tab, pick "Refresh hash registry", click "Run workflow".
+
+name: Refresh hash registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.md'
+      - 'LICENSE*'
+      - '00-Reading/**'
+      - '01-Framework/**'
+      - '02-Forms/**'
+      - '03-Examples/**'
+      - '04-Registry/**'
+      - '.github/workflows/hash-registry.yml'
+  # A bundle rebuilt by the "Build AI Bundle" workflow is committed by a bot, and bot
+  # commits do not start other workflows. This makes sure the new bundle is hashed.
+  workflow_run:
+    workflows: ["Build AI Bundle"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-autocommit
+  cancel-in-progress: false
+
+jobs:
+  hash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Write the hash registry
+        run: |
+          out=05-Reference/05-Maintainer-Resources/00-SCBP-Hash-Registry.txt
+          mkdir -p "$(dirname "$out")"
+          {
+            echo "BOUNDED POWER FRAMEWORK - HASH REGISTRY"
+            echo "Core Requirements rule 6.5 (Canonical Integrity)."
+            echo "SHA-256 of each published file. Check any file with: sha256sum FILE"
+            echo "This file is regenerated automatically; its commit history dates each entry."
+            echo
+            git ls-files -- '*.md' 'LICENSE*' '00-Reading' '01-Framework' '02-Forms' '03-Examples' '04-Registry' \
+              | grep -v -e '^05-Reference/' \
+              | LC_ALL=C sort -u \
+              | while IFS= read -r f; do sha256sum -- "$f"; done
+          } > "$out"
+          echo "Hashed $(grep -c '  ' "$out") files."
+
+      - name: Commit the refreshed hash registry if it changed
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 05-Reference/05-Maintainer-Resources/00-SCBP-Hash-Registry.txt
+          if git diff --cached --quiet; then
+            echo "Hash registry already up to date - nothing to commit."
+          else
+            git commit -m "Auto: refresh hash registry [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi

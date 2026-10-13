@@ -1,0 +1,66 @@
+name: Review comment
+description: Point out an error, gap, or problem in the framework's own documents, forms, tools, or examples.
+title: "Review: [file] [short description]"
+labels: ["review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        v1 is a draft published for independent review. Use this form to comment on **the framework itself**: the Core Requirements, the operations manual, the forms, the checker, the AI bundle, the worked examples, or BPF's own record.
+
+        **This is not a place to post about real institutions or people.**
+        - Do not post records, witness reports, or complaints about any real institution.
+        - Do not name or describe real people.
+        - If you made a record with the AI bundle, it is yours. v1 offers no place to submit it. See `TERMS.md`, section 5.
+
+        Comments that describe real institutions or people will be closed.
+
+  - type: input
+    id: file
+    attributes:
+      label: File
+      description: The file your comment is about.
+      placeholder: 01-Framework/SCBP-04-Core-Requirements.md
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Where in the file
+      description: A rule number (for example 3.A.2), a section heading, or a line.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - Error (something is wrong)
+        - Gap (something is missing)
+        - Contradiction between two places
+        - Unclear wording
+        - A protection that seems weakened or lost
+        - Problem in BPF's own record
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: comment
+    attributes:
+      label: Your comment
+      description: Quote the text you mean, say what you think is wrong, and suggest a fix if you have one. Use fictional or general examples only.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: My comment is about the framework's own documents, forms, tools, or examples.
+          required: true
+        - label: My comment does not describe, record, or accuse any real institution or person.
+          required: true

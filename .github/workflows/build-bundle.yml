@@ -1,0 +1,79 @@
+# GitHub Action: rebuild the AI Registration Bundle automatically.
+#
+# WHAT IT DOES, IN PLAIN TERMS:
+#   Whenever one of the bundle's source files changes, this runs
+#   02-Forms/build_bundle.py, which joins:
+#     02-Forms/bundle-core.md        (the bundle's own text)
+#     02-Forms/01-Registration.md    (the registration form)
+#     02-Forms/VOCAB.yml                (the vocabulary)
+#     01-Framework/SCBP-04-Core-Requirements.md
+#   into 02-Forms/AI-Registration-Bundle.md.
+#   On a push to main it commits the rebuilt bundle if it changed. On a pull request
+#   it fails if the committed bundle differs from a fresh build (build_bundle.py
+#   --check), so a stale bundle cannot be merged; nothing is committed.
+#   If the builder fails (a missing input or an unfilled placeholder), the run goes
+#   red and nothing is committed.
+#
+# HOW TO RUN IT BY HAND (optional):
+#   On GitHub, open the "Actions" tab, pick "Build AI Bundle", click "Run workflow".
+
+name: Build AI Bundle
+
+on:
+  push:
+    paths:
+      - '02-Forms/bundle-core.md'
+      - '02-Forms/01-Registration.md'
+      - '02-Forms/VOCAB.yml'
+      - '02-Forms/build_bundle.py'
+      - '01-Framework/SCBP-04-Core-Requirements.md'
+      - '.github/workflows/build-bundle.yml'
+  pull_request:
+    paths:
+      - '02-Forms/bundle-core.md'
+      - '02-Forms/01-Registration.md'
+      - '02-Forms/VOCAB.yml'
+      - '02-Forms/build_bundle.py'
+      - '01-Framework/SCBP-04-Core-Requirements.md'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-autocommit
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check the committed bundle is up to date (pull requests)
+        if: github.event_name == 'pull_request'
+        run: python3 02-Forms/build_bundle.py --check
+
+      - name: Rebuild the bundle
+        if: github.event_name != 'pull_request'
+        run: python3 02-Forms/build_bundle.py
+
+      - name: Commit the rebuilt bundle if it changed
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- 02-Forms/AI-Registration-Bundle.md; then
+            echo "Bundle already up to date - nothing to commit."
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add 02-Forms/AI-Registration-Bundle.md
+            git commit -m "Auto: rebuild AI bundle from its sources"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
