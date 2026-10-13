@@ -42,7 +42,7 @@ This is the gap the framework is built around. It relies on structural limits se
 - [`Major-US-Authority-Harms-1900-2026.csv`](../05-Reference/06-Supporting-Data/Major-US-Authority-Harms-1900-2026.csv) — 50 widely reported instances of an authority imposing a cost on people who had not consented, each with a structural note.
 - [`Major-World-Structural-Harms-1883-2021.csv`](../05-Reference/06-Supporting-Data/Major-World-Structural-Harms-1883-2021.csv) — a world-scope companion set of 12 well-documented cases, each an authority decision that caused lasting harm.
 
-The datasets are mostly US-focused, drawn from widely reported public events, and assembled with AI assistance. Specific dates appear only where reasonably confident. The US list does not yet cite a source for each row: treat it as a working list, not evidence, and check a public original before relying on any figure (see the [data README](../05-Reference/06-Supporting-Data/README.md)).
+The datasets are mostly US-focused, drawn from widely reported public events, and assembled with AI assistance. Specific dates appear only where reasonably confident. Each row of the US list cites one or two public sources; check the cited original before relying on any figure (see the [data README](../05-Reference/06-Supporting-Data/README.md)).
 
 ## Caveats
 
