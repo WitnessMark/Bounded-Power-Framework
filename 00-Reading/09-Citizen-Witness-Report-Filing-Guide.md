@@ -2,9 +2,26 @@
 
 A **witness report** is a dated, written record of something an institution did, failed to do, or threatened to do. You write it in a set shape, so that it can be read, compared with other reports, and checked.
 
-Reading this guide takes about five minutes. A report takes fifteen to thirty.
-
 > **If anyone is in danger right now, contact emergency services first.** A witness report is a record, not a rescue.
+
+---
+
+## The easy way: let an AI interview you
+
+About 20 minutes. You answer questions; the AI writes the report.
+
+1. **Download the interviewer file:** [AI-Witness-Interview.md](https://raw.githubusercontent.com/WitnessMark/Bounded-Power-Framework/main/00-Reading/10-AI-Witness-Interview-Bundle.md)
+   - **iPhone or iPad:** press and hold the link, then tap **Download Linked File**. It is saved in the **Files** app, under **Downloads**.
+   - **Android:** press and hold the link, then tap **Download link**.
+   - **Computer:** right-click the link, then choose **Save link as**.
+2. **Open an AI app** (such as ChatGPT, Claude, or Gemini) and start a **new chat**.
+3. **Attach the file.** Tap the **+** or 📎 button and choose the file you downloaded.
+4. **Type "Interview me."** Answer in your own words. You can skip any question or stop at any time.
+5. **Download your report at the end.** The AI offers it as a file. Save it on your phone or computer. If your AI app can't make files, it gives you the text and tells you how to save it.
+
+**Don't upload photos or videos to the AI chat.** Just tell it what you have and where you keep it.
+
+The rest of this page explains each part in more detail, and how to write the report yourself without an AI.
 
 ---
 
@@ -85,7 +102,7 @@ Make a list of what exists and where it can be found: "letter dated…", "case n
 ## Step 5 — Fill in the form
 
 Two ways:
-- **With an AI.** The [AI Witness Interview Bundle](10-AI-Witness-Interview-Bundle.md) turns an AI chat into a calm interviewer. It asks one question at a time, keeps your words as you said them, and builds the report for you.
+- **With an AI.** Follow [the easy way](#the-easy-way-let-an-ai-interview-you) at the top of this page. The [interviewer file](https://raw.githubusercontent.com/WitnessMark/Bounded-Power-Framework/main/00-Reading/10-AI-Witness-Interview-Bundle.md) asks one question at a time, keeps your words as you said them, builds the report, and gives it to you as a file to download. You can also [read the file here](10-AI-Witness-Interview-Bundle.md) first.
 - **By hand.** Copy the template from the [Witness Report Form](../02-Forms/02-Witness-Report.md) into a new text file and work from top to bottom.
 
 Name the file `SCBP-WR-{SHORT-NAME}-{date}.md`, for example `SCBP-WR-COUNTYJAIL-2026-10-01.md`, using the date it happened. If you don't know that date, use the date you write the report.
@@ -96,7 +113,7 @@ If you can, run the checker in `02-Forms/`: `python3 validate_record.py FILE` (i
 
 ## Step 6 — Keep it
 
-**Your report is yours.** It is a file on your device. Nobody stores it for you.
+**Your report is yours.** It is a file on your device. Nobody stores it for you. If you used an AI, download the file it gives you before you close the chat.
 
 **There is no place to file witness reports in v1 yet.** A private way to send reports, and a public site to read them, are being considered, but no host has been chosen and no date is promised. Until then, don't send reports to the project's code repository or its issue pages.
 

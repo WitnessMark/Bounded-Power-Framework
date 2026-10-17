@@ -1,6 +1,6 @@
 # AI Witness Interview Bundle
 
-*Bundle version 1.0.0 · 2026-10-13 · Published for independent review · Not adopted · Produces: Witness Report form 1.0.0 · Core Requirements v1 · Vocabulary 1.0.0*
+*Bundle version 1.1.0 · 2026-10-17 · Published for independent review · Not adopted · Produces: Witness Report form 1.0.0 · Core Requirements v1 · Vocabulary 1.0.0*
 
 ---
 
@@ -14,7 +14,7 @@ This file turns an AI chat into a calm interviewer. It asks you questions one at
 1. Open a new conversation in an AI assistant.
 2. Copy this **whole file** and paste it in, or attach it. (It may show as a small file icon. That's fine.)
 3. Type **"Interview me."** and answer in your own words.
-4. At the end, the AI gives you the finished report as text. Save it as a file.
+4. At the end, the AI gives you the finished report as a file to download. Save it on your phone or computer. If your AI app can't make files, it gives you the text and tells you how to save it.
 
 **Good to know**
 - You can skip any question, say "I don't know", take a break, or stop at any time.
@@ -125,8 +125,16 @@ Offer the **verification token**: they make up a long secret phrase, turn it int
 
 **Step 11. Build and check the report.** Fill Appendix A. Then run every check in **"Before you hand it over"** below. Fix what fails, except never change the witness's words to pass a check.
 
-**Step 12. Hand it over.** Give the whole report in one block of text, and the file name (`report_id` plus `.md`). Then say, plainly and briefly:
-- **"This report is yours. Nothing has been sent anywhere."** Save it as a text file. Keep a dated copy, for example by emailing it to yourself.
+**Step 12. Hand it over as a file.**
+- **If you can create files** (a download link, an attachment, or a file panel), create the finished report as a Markdown file named exactly `report_id` plus `.md`, for example `SCBP-WR-COUNTYJAIL-2026-10-01.md`. Offer it plainly: *"Here is your report as a file. Tap it to download and save it."* Also show the whole report in one code block underneath, in case the download doesn't work.
+- **If you can't create files,** give the whole report in one code block, and the file name. Then explain the simplest way to keep it:
+  1. Tap **Copy** on the block (or press and hold the text, then **Select All** and **Copy**).
+  2. Paste it into an email to yourself, with the file name as the subject. That keeps a dated copy too.
+  3. Or paste it into a notes or text app and save it with the file name.
+- Never say the report has been saved, stored, or sent for them.
+
+Then say, plainly and briefly:
+- **"This report is yours. Nothing has been sent anywhere."** Save the file. Keep a dated copy, for example by emailing it to yourself.
 - **There is no place to file witness reports yet.** Don't post it to a code repository or issue tracker.
 - **If you share it:** read it once as a stranger would and remove anything that could identify you; share the text only, not photos; use a separate email if you are pseudonymous; think about retaliation before sending it to the institution itself. A lawyer, legal aid service, or oversight body can act on it.
 - If they are worried about retaliation, see Appendix C. Be honest: that protection binds only institutions that have adopted the Core Requirements, and none has yet.
@@ -170,7 +178,7 @@ report_id: SCBP-WR-{SUFFIX}-{YYYY-MM-DD}
 report_type: incident                 # incident | stop_signal | challenge | change_request | review_petition
 form: {name: witness-report, version: 1.0.0, date: 2026-10-13}
 core_requirements: {version: v1, date: 2026-10-13}
-bundle: {version: 1.0.0, date: 2026-10-13}
+bundle: {version: 1.1.0, date: 2026-10-17}
 vocab_version: 1.0.0
 record_id: NONE                       # a registration record ID if the witness knows one, or NONE
 power_id: UNKNOWN                     # P1, P2… from that record, or UNKNOWN
