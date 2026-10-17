@@ -101,6 +101,10 @@ Recommended path:
 5. The worked examples, especially their teaching notes
 6. [05-Reference](../05-Reference/)
 
+Questions and critical feedback about the framework are welcome in [GitHub Discussions](https://github.com/WitnessMark/Bounded-Power-Framework/discussions). You can also ask general questions about creating witness reports there.
+
+**Do not post personal witness reports, identifying information, private documents, or sensitive evidence in Discussions.** The repository does not accept witness-report submissions. Keep your report for your own records.
+
 ---
 
 ## Quick reference
