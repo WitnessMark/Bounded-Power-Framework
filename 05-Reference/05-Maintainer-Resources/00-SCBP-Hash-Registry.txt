@@ -3,7 +3,7 @@ Core Requirements rule 6.5 (Canonical Integrity).
 SHA-256 of each published file. Check any file with: sha256sum FILE
 This file is regenerated automatically; its commit history dates each entry.
 
-24f6116ee615727b0f97fb69dbdc76aa2b61ddc3f7755343790c88e75c17ac18  00-Reading/00-Start-Here.md
+60c02095ad3812a0859dc79e7f4dfae87a4c53fa363e53c0d4a81e6c3a1a9cd5  00-Reading/00-Start-Here.md
 2319a8e8dae6a2aa87a418e525ff0becc387d4adda500304d564b27d75f0d7e6  00-Reading/01-BPF-Reasoning.md
 f04eb560f5501c7bdb3bc75e59a8fa6bc9a990c75c29be9b82c9a35545d3e1af  00-Reading/02-What-This-Is-and-Is-Not.md
 6b06389877b64a7663075415cd57094290011aefe3c806d7b63e70d9a7fc7873  00-Reading/03-Historical-Context.md
@@ -87,5 +87,5 @@ df54458077c20bcd38e4f02c310182ddcc1020e846a1602c549a1d54f68edc7a  03-Examples/SC
 c09262d1e4b8e50154c197ab7addf549fabb93d02c52a8ff3f74dba876208b47  LICENSE
 713c4756b01e0a3fe2db155a44ceb85df22d78ea4f23ea613b194340c14b4819  LICENSE-CC-BY-4.0.md
 f4219c3550062c309530c45f796161d6367c157ab13a7dee0bda504df20ab92a  LICENSE-MIT
-6ff1817184a2efbdc56d737e398a45dc25cb4212e7297cc74a61eb59379f9780  README.md
+da767f72cb9194284346c76379f76881dbc37efec8b73ae5f8ee4e14c638703a  README.md
 7295c3af66875287afc5657b08d337c490704a424e5b888be08c2e63002cb2e2  TERMS.md
