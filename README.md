@@ -103,11 +103,19 @@ Everything else in the framework serves that aim.
 
 ---
 
-## Comments and review
+## Questions, comments, and critical review
 
-**GitHub Issues are temporarily closed** while a review process is set up. The review-comment form is ready for when they reopen: reviewers will use it to point out errors, gaps, and hard questions about the framework. Comments are about the framework itself; this repository does not accept reports or records about real institutions or people.
+The Bounded Power Framework is published for independent examination, criticism, and improvement. Questions, objections, corrections, and proposed revisions are welcome in [GitHub Discussions](https://github.com/WitnessMark/Bounded-Power-Framework/discussions).
 
-The maintainer's public contact is the GitHub account **WitnessMark** and the project email address **WitnessMarkGitHub@proton.me**. Please don't send personal information about yourself or others, or reports about real people or institutions; this repository doesn't publish them.
+Discussions is for questions about the witness-report instructions, errors or gaps in the documentation, challenges to the framework's assumptions, possible institutional applications, and proposed improvements.
+
+**Privacy — no personal reports or submissions.** GitHub Discussions is not a witness-report submission system. Do not post witness reports, identifying details, private documents, sensitive evidence, or descriptions that could identify real individuals. This version of BPF does not accept registrations or witness-report submissions. Keep any report you create for your own records; whether and with whom to share it is your decision.
+
+For the introductory guide, begin with [Start Here](00-Reading/00-Start-Here.md).
+
+GitHub Issues remain closed while the review process is being developed.
+
+The maintainer's public contact is the GitHub account **WitnessMark** and the project email address **WitnessMarkGitHub@proton.me**. Please don't send personal information about yourself or others, or reports about real people or institutions through these channels.
 
 ---
 
