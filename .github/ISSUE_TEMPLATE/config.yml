@@ -1,0 +1,8 @@
+# GitHub Issues are temporarily closed at the v1 launch (see README, "Comments
+# and review"). These two files are kept ready for when issues reopen; they have
+# no effect while Issues are turned off in the repository settings.
+#
+# Only the review-comment form is offered. Blank issues are turned off so that
+# nobody is invited to post records, reports, or accusations about real
+# institutions or people here. v1 has no place to submit those.
+blank_issues_enabled: false
