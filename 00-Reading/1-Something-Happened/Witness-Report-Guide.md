@@ -14,7 +14,7 @@ Opened from inside another app, such as Instagram, the page often cannot save. T
 
 ## With an AI interviewer
 
-The interview takes about twenty minutes. The AI asks what happened and lets the witness tell it in their own way. It takes from the story everything the report needs, reads that back, and asks only about what is missing. The witness's own words are kept as given. Some AI apps have a voice mode, and the interview works out loud too.
+The interview takes about twenty minutes. The AI asks what happened and lets the witness tell it in their own way. It takes from the story everything the report needs, reads that back, and asks only about what is missing. The witness's own words are kept as given.
 
 1. **Download the interviewer file:** [AI-Witness-Interview-Bundle.md](https://raw.githubusercontent.com/WitnessMark/Bounded-Power-Framework/main/00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md)
    - **iPhone or iPad:** press and hold the link, then tap **Download Linked File**. It is saved in the **Files** app, under **Downloads**.
@@ -23,6 +23,7 @@ The interview takes about twenty minutes. The AI asks what happened and lets the
 2. **Open an AI app** (such as ChatGPT, Claude, or Gemini) and start a new chat.
 3. **Attach the file** with the **+** or paperclip button.
 4. **Type "Interview me."** Any question can be skipped, and the interview can stop at any point.
+   **To talk instead of type,** switch the chat to the app's voice mode after typing "Interview me." and tell the story out loud. Switch back to the written chat at the end; the report is there. Some voice modes cannot read the attached file or make a new one, which is why the file is attached and the report saved in the written chat.
 5. **Save the report at the end.** The AI offers it as a file. If the app cannot make files, it gives the text and explains how to keep it.
 
 **Photos, video and recordings stay out of the chat.** The AI company may keep them, and they can identify people. The report lists what exists and where it is kept; the files themselves stay with their owner.

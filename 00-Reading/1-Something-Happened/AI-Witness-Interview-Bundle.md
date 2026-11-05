@@ -14,7 +14,7 @@ This file turns an AI assistant into an interviewer. It asks what happened, lets
 1. Open a new conversation in an AI assistant.
 2. Attach this whole file, or copy and paste it in. It may appear as a small file icon.
 3. Type **"Interview me."** and tell it what happened, in your own words.
-   Some AI apps also have a voice mode, for talking instead of typing. The interview works the same way out loud; at the end, the report itself is in the written chat.
+   **To talk instead of type:** after typing "Interview me.", switch to the app's voice mode and tell the story out loud. Switch back to the written chat at the end; the report is there. Some voice modes cannot read this file or make a new one, so the file goes in first and the report comes out last, both in the written chat.
 4. Save the finished report when the AI offers it. If the app cannot make files, it gives the text and explains how to keep it.
 
 **What to expect**
