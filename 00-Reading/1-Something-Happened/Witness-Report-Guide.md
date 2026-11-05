@@ -14,7 +14,7 @@ Opened from inside another app, such as Instagram, the page often cannot save. T
 
 ## With an AI interviewer
 
-The interview takes about twenty minutes. The AI asks one question at a time, keeps the witness's own words as given, and writes the report.
+The interview takes about twenty minutes. The AI asks what happened and lets the witness tell it in their own way. It takes from the story everything the report needs, reads that back, and asks only about what is missing. The witness's own words are kept as given. Some AI apps have a voice mode, and the interview works out loud too.
 
 1. **Download the interviewer file:** [AI-Witness-Interview-Bundle.md](https://raw.githubusercontent.com/WitnessMark/Bounded-Power-Framework/main/00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md)
    - **iPhone or iPad:** press and hold the link, then tap **Download Linked File**. It is saved in the **Files** app, under **Downloads**.

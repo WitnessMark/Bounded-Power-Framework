@@ -29,7 +29,7 @@ The first step is a **witness report**: a dated account, in the person's own wor
 There are three ways to make one:
 
 - **[Witness report web form](https://witnessmark.github.io/Bounded-Power-Framework/witness-report/).** A page that asks the questions one step at a time and assembles the report inside the browser. Nothing on it is sent anywhere.
-- **[AI Witness Interview](1-Something-Happened/AI-Witness-Interview-Bundle.md).** An AI assistant asks one question at a time and assembles the report. It takes about twenty minutes.
+- **[AI Witness Interview](1-Something-Happened/AI-Witness-Interview-Bundle.md).** An AI assistant listens to what happened, asks only about what is missing, and assembles the report. It takes about twenty minutes.
 - **[Witness Report Guide](1-Something-Happened/Witness-Report-Guide.md).** The same report, written by hand, with each part explained.
 
 *The report belongs to the person who makes it.* Nothing is sent to this project or anywhere else. Whether to share it, and with whom, is that person's decision.
