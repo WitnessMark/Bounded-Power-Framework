@@ -5,10 +5,10 @@ A fingerprint shows whether a file's contents match the recorded version. It doe
 This file is regenerated automatically; its commit history dates each entry.
 
 2974f839543f46a3b510b37ec22bd3d1200c3cbb13dad437d00a6c562dd2fa87  00-Reading/00-Start-Here.md
-3bc35f0b6712271aa4b6d63762dc43992bba7d1c25bfbdd019e4ca66fbc55957  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
+2599820d1bb1386a7b8c5825c3699538a53deb37eda5aad2bb36dc4973c21f0b  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
 3c00582a2489fe60b7312121ef39bb28ecb983b1e2af1f1688caf395acd1127a  00-Reading/1-Something-Happened/Bill-of-Rights-Crosswalk.md
 96ad7c44a9a6f48e90f363cea4473cf79e6c85159b19385a4fe6dc1151240419  00-Reading/1-Something-Happened/What-You-Can-Do.md
-12e46815e4b41cd0db0097f35f59e2ed1b4729fa5f52c8d064af31698d759a31  00-Reading/1-Something-Happened/Witness-Report-Guide.md
+34a63abed75a49fd380593920976a5ae706dbc729c5998884d7adb6ab1f169db  00-Reading/1-Something-Happened/Witness-Report-Guide.md
 e93ebcf608c86f425d6f54db2d0b02e3ed58e89ed1abfad7da494ac9e38a627e  00-Reading/2-Examine-an-Institution/AI-Registration-Bundle.md
 076244a32bd419edd607f9a3a4eba652075a9003d6a43af5a0705f8339ca82bf  00-Reading/2-Examine-an-Institution/Inquiry-Guide.md
 c1ea0ec4586f03a007741bb5f3eb0476c300377094c3744f0c892a04f3a13df4  00-Reading/3-Understand-the-Framework/BPF-Reasoning.md
