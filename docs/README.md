@@ -9,7 +9,7 @@ This folder is the project's website, served by GitHub Pages.
 ## How the witness report page keeps its promise
 
 - **Nothing is sent.** The page is one self-contained file. Its security policy blocks every network connection, so it cannot send what is typed, even by mistake. It also works offline: the file can be saved and opened without an internet connection.
-- **Nothing is saved.** What is typed lives only in the open page, and is gone when the page is closed. The report is kept only by downloading, copying or printing it.
+- **Nothing is saved.** What is typed lives only in the open page, and is gone when the page is closed. The report is kept only by saving or sending it through the phone's own share menu, or by downloading, copying or printing it.
 - **Codes are calculated in the page.** The verification phrase and file fingerprints (SHA-256) are worked out inside the browser. The phrase never appears in the report; a fingerprinted file is read but never attached.
 - **The output is checked.** A report made with the page passes the [record checker](../02-Forms/validate_record.py).
 
