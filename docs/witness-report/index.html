@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Witness Report</title>
+<style>
+:root {
+  --paper: #F7F4EC;
+  --card: #FFFFFF;
+  --ink: #2B2926;
+  --quiet: #5F584F;
+  --line: #D3CBBE;
+  --soft: #EDE7DB;
+  --focus: #1F4E8C;
+  --warn: #8A4B0F;
+  --warn-bg: #FBF1E3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1D1B19;
+    --card: #262320;
+    --ink: #EDE6DA;
+    --quiet: #B9B0A3;
+    --line: #45403A;
+    --soft: #302C28;
+    --focus: #8AB4F8;
+    --warn: #E8B070;
+    --warn-bg: #3A2C1C;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+header {
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+.bar {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bar svg { flex: none; }
+.bar .name { font-weight: 600; letter-spacing: 0.02em; }
+.bar .note { margin-left: auto; color: var(--quiet); font-size: 14px; text-align: right; }
+main { max-width: 760px; margin: 0 auto; padding: 16px 16px 120px; }
+.progress { color: var(--quiet); font-size: 15px; margin: 8px 0 4px; }
+.track { height: 6px; background: var(--soft); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+.track span { display: block; height: 100%; background: var(--ink); width: 0; transition: width 0.2s; }
+h1 { font: 600 30px/1.2 Georgia, "Times New Roman", serif; margin: 8px 0 12px; }
+h2 { font: 600 26px/1.25 Georgia, "Times New Roman", serif; margin: 4px 0 12px; }
+h2:focus { outline: none; }
+h3 { font-size: 18px; margin: 24px 0 6px; }
+p { margin: 0 0 12px; }
+.lead { font-size: 18px; }
+.quiet { color: var(--quiet); }
+.small { font-size: 15px; }
+.safety {
+  border-left: 4px solid var(--ink);
+  background: var(--card);
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+.field { margin: 18px 0; }
+label, legend { display: block; font-weight: 600; margin-bottom: 4px; }
+.hint { display: block; font-weight: 400; color: var(--quiet); font-size: 15px; margin-bottom: 6px; }
+input[type=text], input[type=date], input[type=password], textarea, select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+textarea { min-height: 120px; resize: vertical; }
+textarea.tall { min-height: 220px; }
+input:focus, textarea:focus, select:focus, button:focus, summary:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+}
+fieldset { border: 0; padding: 0; margin: 18px 0; }
+.choice {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  margin: 8px 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+.choice input { margin: 4px 0 0; width: 20px; height: 20px; flex: none; }
+.choice b { display: block; }
+.choice span { display: block; }
+.choice .hint { margin: 2px 0 0; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.row > * { flex: 1 1 200px; }
+details { margin: 16px 0; }
+summary { cursor: pointer; font-weight: 600; padding: 10px 0; }
+.ev {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  margin: 12px 0;
+  background: var(--card);
+}
+.ev .field { margin: 10px 0; }
+button {
+  font: inherit;
+  min-height: 44px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--ink);
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+}
+button.primary { background: var(--ink); color: var(--paper); }
+button.link { border: 0; background: none; padding: 8px 0; text-decoration: underline; min-height: 44px; }
+.controls {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+}
+.controls .inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+.error {
+  color: var(--warn);
+  background: var(--warn-bg);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.notice {
+  background: var(--warn-bg);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.code {
+  font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  word-break: break-all;
+}
+pre#preview {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px;
+  max-height: 60vh;
+  overflow: auto;
+}
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.step[hidden] { display: none; }
+ul.plain { padding-left: 20px; margin: 0 0 12px; }
+.sr { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media print {
+  header, .controls, .progress, .track, .step > *:not(.printable) { display: none !important; }
+  body { background: #fff; color: #000; }
+  main { padding: 0; max-width: none; }
+  .step[data-name="review"] { display: block !important; }
+  pre#preview { border: 0; max-height: none; overflow: visible; font-size: 10.5pt; color: #000; background: #fff; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <svg width="30" height="30" viewBox="0 0 512 512" aria-hidden="true">
+      <circle cx="256" cy="256" r="122" fill="none" stroke="currentColor" stroke-width="16"/>
+      <circle cx="256" cy="256" r="94" fill="none" stroke="currentColor" stroke-width="5"/>
+      <polygon points="256,34 256,256 230,230" fill="currentColor" opacity="0.55"/>
+      <polygon points="256,34 256,256 282,230" fill="currentColor"/>
+      <polygon points="470,256 256,256 282,230" fill="currentColor" opacity="0.55"/>
+      <polygon points="470,256 256,256 282,282" fill="currentColor"/>
+      <polygon points="256,478 256,256 282,282" fill="currentColor" opacity="0.55"/>
+      <polygon points="256,478 256,256 230,282" fill="currentColor"/>
+      <polygon points="42,256 256,256 230,282" fill="currentColor" opacity="0.55"/>
+      <polygon points="42,256 256,256 230,230" fill="currentColor"/>
+    </svg>
+    <span class="name">Witness Report</span>
+    <span class="note">Nothing on this page is sent anywhere.</span>
+  </div>
+</header>
+
+<main>
+<p class="progress" id="progress" aria-live="polite"></p>
+<div class="track" aria-hidden="true"><span id="trackfill"></span></div>
+<div id="error" class="error" role="alert" hidden></div>
+
+<!-- 0 start -->
+<section class="step" data-name="start">
+  <h1 tabindex="-1">Make a witness report</h1>
+  <p class="lead">A witness report is a dated, written account of something an institution did, failed to do, or threatened to do. It needs no proof, no special wording, no lawyer, and no one's permission.</p>
+  <div class="safety"><b>If anyone is in immediate danger, emergency services come first.</b> A report is a record, not a rescue.</div>
+  <p>This page asks one set of questions at a time and assembles the report as it goes. It takes about twenty minutes. Any question can be left blank: what is not known is recorded as UNKNOWN, and a report with honest gaps is more useful than none.</p>
+  <h3>Privacy</h3>
+  <ul class="plain">
+    <li><b>Nothing is sent.</b> The page works entirely inside this browser, and its security settings block every connection to the internet. It also works offline.</li>
+    <li><b>Nothing is saved.</b> Closing the page discards what has been typed. At the end, the report is downloaded as a file that belongs to its author.</li>
+    <li><b>No photos, video or recordings.</b> The report lists what exists and where it is kept; the files themselves stay with their owner.</li>
+  </ul>
+  <h3>Three rules</h3>
+  <ol>
+    <li><b>Public sources and first-hand observation only.</b> What was seen or heard, and what public records show. Nothing private, leaked or guessed.</li>
+    <li><b>Roles, not names.</b> "The officer", "the caseworker", "the manager". An office only one person holds, such as the Sheriff or the Mayor, identifies that person, so conduct is attributed to the office: "the Sheriff's Office".</li>
+    <li><b>What is proven stays apart from what was seen or believed.</b></li>
+  </ol>
+</section>
+
+<!-- 1 where -->
+<section class="step" data-name="where" hidden>
+  <h2 tabindex="-1">Where it happened</h2>
+  <p>The place comes first: it is often easier to recall than the order of events, and reports about the same place can be grouped. It is given only as precisely as is safe.</p>
+  <fieldset>
+    <legend>How precise is it safe to be?</legend>
+    <label class="choice"><input type="radio" name="prec" value="exact"><span><b>Exact</b><span class="hint">A specific address or spot.</span></span></label>
+    <label class="choice"><input type="radio" name="prec" value="approximate"><span><b>Approximate</b><span class="hint">A street, a neighbourhood, a part of a building.</span></span></label>
+    <label class="choice"><input type="radio" name="prec" value="locality" checked><span><b>Town or city</b></span></label>
+    <label class="choice"><input type="radio" name="prec" value="region"><span><b>Region</b><span class="hint">A county, a state, a wider area.</span></span></label>
+    <label class="choice"><input type="radio" name="prec" value="withheld"><span><b>Withheld</b><span class="hint">No location at all. Suits a place that could identify the person reporting, such as a home or a small workplace.</span></span></label>
+  </fieldset>
+  <div class="field" id="locwrap">
+    <label for="loc_desc">Where did it happen?<span class="hint">For example "intake area, county jail, [city], [state]" or "a rented house, [town], [state]".</span></label>
+    <input type="text" id="loc_desc" autocomplete="off">
+  </div>
+  <details id="coords">
+    <summary>Map coordinates (optional)</summary>
+    <p class="small quiet">Only from a map app, never estimated. Decimal degrees, such as 41.4993 and -81.6944.</p>
+    <div class="row">
+      <div class="field"><label for="lat">Latitude</label><input type="text" id="lat" inputmode="decimal" autocomplete="off"></div>
+      <div class="field"><label for="lon">Longitude</label><input type="text" id="lon" inputmode="decimal" autocomplete="off"></div>
+    </div>
+  </details>
+</section>
+
+<!-- 2 when -->
+<section class="step" data-name="when" hidden>
+  <h2 tabindex="-1">When it happened</h2>
+  <div class="field">
+    <label for="inc_date">When did it happen, or start?</label>
+    <input type="date" id="inc_date">
+    <label class="choice"><input type="checkbox" id="inc_unknown"><span>The date is not known</span></label>
+  </div>
+  <fieldset>
+    <legend>Is it still going on?</legend>
+    <label class="choice"><input type="radio" name="going" value="yes" checked><span>Yes, it is still going on</span></label>
+    <label class="choice"><input type="radio" name="going" value="no"><span>No, it has ended</span></label>
+    <label class="choice"><input type="radio" name="going" value="unsure"><span>Not known</span></label>
+  </fieldset>
+  <div class="field" id="endwrap" hidden>
+    <label for="end_date">When did it end?<span class="hint">Leave blank if the date is not known.</span></label>
+    <input type="date" id="end_date">
+  </div>
+</section>
+
+<!-- 3 institution -->
+<section class="step" data-name="institution" hidden>
+  <h2 tabindex="-1">The institution, and which power</h2>
+  <div class="field">
+    <label for="inst">Which institution?<span class="hint">The name people know it by, such as "[City] Water Department". Institutions keep their names; people do not.</span></label>
+    <input type="text" id="inst" autocomplete="off">
+  </div>
+  <div class="field">
+    <label for="inst_where">Where is it?<span class="hint">Its town, county or state.</span></label>
+    <input type="text" id="inst_where" autocomplete="off">
+  </div>
+  <div class="field">
+    <label for="power">What power did it use over people, in plain words?<span class="hint">For example: arrest, a fine, a benefit denial, a water shutoff, a ban, a credit score, data collected about people.</span></label>
+    <input type="text" id="power" autocomplete="off">
+  </div>
+  <div class="field">
+    <label for="tag">A short tag for the file name<span class="hint">Capital letters, digits and hyphens, such as CITYWATER or COUNTYJAIL. It names the file; it is not shown to anyone else unless the report is shared.</span></label>
+    <input type="text" id="tag" autocomplete="off" autocapitalize="characters" spellcheck="false">
+    <p class="small quiet">File name: <span class="code" id="fname_preview"></span></p>
+  </div>
+  <details id="recdetails">
+    <summary>A registration record of this institution (optional)</summary>
+    <p class="small quiet">Some people make a record of an institution's powers with the framework's registration form. Most reports have none, and none is needed.</p>
+    <div class="row">
+      <div class="field"><label for="rec_id">Record ID<span class="hint">Such as SCBP-REG-NNNN-CITYWATER</span></label><input type="text" id="rec_id" autocomplete="off" spellcheck="false"></div>
+      <div class="field"><label for="pow_id">Power number<span class="hint">P1, P2 and so on</span></label><input type="text" id="pow_id" autocomplete="off" spellcheck="false"></div>
+    </div>
+  </details>
+</section>
+
+<!-- 4 own words -->
+<section class="step" data-name="account" hidden>
+  <h2 tabindex="-1">What happened</h2>
+  <div class="field">
+    <label for="own">In your own words, what did the institution do, fail to do, or threaten to do?<span class="hint">Written as it would be told to someone trusted. It goes into the report exactly as written. People by role, not by name. "Something happened that hurt me" is enough, if that is all there is to say.</span></label>
+    <textarea id="own" class="tall"></textarea>
+  </div>
+</section>
+
+<!-- 5 details -->
+<section class="step" data-name="details" hidden>
+  <h2 tabindex="-1">The details</h2>
+  <p class="quiet">Each can be left blank; a blank answer is recorded as UNKNOWN.</p>
+  <div class="field">
+    <label for="timeline">Timeline<span class="hint">What happened, in order, with dates and times where known.</span></label>
+    <textarea id="timeline"></textarea>
+  </div>
+  <div class="field">
+    <label for="impact">Impact<span class="hint">What it did to people: money, health, housing, work, safety, fear.</span></label>
+    <textarea id="impact"></textarea>
+  </div>
+  <div class="field">
+    <label for="affected">Who is affected<span class="hint">Which people or groups, roughly how many, and whether any of them never chose to deal with this institution.</span></label>
+    <textarea id="affected"></textarea>
+  </div>
+  <div class="field">
+    <label for="warnings">Earlier warnings and attempts to fix it<span class="hint">Whether anyone raised it with the institution, before or after; what followed; and where any letter, complaint, inspection or report can be found.</span></label>
+    <textarea id="warnings"></textarea>
+  </div>
+</section>
+
+<!-- 6 optional -->
+<section class="step" data-name="optional" hidden>
+  <h2 tabindex="-1">Four optional questions</h2>
+  <p class="quiet">Answered only where they fit. Each can be skipped.</p>
+  <div class="field">
+    <label for="opt_harm">A warning of wider harm<span class="hint">Could this cause harm that spreads, builds up, lasts a long time, or cannot be undone, including harm to land, water, air or living things? What might be affected, and what was seen that suggests it? A warning, not a finding.</span></label>
+    <textarea id="opt_harm"></textarea>
+  </div>
+  <div class="field">
+    <label for="opt_duty">A duty to protect<span class="hint">Was there something the institution was supposed to do to protect people that it did not do, did late, or did only for some?</span></label>
+    <textarea id="opt_duty"></textarea>
+  </div>
+  <div class="field">
+    <label for="opt_wrong">What seems wrong<span class="hint">In your own words. No rule or law needs to be named.</span></label>
+    <textarea id="opt_wrong"></textarea>
+  </div>
+  <div class="field">
+    <label for="opt_power">What this shows about the power<span class="hint">Does it say something about how the power works for everyone? For example, a protection or exemption that did not work, a way to challenge the decision that was missing or unexplained, or a practice written down nowhere.</span></label>
+    <textarea id="opt_power"></textarea>
+  </div>
+  <div class="field" id="partwrap" hidden>
+    <label for="opt_part">Which part of the registration record does it bear on?<span class="hint">A stop path (B5, by number), a requirement row (B4), or a Floor (B6).</span></label>
+    <input type="text" id="opt_part" autocomplete="off">
+  </div>
+</section>
+
+<!-- 7 kind -->
+<section class="step" data-name="kind" hidden>
+  <h2 tabindex="-1">What kind of report</h2>
+  <p>For any institution that has not adopted the framework's rules, which today is every institution, each kind is a dated record and nothing more. <b>Incident</b> is usually the right choice.</p>
+  <fieldset>
+    <legend class="sr">Kind of report</legend>
+    <label class="choice"><input type="radio" name="rtype" value="incident" checked><span><b>Incident</b><span class="hint">Something happened that should be on the record.</span></span></label>
+    <label class="choice"><input type="radio" name="rtype" value="challenge"><span><b>Challenge</b><span class="hint">The institution is acting outside its limits: beyond its scope, after its term ended, blocking a way to stop it, or punishing someone for speaking up.</span></span></label>
+    <label class="choice"><input type="radio" name="rtype" value="change_request"><span><b>Change request</b><span class="hint">A limit or safeguard should change, even before anyone is harmed.</span></span></label>
+    <label class="choice"><input type="radio" name="rtype" value="stop_signal"><span><b>Stop signal</b><span class="hint">A defined limit was crossed, or there is a real risk of serious harm. Pauses something only where an institution has adopted the framework's rules; none has.</span></span></label>
+    <label class="choice"><input type="radio" name="rtype" value="review_petition"><span><b>Review petition</b><span class="hint">Starting or joining a request by affected people to review, narrow or end a power early. Has an effect only where an institution has adopted the framework's rules; none has.</span></span></label>
+  </fieldset>
+
+  <div id="ss" hidden>
+    <h3>Stop signal</h3>
+    <fieldset>
+      <legend>What is it based on?</legend>
+      <label class="choice"><input type="radio" name="ssb" value="defined_condition"><span><b>A defined limit was crossed</b><span class="hint">A published limit or stop condition.</span></span></label>
+      <label class="choice"><input type="radio" name="ssb" value="credible_pathway"><span><b>A real risk of serious harm</b><span class="hint">A risk no published limit covers.</span></span></label>
+    </fieldset>
+    <div class="field"><label for="ss_which">Which limit, or what facts show the risk?</label><textarea id="ss_which"></textarea></div>
+    <div class="field"><label for="ss_now">Is the harm happening now, or about to? Is anyone in immediate danger?</label><input type="text" id="ss_now" autocomplete="off"></div>
+  </div>
+
+  <div id="ch" hidden>
+    <h3>What limit is being exceeded, or what should change?</h3>
+    <p class="small quiet">Mark any that apply.</p>
+    <label class="choice"><input type="checkbox" class="ch" value="acting outside its scope or limits"><span>Acting outside its scope or limits</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="operating after its term ended, or without authorization"><span>Operating after its term ended, or without authorization</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="a stop path is blocked or harder to use"><span>A way to stop it is blocked or harder to use</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="someone was penalized for raising a concern or giving a stop signal"><span>Someone was penalized for raising a concern or giving a stop signal</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="acted on wrong, outdated, or unverified information about me"><span>It acted on wrong, outdated or unverified information about the person</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="a threshold depends on the institution's own findings"><span>A limit depends on the institution's own findings</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="information was suppressed, distorted, or hidden"><span>Information was suppressed, distorted or hidden</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="unequal treatment"><span>Unequal treatment</span></label>
+    <label class="choice"><input type="checkbox" class="ch" value="a Floor is at stake" id="ch_floor"><span>A Floor is at stake<span class="hint">Ecological; Economic (essentials, charges that grow when people cannot pay); Agency (being told plainly, able to challenge and to leave); Human Rights (body, liberty, due process, expression, equal treatment, privacy).</span></span></label>
+    <div class="field" id="floorwrap" hidden><label for="floor_which">Which Floor?</label><input type="text" id="floor_which" autocomplete="off"></div>
+    <label class="choice"><input type="checkbox" class="ch" value="other"><span>Other</span></label>
+    <div class="field"><label for="fix">What would fix it? (optional)</label><textarea id="fix"></textarea></div>
+    <div class="field" id="petwrap" hidden><label for="petition_id">Joining an existing petition? Its ID, or leave blank.</label><input type="text" id="petition_id" autocomplete="off"></div>
+  </div>
+</section>
+
+<!-- 8 evidence -->
+<section class="step" data-name="evidence" hidden>
+  <h2 tabindex="-1">Evidence</h2>
+  <p>Evidence is listed, not attached. For each key claim: what it is, where it comes from, and what kind of claim it is.</p>
+  <div id="ev_rows"></div>
+  <button type="button" id="ev_add">Add a claim</button>
+  <div class="field">
+    <label for="inventory">What exists but is not attached<span class="hint">For example "letter dated…", "case number…", "photos on my phone", "a receipt", each with where it is kept. No photos, video or recordings go in the report itself.</span></label>
+    <textarea id="inventory"></textarea>
+  </div>
+  <details>
+    <summary>A fingerprint of a file (optional)</summary>
+    <p class="small">A fingerprint is a code calculated from a file. A matching code later shows the file has not changed; it does not show when the file existed. The file is read only inside this browser and is not attached or sent.</p>
+    <p class="small"><b>Anonymity:</b> if the institution holds the same file, such as a letter it sent, it can match the fingerprint and learn who wrote the report. An anonymous report leaves fingerprints out.</p>
+    <div class="field"><label for="fp_file">Choose a file</label><input type="file" id="fp_file"></div>
+    <p id="fp_out" class="small" aria-live="polite"></p>
+  </details>
+</section>
+
+<!-- 9 identity -->
+<section class="step" data-name="identity" hidden>
+  <h2 tabindex="-1">How identified</h2>
+  <fieldset>
+    <legend class="sr">How identified</legend>
+    <label class="choice"><input type="radio" name="ident" value="identified"><span><b>Identified</b><span class="hint">Name and contact. Carries the most weight, and can expose the person to retaliation.</span></span></label>
+    <label class="choice"><input type="radio" name="ident" value="pseudonymous" checked><span><b>Pseudonymous</b><span class="hint">A stable made-up name. Allows follow-up, and reports can be linked over time. Suits most people.</span></span></label>
+    <label class="choice"><input type="radio" name="ident" value="anonymous"><span><b>Anonymous</b><span class="hint">The most protection, less weight, and no follow-up.</span></span></label>
+  </fieldset>
+  <div class="field" id="whowrap">
+    <label for="who_name" id="who_label">A stable made-up name</label>
+    <input type="text" id="who_name" autocomplete="off">
+  </div>
+  <div class="field" id="contactwrap">
+    <label for="who_contact">Contact for follow-up (optional)<span class="hint">A pseudonymous report uses a separate email address.</span></label>
+    <input type="text" id="who_contact" autocomplete="off">
+  </div>
+  <div class="field">
+    <label for="who_rel">Relationship to the institution (optional)<span class="hint">Such as customer, tenant, employee, neighbour, student's parent.</span></label>
+    <input type="text" id="who_rel" autocomplete="off">
+  </div>
+  <details id="phrasebox">
+    <summary>A verification phrase (optional)</summary>
+    <p class="small">A verification phrase lets a pseudonymous or anonymous author step forward later. The phrase is at least five random words, with nothing personal in it: no name, birthday or address. Only a code calculated from it goes in the report. If the phrase is revealed later, anyone can check it against the code. It links a person to the report; it does not prove who first wrote it.</p>
+    <p class="small"><b>The phrase is not saved anywhere.</b> It is written down and kept somewhere safe first: it cannot be recovered from the code.</p>
+    <div class="field">
+      <label for="phrase">Phrase</label>
+      <input type="password" id="phrase" autocomplete="off" spellcheck="false">
+      <label class="choice"><input type="checkbox" id="phrase_show"><span>Show the phrase</span></label>
+    </div>
+    <button type="button" id="hash_btn">Calculate the code</button>
+    <p id="hash_out" class="small" aria-live="polite"></p>
+  </details>
+</section>
+
+<!-- 10 honesty -->
+<section class="step" data-name="honesty" hidden>
+  <h2 tabindex="-1">Honesty</h2>
+  <p>Each statement is ticked only if it is true.</p>
+  <label class="choice"><input type="checkbox" id="hon1"><span>Made in good faith.</span></label>
+  <label class="choice"><input type="checkbox" id="hon2"><span>Public sources and my own observation only.</span></label>
+  <label class="choice"><input type="checkbox" id="hon3"><span>Roles, not names.</span></label>
+  <label class="choice"><input type="checkbox" id="hon4"><span>Facts kept separate from allegations.</span></label>
+</section>
+
+<!-- 11 review -->
+<section class="step" data-name="review" hidden>
+  <h2 tabindex="-1">The report</h2>
+  <div id="checks"></div>
+  <p>Read it once as a stranger would. A street, a shift or a rare job title can identify the person reporting; going back to change it is always possible.</p>
+  <div class="actions">
+    <button type="button" class="primary" id="dl">Download the report</button>
+    <button type="button" id="copy">Copy the text</button>
+    <button type="button" id="print">Print</button>
+  </div>
+  <p class="small quiet" id="action_out" aria-live="polite"></p>
+  <p class="small">File name: <span class="code" id="fname"></span></p>
+  <pre id="preview" class="printable"></pre>
+  <h3>Keeping it</h3>
+  <p><i>The report belongs to its author.</i> Nothing has been sent anywhere, and this project has no place to file reports. A dated copy, such as an email to oneself, shows when it was written.</p>
+  <h3>Sharing it</h3>
+  <p>Whether to share it, and with whom, is the author's decision. A lawyer, a legal aid service or an oversight body can act on it. The text is shared, not the original photos; a pseudonymous report uses a separate email address; and the institution itself is sent a report only after retaliation has been considered. The <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/Witness-Report-Guide.md">Witness Report Guide</a> covers sharing in full, and <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/What-You-Can-Do.md">What You Can Do</a> sets out the usual next steps.</p>
+  <p><button type="button" class="link" id="restart">Start a new report</button></p>
+</section>
+</main>
+
+<nav class="controls" aria-label="Steps">
+  <div class="inner">
+    <button type="button" id="back">Back</button>
+    <button type="button" class="primary" id="next">Begin</button>
+  </div>
+</nav>
+
+<script>
+"use strict";
+/* Values the report declares. Changed only when the Witness Report form changes. */
+var FORM = { version: "v1", date: "2026-11-05" };
+var CORE = { version: "v1", date: "2026-11-05" };
+var VOCAB = "v1";
+
+var steps = Array.prototype.slice.call(document.querySelectorAll("section.step"));
+var cur = 0;
+var dirty = false;
+var saved = false;
+var tagEdited = false;
+var verificationHash = "";
+
+function $(id) { return document.getElementById(id); }
+function val(id) { var e = $(id); return e ? e.value.trim() : ""; }
+function radio(name) { var e = document.querySelector("input[name='" + name + "']:checked"); return e ? e.value : ""; }
+function pad(n) { return (n < 10 ? "0" : "") + n; }
+function today() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+
+var STEP_NAMES = {
+  start: "Before starting", where: "Where", when: "When", institution: "Institution and power",
+  account: "What happened", details: "The details", optional: "Optional questions",
+  kind: "Kind of report", evidence: "Evidence", identity: "How identified",
+  honesty: "Honesty", review: "The report"
+};
+
+function show(i) {
+  steps.forEach(function (s, k) { s.hidden = k !== i; });
+  cur = i;
+  var name = steps[i].getAttribute("data-name");
+  $("progress").textContent = i === 0 ? "" : "Step " + i + " of " + (steps.length - 1) + ": " + STEP_NAMES[name];
+  $("trackfill").style.width = (i / (steps.length - 1) * 100) + "%";
+  $("back").style.visibility = i === 0 ? "hidden" : "visible";
+  $("next").textContent = i === 0 ? "Begin" : (i === steps.length - 2 ? "See the report" : "Next");
+  $("next").hidden = i === steps.length - 1;
+  hideError();
+  if (name === "review") { render(); }
+  var h = steps[i].querySelector("h1, h2");
+  if (h) { h.focus(); }
+  window.scrollTo(0, 0);
+}
+
+function showError(msg) { var e = $("error"); e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: "center" }); }
+function hideError() { $("error").hidden = true; }
+
+/* ---------- validation, per step ---------- */
+function isDate(s) { return /^\d{4}-\d{2}-\d{2}$/.test(s); }
+function coord(s, lo, hi) { if (s === "") { return true; } var n = Number(s); return /^-?\d+(\.\d+)?$/.test(s) && n >= lo && n <= hi; }
+
+var checks = {
+  where: function () {
+    if (radio("prec") !== "withheld" && !val("loc_desc")) { return "A short description of the place is needed, or choose Withheld."; }
+    if (!coord(val("lat"), -90, 90) || !coord(val("lon"), -180, 180)) { return "Coordinates are decimal degrees: latitude from -90 to 90, longitude from -180 to 180. They can be left blank."; }
+    if ((val("lat") === "") !== (val("lon") === "")) { return "Coordinates need both latitude and longitude, or neither."; }
+    return "";
+  },
+  when: function () {
+    if (!$("inc_unknown").checked) {
+      if (!isDate(val("inc_date"))) { return "A date is needed, or tick that the date is not known."; }
+      if (val("inc_date") > today()) { return "The date has not happened yet."; }
+    }
+    if (radio("going") === "no" && val("end_date")) {
+      if (!isDate(val("end_date"))) { return "The end date is not a date."; }
+      if (!$("inc_unknown").checked && val("end_date") < val("inc_date")) { return "The end date is before the start."; }
+    }
+    return "";
+  },
+  institution: function () {
+    if (!val("inst")) { return "The institution's name is needed."; }
+    if (!/^[A-Z0-9]+(-[A-Z0-9]+)*$/.test(val("tag"))) { return "The tag uses capital letters, digits and single hyphens, such as CITYWATER."; }
+    var r = val("rec_id"), p = val("pow_id");
+    if (r && !/^SCBP-REG-(NNNN|\d{4}|EXAMPLE)-[A-Z0-9-]+$/.test(r)) { return "A record ID looks like SCBP-REG-NNNN-TAG. It can be left blank."; }
+    if (p && !/^P\d+$/.test(p)) { return "A power number looks like P1, P2 and so on."; }
+    if (p && !r) { return "A power number needs the record ID it belongs to."; }
+    return "";
+  },
+  account: function () {
+    if (!val("own")) { return "The account is the heart of the report. A sentence is enough."; }
+    return "";
+  },
+  kind: function () {
+    if (radio("rtype") === "stop_signal" && !radio("ssb")) { return "A stop signal states what it is based on."; }
+    return "";
+  },
+  identity: function () {
+    if (radio("ident") === "identified" && !val("who_name")) { return "An identified report gives a name."; }
+    if (val("phrase") && !verificationHash) { return "Calculate the code for the phrase, or clear the phrase."; }
+    return "";
+  }
+};
+
+/* ---------- conditional parts ---------- */
+function sync() {
+  var prec = radio("prec");
+  $("locwrap").querySelector("label").firstChild.textContent = prec === "withheld" ? "Anything to say about the place (optional)" : "Where did it happen?";
+  $("coords").hidden = prec === "withheld";
+  $("endwrap").hidden = radio("going") !== "no";
+  $("inc_date").disabled = $("inc_unknown").checked;
+  var t = radio("rtype");
+  $("ss").hidden = t !== "stop_signal";
+  $("ch").hidden = ["challenge", "change_request", "review_petition"].indexOf(t) < 0;
+  $("petwrap").hidden = t !== "review_petition";
+  $("floorwrap").hidden = !$("ch_floor").checked;
+  $("partwrap").hidden = !val("rec_id");
+  var id = radio("ident");
+  $("whowrap").hidden = id === "anonymous";
+  $("contactwrap").hidden = id === "anonymous";
+  $("who_label").textContent = id === "identified" ? "Name" : "A stable made-up name";
+  $("fname_preview").textContent = fileName();
+}
+
+function suggestTag() {
+  if (tagEdited) { return; }
+  var skip = { the: 1, of: 1, and: 1, for: 1, in: 1, on: 1, at: 1, a: 1, an: 1, to: 1 };
+  var words = val("inst").replace(/[^A-Za-z0-9 ]+/g, " ").split(/\s+/).filter(function (w) { return w && !skip[w.toLowerCase()]; });
+  var tag = words.length > 1 ? words.map(function (w) { return w[0]; }).join("") : (words[0] || "").slice(0, 10);
+  $("tag").value = tag.toUpperCase().slice(0, 12);
+}
+
+function reportDate() { return $("inc_unknown").checked || !isDate(val("inc_date")) ? today() : val("inc_date"); }
+function reportId() { return "SCBP-WR-" + (val("tag") || "TAG") + "-" + reportDate(); }
+function fileName() { return reportId() + ".md"; }
+
+/* ---------- evidence rows ---------- */
+var CLAIM_TYPES = [
+  ["my_observation", "My own observation"],
+  ["institution_statement", "The institution's own published statement (rule, policy, notice, announcement)"],
+  ["adjudicated_or_admitted_fact", "A court judgment, final order or admission"],
+  ["settled_without_admission", "A settlement without admission"],
+  ["allegation_or_estimate", "An allegation or an estimate"]
+];
+var evCount = 0;
+function addEvidence() {
+  evCount += 1;
+  var n = evCount;
+  var box = document.createElement("div");
+  box.className = "ev";
+  var opts = CLAIM_TYPES.map(function (c) { return "<option value='" + c[0] + "'>" + c[1] + "</option>"; }).join("");
+  box.innerHTML =
+    "<div class='field'><label for='evc" + n + "'>Claim</label><input type='text' id='evc" + n + "' class='evc' autocomplete='off'></div>" +
+    "<div class='field'><label for='evs" + n + "'>Source<span class='hint'>A link, a record or case number, or \"my own observation\".</span></label><input type='text' id='evs" + n + "' class='evs' autocomplete='off'></div>" +
+    "<div class='field'><label for='evt" + n + "'>Kind of claim</label><select id='evt" + n + "' class='evt'>" + opts + "</select></div>" +
+    "<button type='button' class='link'>Remove this claim</button>";
+  box.querySelector("button").addEventListener("click", function () { box.remove(); dirty = true; });
+  $("ev_rows").appendChild(box);
+  box.querySelector("input").focus();
+}
+
+/* ---------- hashing (inside the browser only) ---------- */
+function hex(buf) { return Array.prototype.map.call(new Uint8Array(buf), function (b) { return (b < 16 ? "0" : "") + b.toString(16); }).join(""); }
+function canHash() { return !!(window.crypto && window.crypto.subtle); }
+
+function hashPhrase() {
+  var p = $("phrase").value;
+  var out = $("hash_out");
+  verificationHash = "";
+  if (!canHash()) { out.textContent = "This browser cannot calculate the code here. The phrase can be left out."; return; }
+  if (p !== p.trim()) { out.textContent = "The phrase starts or ends with a space. Remove it, so the code can be matched later."; return; }
+  if (p.split(/\s+/).filter(Boolean).length < 5) { out.textContent = "The phrase needs at least five words."; return; }
+  window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(p)).then(function (h) {
+    verificationHash = hex(h);
+    out.innerHTML = "Code (SHA-256), added to the report: <span class='code'></span>";
+    out.querySelector(".code").textContent = verificationHash;
+  });
+}
+
+function fingerprint() {
+  var f = $("fp_file").files[0];
+  var out = $("fp_out");
+  if (!f) { return; }
+  if (!canHash()) { out.textContent = "This browser cannot calculate fingerprints here."; return; }
+  out.textContent = "Calculating…";
+  f.arrayBuffer().then(function (b) { return window.crypto.subtle.digest("SHA-256", b); }).then(function (h) {
+    var line = "Fingerprint (SHA-256) of " + f.name + ": " + hex(h);
+    var inv = $("inventory");
+    inv.value = inv.value.replace(/\s+$/, "") + (inv.value.trim() ? "\n" : "") + line;
+    out.textContent = "Added to the list above. The file name may itself identify someone; it can be edited there.";
+    $("fp_file").value = "";
+    dirty = true;
+  });
+}
+
+/* ---------- building the report ---------- */
+function q(s) { return "\"" + s.replace(/\\/g, "\\\\").replace(/"/g, "\\\"").replace(/\s*\n\s*/g, " ") + "\""; }
+function cell(s) { return s.replace(/\|/g, "\\|").replace(/\s*\n\s*/g, " "); }
+function block(s) {
+  /* lines that would start a heading or a rule are escaped, so the report keeps its shape */
+  return s.split(/\r?\n/).map(function (l) {
+    return /^\s*(#|---|```)/.test(l) ? "\\" + l.replace(/^\s+/, "") : l;
+  }).join("\n");
+}
+function answer(id) { var s = val(id); return s ? block(s) : "UNKNOWN"; }
+function optional(id) { var s = val(id); return s ? block(s) : "UNKNOWN (skipped)."; }
+function quote(s) { return block(s).split("\n").map(function (l) { return l ? "> " + l : ">"; }).join("\n"); }
+function line(label, text) { return text.indexOf("\n") >= 0 ? label + "\n" + text : label + " " + text; }
+
+function build() {
+  var prec = radio("prec");
+  var withheld = prec === "withheld";
+  var lat = withheld ? "WITHHELD" : (val("lat") || "UNKNOWN");
+  var lon = withheld ? "WITHHELD" : (val("lon") || "UNKNOWN");
+  var desc = val("loc_desc") || (withheld ? "withheld" : "UNKNOWN");
+  var incUnknown = $("inc_unknown").checked;
+  var inc = incUnknown ? "UNKNOWN" : val("inc_date");
+  var going = radio("going");
+  var end = going === "yes" ? "ongoing" : (going === "no" && val("end_date") ? val("end_date") : "NONE");
+  var status = going === "yes" ? "ongoing" : (going === "no" ? "resolved" : "unknown");
+  var rtype = radio("rtype");
+  var ssb = rtype === "stop_signal" ? radio("ssb") : "NONE";
+  var rec = val("rec_id") || "NONE";
+  var pw = rec !== "NONE" && val("pow_id") ? val("pow_id") : "UNKNOWN";
+  var ident = radio("ident");
+  var inst = val("inst");
+
+  var fm = [
+    "---",
+    "report_id: " + reportId(),
+    "report_type: " + rtype,
+    "form: {name: witness-report, version: " + FORM.version + ", date: " + FORM.date + "}",
+    "core_requirements: {version: " + CORE.version + ", date: " + CORE.date + "}",
+    "bundle: NONE",
+    "vocab_version: " + VOCAB,
+    "record_id: " + rec,
+    "power_id: " + pw,
+    "institution_name: " + q(inst),
+    "incident_date: " + inc,
+    "incident_end_date: " + end,
+    "filed_date: " + today(),
+    "location:",
+    "  description: " + q(desc),
+    "  latitude: " + lat,
+    "  longitude: " + lon,
+    "  precision: " + prec,
+    "stop_signal_basis: " + ssb,
+    "identity_disclosure: " + ident,
+    "verification_hash: " + (verificationHash || "NONE"),
+    "status: " + status,
+    "---"
+  ].join("\n");
+
+  var where = inst + (val("inst_where") ? ", " + val("inst_where") : "");
+  var recLine = rec === "NONE" ? "NONE" : rec + (pw !== "UNKNOWN" ? ", power " + pw : "");
+  var b = [];
+  b.push("> **Public sources and first-hand observation only.** People are referred to by role or title. This is a good-faith report, not a verdict.");
+  b.push("# Witness Report — " + inst + " — " + inc);
+  b.push("## 1. The institution, and which power\n" +
+    "- Which institution, and where: " + where + "\n" +
+    "- What power did it use over people? Say it in plain words: " + (val("power") || "UNKNOWN") + "\n" +
+    "- Registration record, if one exists: " + recLine);
+  var s2 = "## 2. What happened\n2a. **In your own words.**\n\n" + quote(val("own")) + "\n\n" +
+    "*Written by the witness with the web form.*\n\n" +
+    line("2b. **Timeline.**", answer("timeline")) + "\n\n" +
+    line("2c. **Impact.**", answer("impact")) + "\n\n" +
+    line("2d. **Who is affected.**", answer("affected")) + "\n\n" +
+    line("2e. **Earlier warnings and attempts to fix it.**", answer("warnings")) + "\n\n" +
+    line("2f. **Potential harm warning (optional):**", optional("opt_harm")) + "\n\n" +
+    line("2g. **Protective duty (optional).**", optional("opt_duty")) + "\n\n" +
+    line("2h. **What seems wrong to you? (optional)**", optional("opt_wrong")) + "\n\n" +
+    line("2i. **What this shows about the power (optional).**", optional("opt_power") +
+      (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
+  b.push(s2);
+
+  if (rtype === "stop_signal") {
+    var dc = ssb === "defined_condition" ? "x" : " ";
+    var cp = ssb === "credible_pathway" ? "x" : " ";
+    b.push("## 3. For a stop signal only\n3a. **Basis:**\n" +
+      "  - [" + dc + "] a **defined condition**: a published limit or stop condition was crossed. Which one?\n" +
+      "  - [" + cp + "] a **credible pathway to serious harm**: a real risk of serious harm that no published limit covers. What facts show it?\n\n" +
+      answer("ss_which") + "\n\n" +
+      "3b. Is the harm happening **now**, or about to? Is anyone in immediate danger? " + answer("ss_now"));
+  } else {
+    b.push("## 3. For a stop signal only\nNot applicable.");
+  }
+
+  if (["challenge", "change_request", "review_petition"].indexOf(rtype) >= 0) {
+    var items = Array.prototype.slice.call(document.querySelectorAll("input.ch")).map(function (c) {
+      var label = c.value === "a Floor is at stake" ? "a Floor is at stake (which one?)" + (c.checked && val("floor_which") ? " " + val("floor_which") : "") : c.value;
+      return "  - [" + (c.checked ? "x" : " ") + "] " + label;
+    }).join("\n");
+    var s4 = "## 4. For a challenge, change request, or review petition only\n4a. **What limit is being exceeded, or what should change?**\n" + items + "\n\n" +
+      line("4b. **What would fix it?** (optional)", optional("fix"));
+    if (rtype === "review_petition") { s4 += "\n4c. **For a review petition:** joining an existing petition? " + (val("petition_id") || "NONE"); }
+    b.push(s4);
+  } else {
+    b.push("## 4. For a challenge, change request, or review petition only\nNot applicable.");
+  }
+
+  var rows = Array.prototype.slice.call(document.querySelectorAll("#ev_rows .ev")).map(function (box) {
+    return [box.querySelector(".evc").value.trim(), box.querySelector(".evs").value.trim(), box.querySelector(".evt").value];
+  }).filter(function (r) { return r[0]; });
+  var s5 = "## 5. Evidence\n";
+  if (rows.length) {
+    s5 += "| Claim | Source (link, record number, or \"my own observation\") | Claim type |\n|---|---|---|\n" +
+      rows.map(function (r) { return "| " + cell(r[0]) + " | " + cell(r[1] || "UNKNOWN") + " | " + r[2] + " |"; }).join("\n");
+  } else {
+    s5 += "No claims listed.";
+  }
+  s5 += "\n\n**What exists but isn't attached.** " + (val("inventory") ? block(val("inventory")) : "Nothing listed.");
+  b.push(s5);
+
+  function t(id) { return $(id).checked ? "x" : " "; }
+  b.push("## 6. Honesty\n" +
+    "- [" + t("hon1") + "] Made in good faith.\n" +
+    "- [" + t("hon2") + "] Public sources and my own observation only.\n" +
+    "- [" + t("hon3") + "] Roles, not names.\n" +
+    "- [" + t("hon4") + "] Facts kept separate from allegations.");
+
+  var who = ident === "anonymous" ? "anonymous" : (val("who_name") || "UNKNOWN");
+  var contact = ident === "anonymous" ? "NONE" : (val("who_contact") || "NONE");
+  b.push("## 7. About you (optional)\n" +
+    "- Name or stable handle: " + who + "\n" +
+    "- Contact, for follow-up: " + contact + "\n" +
+    "- Relationship to the institution: " + (val("who_rel") || "UNKNOWN") + "\n" +
+    "- Verification phrase used? " + (verificationHash ? "yes" : "no"));
+
+  b.push("## 8. Resolution (filled in later by whoever reviews the report)\n" +
+    "- Response from the institution, and its date:\n" +
+    "- For a stop signal, the result of the independent check: did the trigger fact occur? yes / no / not checked. Date:\n" +
+    "- Effect on the power: did the power itself change (for example paused, stopped, narrowed, changed in another way, or not changed)? Date and source:\n" +
+    "- Outcome:\n" +
+    "- Linked reports:");
+
+  return fm + "\n\n" + b.join("\n\n") + "\n";
+}
+
+/* ---------- review ---------- */
+var TITLE_NAME = /\b(?:Officer|Sgt\.?|Sergeant|Lt\.?|Lieutenant|Det\.?|Detective|Deputy|Judge|Mayor|Dr\.|Mr\.?|Ms\.?|Mrs\.?|Commissioner|Chief|Sheriff|Captain|Capt\.)\s+([A-Z][a-zA-Z'-]+)/g;
+var ROLE_OK = /^(Office|Department|Division|Court|County|City|State|District|Executive|Officer|Deputy|Assistant|General|Justice|Judge|Public|Police|Fire|Medical|Clerk|Director|The|Of|And)$/;
+
+function render() {
+  var text = build();
+  $("preview").textContent = text;
+  $("fname").textContent = fileName();
+  var notes = [];
+  var names = [];
+  var m;
+  var body = text.split("## 7.")[0];
+  TITLE_NAME.lastIndex = 0;
+  while ((m = TITLE_NAME.exec(body)) !== null) { if (!ROLE_OK.test(m[1])) { names.push(m[0]); } }
+  if (names.length) { notes.push("Possible names after a title: " + names.slice(0, 5).join(", ") + ". The report concerns the institution; roles are used instead of names."); }
+  var hon = ["hon1", "hon2", "hon3", "hon4"].filter(function (id) { return !$(id).checked; }).length;
+  if (hon) { notes.push((hon === 1 ? "One honesty statement is" : hon + " honesty statements are") + " not ticked, and the report records it so. Going back to the Honesty step changes that."); }
+  if (radio("rtype") === "stop_signal" || radio("rtype") === "review_petition") { notes.push("This kind of report has an effect only where an institution has adopted the framework's rules. For any other institution it is a dated record."); }
+  $("checks").innerHTML = "";
+  notes.forEach(function (n) { var p = document.createElement("p"); p.className = "notice"; p.textContent = n; $("checks").appendChild(p); });
+}
+
+function download() {
+  var blob = new Blob([build()], { type: "text/markdown;charset=utf-8" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName();
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  saved = true;
+  $("action_out").textContent = "Downloaded as " + fileName() + ".";
+}
+
+function copyText() {
+  var text = build();
+  var done = function () { saved = true; $("action_out").textContent = "Copied. It can be pasted into an email or a notes app and kept there."; };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var r = document.createRange();
+    r.selectNodeContents($("preview"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(r);
+    try { document.execCommand("copy"); done(); } catch (e) { $("action_out").textContent = "The text is selected; it can be copied from the menu."; }
+  }
+}
+
+/* ---------- wiring ---------- */
+$("next").addEventListener("click", function () {
+  var name = steps[cur].getAttribute("data-name");
+  var err = checks[name] ? checks[name]() : "";
+  if (err) { showError(err); return; }
+  if (cur < steps.length - 1) { show(cur + 1); }
+});
+$("back").addEventListener("click", function () { if (cur > 0) { show(cur - 1); } });
+$("ev_add").addEventListener("click", function () { addEvidence(); });
+$("hash_btn").addEventListener("click", hashPhrase);
+$("phrase").addEventListener("input", function () { verificationHash = ""; $("hash_out").textContent = ""; });
+$("phrase_show").addEventListener("change", function () { $("phrase").type = this.checked ? "text" : "password"; });
+$("fp_file").addEventListener("change", fingerprint);
+$("dl").addEventListener("click", download);
+$("copy").addEventListener("click", copyText);
+$("print").addEventListener("click", function () { window.print(); });
+$("restart").addEventListener("click", function () {
+  if (!saved && !window.confirm("Start again? The current report has not been downloaded or copied.")) { return; }
+  dirty = false;
+  window.location.reload();
+});
+$("inst").addEventListener("input", suggestTag);
+$("tag").addEventListener("input", function () {
+  tagEdited = true;
+  var p = this.selectionStart;
+  this.value = this.value.toUpperCase().replace(/[^A-Z0-9-]/g, "");
+  this.setSelectionRange(p, p);
+});
+document.addEventListener("input", function () { dirty = true; saved = false; sync(); });
+document.addEventListener("change", function () { sync(); });
+window.addEventListener("beforeunload", function (e) {
+  if (dirty && !saved) { e.preventDefault(); e.returnValue = ""; }
+});
+
+addEvidence();
+$("ev_rows").querySelector("input").blur();
+sync();
+show(0);
+</script>
+</body>
+</html>
