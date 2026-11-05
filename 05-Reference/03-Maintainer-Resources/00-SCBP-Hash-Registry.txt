@@ -8,7 +8,7 @@ This file is regenerated automatically; its commit history dates each entry.
 4c82d94605f5148ce1727f24dcd92d808b376c5923a2d2ed78b732d9c7976a88  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
 3c00582a2489fe60b7312121ef39bb28ecb983b1e2af1f1688caf395acd1127a  00-Reading/1-Something-Happened/Bill-of-Rights-Crosswalk.md
 96ad7c44a9a6f48e90f363cea4473cf79e6c85159b19385a4fe6dc1151240419  00-Reading/1-Something-Happened/What-You-Can-Do.md
-94a5289a2e0737688ec8cdca7571421610f65b6d935316a59577adc1f817ad19  00-Reading/1-Something-Happened/Witness-Report-Guide.md
+e458945a34fbc7f03cf082303e1440f61129d40262bc737a7266bd10dba7aa18  00-Reading/1-Something-Happened/Witness-Report-Guide.md
 e93ebcf608c86f425d6f54db2d0b02e3ed58e89ed1abfad7da494ac9e38a627e  00-Reading/2-Examine-an-Institution/AI-Registration-Bundle.md
 076244a32bd419edd607f9a3a4eba652075a9003d6a43af5a0705f8339ca82bf  00-Reading/2-Examine-an-Institution/Inquiry-Guide.md
 c1ea0ec4586f03a007741bb5f3eb0476c300377094c3744f0c892a04f3a13df4  00-Reading/3-Understand-the-Framework/BPF-Reasoning.md
@@ -116,5 +116,5 @@ f4219c3550062c309530c45f796161d6367c157ab13a7dee0bda504df20ab92a  LICENSE-MIT
 980c60263fce5c4e9c09c173fde169957ed8221ecb71a20611b4d0ef68e87fb4  README.md
 5ebd88658a5f49f3c0dd17edf56f3507c713bde5865564d6e06f8186952e199c  TERMS.md
 c05047c28d5f0d07901d9d1b83a651ec4615d282f4812e168b430e3254a3ac6c  docs/CNAME
-fc0350ed7d5ec86bd1a846616974a1a18ee09f3596e32799e0f49f5d9163fc75  docs/README.md
-9165a6e90d2970a5ae2dc42624ae0b61a7f97d0e362f9d1cf18b1decd3c0ec27  docs/witness-report/index.html
+0f571cacd6bcb8ed06cfb6bab77017d72e794cbd96628b50f59a3505dca7b4b3  docs/README.md
+2f2ae9775b2337b7fb7fcca0cc1fd0ad601430376cc44fa29d719b4a3d73bbf1  docs/witness-report/index.html
