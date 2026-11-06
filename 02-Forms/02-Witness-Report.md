@@ -120,9 +120,9 @@ status: ongoing
 
 > "…"
 
-2b. **Timeline.** What happened, in order? Give dates and times if you know them.
+2b. **Timeline.** What happened, in order, and how was it done or said: in person, by letter, by phone, by email, by a notice? Give dates and times if you know them.
 2c. **Impact.** What did it do to people?
-2d. **Who is affected.** Which people or groups? Roughly how many? Did any of them never choose to deal with this institution?
+2d. **Who is affected, and who else saw it.** Which people or groups? Roughly how many? Did any of them never choose to deal with this institution? Did anyone else see or hear what happened? By role only, such as "a neighbour in the same building", with no names or contact details.
 2e. **Earlier warnings and attempts to fix it.** Did anyone warn about this, or raise it with the institution, before or after it happened? What happened then? Is there anything that shows the risk was known, such as a letter, a complaint, an inspection, or a report? Say where it can be found.
 2f. **Potential harm warning (optional):** Is there a credible risk of widespread, cumulative, long-lasting, or irreversible harm, including ecological harm? Describe what may be affected, the possible extent and duration, and any observations or evidence supporting the concern. Use UNKNOWN where necessary.
 2g. **Protective duty (optional).** Was there something the institution was supposed to do to protect people that it did not do, did late, or did only for some people? You can skip this if you don't know.

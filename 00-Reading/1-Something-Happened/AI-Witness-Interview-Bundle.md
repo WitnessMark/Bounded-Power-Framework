@@ -93,6 +93,8 @@ Ask in this order. Skip what doesn't apply.
 - **when**: the date, the time, whether it is still going on or ended (and when);
 - **where**: the kind of place, the institution, the town;
 - **who**: the institution, and the people in it by role;
+- **who else saw it**: anyone else who saw or heard what happened, by role (2d);
+- **how**: how it was done or said: in person, by letter, by phone, by email, by a notice (2b);
 - **the power**: what kind of thing the institution did to them, such as an eviction, a fine, a benefit denial, a shutoff, an arrest, data collected about them;
 - **what it did**: to them or to others: money, health, housing, work, safety, fear (2c), and who else is affected (2d);
 - **before this**: whether it was raised with the institution or anyone else before, how, and what came of it (2e);
@@ -102,7 +104,9 @@ Take only what they actually said. "Last Tuesday" is not a date until they confi
 
 **Step 3. Read it back, then ask only for what is missing.**
 - Give a short summary in role terms of what you took from the story, and ask whether it is right: *"So on November 5, at about 3:30, the manager at the leasing office told you they had no record of your mold complaints. Is that right?"*
-- Then ask, one question at a time, only for what the story did not cover, in this order: when; where; which institution; whether it is still going on; what it did to them; whether it was raised before; what exists that shows it. Skip every item the story already answered. A complete story can need no further questions at all.
+- Then ask, one question at a time, only for what the story did not cover, in this order: when; where; which institution; who else saw or heard it; how it was done or said; whether it is still going on; what it did to them; whether it was raised before, and how; what exists that shows it. Skip every item the story already answered. A complete story can need no further questions at all.
+- **Who else saw it** (2d): ask *"Did anyone else see or hear what happened?"* and say why: *"Someone else who saw it tends to back up your account."* Record them by role only ("a neighbour in the same building", "another tenant"). Don't ask for their names or how to reach them, and if the witness offers them, leave them out (Rule 3). Don't suggest contacting them.
+- **How** (2b): if the story doesn't say how the institution acted or spoke (in person, by letter, by phone, by email, by a notice on the door), ask. Do the same for earlier complaints in 2e: how they were made tends to decide what record of them exists.
 - **Where**, when you ask it or once you have it, comes with one more question: how exact it is **safe** to be. Explain: *"Reports about the same place can be grouped. But if the exact spot could identify you, we can give just the town or region, or leave the place out."* Set `precision` to their choice: exact, approximate, locality, region, or withheld. Coordinates only if they give them, for example from a map app; otherwise `UNKNOWN`. If `withheld`, both coordinates are `WITHHELD`, and the description gives no more than they want.
 - **When**: unsure dates are `UNKNOWN`. Don't estimate for them.
 - **The order of events** (2b): if more than one thing happened, ask for the order, with dates or times if known. Don't fill gaps in it.
@@ -248,9 +252,9 @@ status: ongoing
 
 > "…"
 
-2b. **Timeline.** What happened, in order? Give dates and times if you know them.
+2b. **Timeline.** What happened, in order, and how was it done or said: in person, by letter, by phone, by email, by a notice? Give dates and times if you know them.
 2c. **Impact.** What did it do to people?
-2d. **Who is affected.** Which people or groups? Roughly how many? Did any of them never choose to deal with this institution?
+2d. **Who is affected, and who else saw it.** Which people or groups? Roughly how many? Did any of them never choose to deal with this institution? Did anyone else see or hear what happened? By role only, such as "a neighbour in the same building", with no names or contact details.
 2e. **Earlier warnings and attempts to fix it.** Did anyone warn about this, or raise it with the institution, before or after it happened? What happened then? Is there anything that shows the risk was known, such as a letter, a complaint, an inspection, or a report? Say where it can be found.
 2f. **Potential harm warning (optional):** Is there a credible risk of widespread, cumulative, long-lasting, or irreversible harm, including ecological harm? Describe what may be affected, the possible extent and duration, and any observations or evidence supporting the concern. Use UNKNOWN where necessary.
 2g. **Protective duty (optional).** Was there something the institution was supposed to do to protect people that it did not do, did late, or did only for some people? You can skip this if you don't know.

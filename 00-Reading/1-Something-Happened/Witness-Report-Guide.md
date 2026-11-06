@@ -54,8 +54,10 @@ In plain words, with people named only by role:
 
 - **the account**, in the witness's own words;
 - **when**: dates and times, in order, as far as they are known;
+- **how**: how it was done or said, such as in person, by letter, by phone, by email or by a notice on the door. Whether there is a written record of something tends to depend on this;
 - **the impact**: what it did to people;
 - **who is affected**: roughly how many, and whether any of them never chose to deal with this institution;
+- **who else saw it**: anyone else who saw or heard what happened, by role only, such as "a neighbour in the same building". Their names and contact details stay out of the report;
 - **earlier warnings and attempts to fix it**: whether anyone raised the problem before or after, what followed, and where any letter, complaint, inspection or report can be found.
 
 Four further questions are optional and are answered only where they fit:

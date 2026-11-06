@@ -203,6 +203,10 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
     <label for="own">In your own words<span class="hint">The first line is started from the earlier answers; it can be changed. People by role, not by name. It goes into the report exactly as written.</span></label>
     <textarea id="own" class="tall"></textarea>
   </div>
+  <div class="field">
+    <label for="how">How was it done or said? (optional)<span class="hint">In person, by letter, by phone, by email, by a notice on the door.</span></label>
+    <input type="text" id="how" autocomplete="off">
+  </div>
 </section>
 
 <!-- impact -->
@@ -215,6 +219,10 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   <div class="field">
     <label for="affected">Is anyone else affected? (optional)<span class="hint">Who, and roughly how many. For example "the other tenants in building C".</span></label>
     <textarea id="affected"></textarea>
+  </div>
+  <div class="field">
+    <label for="seen">Did anyone else see or hear it? (optional)<span class="hint">By role only, such as "a neighbour in the same building". No names or contact details.</span></label>
+    <textarea id="seen"></textarea>
   </div>
 </section>
 
@@ -635,9 +643,9 @@ function build() {
     "- Registration record, if one exists: " + recLine);
   b.push("## 2. What happened\n2a. **In your own words.**\n\n" + quote(val("own")) + "\n\n" +
     "*Written by the witness with the web form.*\n\n" +
-    line("2b. **Timeline.**", timelineText()) + "\n\n" +
+    line("2b. **Timeline.**", timelineText() + (val("how") ? "\n\nHow it was done or said: " + block(val("how")) : "")) + "\n\n" +
     line("2c. **Impact.**", answer("impact")) + "\n\n" +
-    line("2d. **Who is affected.**", answer("affected")) + "\n\n" +
+    line("2d. **Who is affected, and who else saw it.**", answer("affected") + "\n\nAlso saw or heard it: " + (val("seen") ? block(val("seen")) : "UNKNOWN")) + "\n\n" +
     line("2e. **Earlier warnings and attempts to fix it.**", answer("warnings")) + "\n\n" +
     line("2f. **Potential harm warning (optional):**", optional("opt_harm")) + "\n\n" +
     line("2g. **Protective duty (optional).**", optional("opt_duty")) + "\n\n" +
