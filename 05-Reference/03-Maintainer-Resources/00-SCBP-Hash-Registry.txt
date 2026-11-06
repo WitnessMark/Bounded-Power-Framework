@@ -5,10 +5,10 @@ A fingerprint shows whether a file's contents match the recorded version. It doe
 This file is regenerated automatically; its commit history dates each entry.
 
 4e24dd64fea1e35883ee407fc640ea9b771538f19a01a884965c752c8ce358cb  00-Reading/00-Start-Here.md
-2599820d1bb1386a7b8c5825c3699538a53deb37eda5aad2bb36dc4973c21f0b  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
+fc609783a00b14e75afa6fffb0481710d38aba46a440296d01de1d8f529b3ed4  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
 3c00582a2489fe60b7312121ef39bb28ecb983b1e2af1f1688caf395acd1127a  00-Reading/1-Something-Happened/Bill-of-Rights-Crosswalk.md
 96ad7c44a9a6f48e90f363cea4473cf79e6c85159b19385a4fe6dc1151240419  00-Reading/1-Something-Happened/What-You-Can-Do.md
-03f8f65be8ea645132e2951123d46a70b5fd53923bd7bd924412ccd8fdefeb3e  00-Reading/1-Something-Happened/Witness-Report-Guide.md
+4474befa8c3c1ae787df4d1d9efdb941e3ed7344f511be9011e032479e5dac31  00-Reading/1-Something-Happened/Witness-Report-Guide.md
 e93ebcf608c86f425d6f54db2d0b02e3ed58e89ed1abfad7da494ac9e38a627e  00-Reading/2-Examine-an-Institution/AI-Registration-Bundle.md
 076244a32bd419edd607f9a3a4eba652075a9003d6a43af5a0705f8339ca82bf  00-Reading/2-Examine-an-Institution/Inquiry-Guide.md
 c1ea0ec4586f03a007741bb5f3eb0476c300377094c3744f0c892a04f3a13df4  00-Reading/3-Understand-the-Framework/BPF-Reasoning.md
@@ -27,7 +27,7 @@ ed2f71c05e9941ef7b78d9e8a9cd0db775b2ebc249edf4a76d9a5a1e52b93157  01-Framework/S
 9687592a983866d7a2701d665a783d72d09df27497da1f69691e41848a27c3a6  01-Framework/SCBP-08-Witness-Reports-and-Stop-Signals.md
 9ea78fc8c1b53bdcef0147b38b5cced52bcf63e2e588dc8bf9b59b214c677622  01-Framework/SCBP-09-Record-Quality-Standards.md
 c72e014b4c51256986ed1d2d97d9f92de108f10ef46baf7143078c89f4d58fba  02-Forms/01-Registration.md
-a5badc32da41fd386889584713c4e449f1094dfaf5465900828e37d7022e0f60  02-Forms/02-Witness-Report.md
+d45556d26d2f9e449ef75776b6b7c4407759524455520291742a0c055ddee05f  02-Forms/02-Witness-Report.md
 d307504f6c37caf32724854569cb875c724bdf48620e594bea66e7105aa10758  02-Forms/03-Authority-Response.md
 2c3a07348dba5657a284bfcb09c2e843db7ce4f90c321e55156c50f6a34164e4  02-Forms/README.md
 ea678a28b8d72859cf2fe28a813e31909e10fb14b29de3b654697a102bdac7b1  02-Forms/VOCAB.yml
@@ -118,4 +118,4 @@ f4219c3550062c309530c45f796161d6367c157ab13a7dee0bda504df20ab92a  LICENSE-MIT
 c05047c28d5f0d07901d9d1b83a651ec4615d282f4812e168b430e3254a3ac6c  docs/CNAME
 a6f4ac500b80fc66b151bcd8bcdf38abc46a4dabdcf0538b43c67b22bbd43468  docs/README.md
 53b4cd08ab032fb4e2812129865056c2fd2a792cf2f84b94353a340a508be3b8  docs/index.html
-2f2ae9775b2337b7fb7fcca0cc1fd0ad601430376cc44fa29d719b4a3d73bbf1  docs/witness-report/index.html
+f85d152fa7e9490759e3638533ebe57d1f2c9277a66c460d739909732d772559  docs/witness-report/index.html
