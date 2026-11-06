@@ -4,6 +4,7 @@ This folder is the project's website, served by GitHub Pages.
 
 | Page | What it is |
 |---|---|
+| [`index.html`](index.html) | The front page of witnessmark.org: what the framework is, and the three ways in. |
 | [`witness-report/`](witness-report/index.html) | A web form for making a witness report. It asks the questions of the [Witness Report form](../02-Forms/02-Witness-Report.md) one step at a time and produces the same report file. |
 
 ## How the witness report page keeps its promise

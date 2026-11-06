@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="The Bounded Power Framework keeps power small enough to stop. Make a witness report, examine an institution, or read the framework.">
+<title>Bounded Power Framework</title>
+<style>
+:root {
+  --paper: #F7F4EC;
+  --card: #FFFFFF;
+  --ink: #2B2926;
+  --quiet: #5F584F;
+  --line: #D3CBBE;
+  --focus: #1F4E8C;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1D1B19;
+    --card: #262320;
+    --ink: #EDE6DA;
+    --quiet: #B9B0A3;
+    --line: #45403A;
+    --focus: #8AB4F8;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 40px 16px 48px; }
+.mark { display: block; margin: 0 0 20px; }
+h1 { font: 600 34px/1.15 Georgia, "Times New Roman", serif; margin: 0 0 10px; }
+.tagline { font: italic 21px/1.4 Georgia, "Times New Roman", serif; margin: 0 0 24px; }
+p { margin: 0 0 14px; }
+.status { color: var(--quiet); font-size: 15px; border-left: 3px solid var(--line); padding-left: 12px; margin: 20px 0 32px; }
+h2 { font: 600 22px/1.3 Georgia, "Times New Roman", serif; margin: 36px 0 14px; }
+a { color: inherit; }
+a:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+.paths { display: grid; gap: 12px; }
+.path {
+  display: block; text-decoration: none; background: var(--card);
+  border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px;
+}
+.path:hover { border-color: var(--ink); }
+.path b { display: block; font-size: 19px; margin-bottom: 4px; }
+.path span { color: var(--quiet); }
+.path .go { display: block; margin-top: 8px; color: var(--ink); text-decoration: underline; }
+.safety { background: var(--card); border-left: 4px solid var(--ink); padding: 12px 16px; margin: 0 0 16px; }
+footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 16px; color: var(--quiet); font-size: 15px; }
+footer p { margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" width="56" height="56" viewBox="0 0 512 512" aria-hidden="true">
+    <circle cx="256" cy="256" r="122" fill="none" stroke="currentColor" stroke-width="16"/>
+    <circle cx="256" cy="256" r="94" fill="none" stroke="currentColor" stroke-width="5"/>
+    <polygon points="256,34 256,256 230,230" fill="currentColor" opacity="0.55"/>
+    <polygon points="256,34 256,256 282,230" fill="currentColor"/>
+    <polygon points="470,256 256,256 282,230" fill="currentColor" opacity="0.55"/>
+    <polygon points="470,256 256,256 282,282" fill="currentColor"/>
+    <polygon points="256,478 256,256 282,282" fill="currentColor" opacity="0.55"/>
+    <polygon points="256,478 256,256 230,282" fill="currentColor"/>
+    <polygon points="42,256 256,256 230,282" fill="currentColor" opacity="0.55"/>
+    <polygon points="42,256 256,256 230,230" fill="currentColor"/>
+  </svg>
+
+  <h1>Bounded Power Framework</h1>
+  <p class="tagline">Keeping power small enough to stop.</p>
+
+  <p>Institutions make decisions that bind people's lives. Left unattended, their powers tend to widen, outlast their purpose, and become difficult to question or reverse. That is an ordinary tendency, not a moral failure, and it can be answered with structure.</p>
+  <p>The framework rests on one idea: <i>authority does not continue by default.</i> Each power has to show, at set intervals, that it is still justified. A power that is renewed carries on. One that cannot be justified ends, and the institution carries on without it.</p>
+
+  <p class="status">v1, published for independent review. No institution or government has adopted it.</p>
+
+  <h2>Three ways in</h2>
+  <div class="paths">
+    <a class="path" href="witness-report/">
+      <b>Something happened to me</b>
+      <span>Put on record what an organization or an office did, in your own words. About ten minutes. Nothing on the page is sent anywhere.</span>
+      <span class="go">Make a witness report</span>
+    </a>
+    <a class="path" href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/00-Start-Here.md#2-examine-an-institution">
+      <b>Examine an institution</b>
+      <span>Record how its powers are built: who authorized them, when they expire, and what can stop them.</span>
+      <span class="go">How a record is made</span>
+    </a>
+    <a class="path" href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/00-Start-Here.md#3-understand-or-evaluate-the-framework">
+      <b>Understand or evaluate the framework</b>
+      <span>The reasoning, and the 101 rules it leads to. Published to be tested and criticized.</span>
+      <span class="go">Where to start reading</span>
+    </a>
+  </div>
+
+  <h2>Before a report</h2>
+  <p class="safety"><b>If anyone is in immediate danger, emergency services come first.</b> A report is a record, not a rescue.</p>
+  <p>Other ways to make a witness report, with an AI assistant or by hand, are in <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/00-Start-Here.md#1-something-happened-to-me">Start Here</a>.</p>
+
+  <footer>
+    <p>The full framework, forms and examples: <a href="https://github.com/WitnessMark/Bounded-Power-Framework">github.com/WitnessMark/Bounded-Power-Framework</a></p>
+    <p>Maintained by one volunteer.</p>
+  </footer>
+</main>
+</body>
+</html>
