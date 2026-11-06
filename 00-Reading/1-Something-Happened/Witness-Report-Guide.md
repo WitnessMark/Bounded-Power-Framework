@@ -8,7 +8,7 @@ There are three ways to make one: a web form, an AI interviewer, or by hand. All
 
 ## With the web form
 
-The [witness report web form](https://witnessmark.github.io/Bounded-Power-Framework/witness-report/) asks the questions one step at a time and assembles the report as it goes. It works entirely inside the browser: its security settings block every connection, so nothing typed into it is sent anywhere, and it works offline once open. It asks first when and where, then who, then what happened, and starts the account with that first line already written. It calculates the verification code and file fingerprints itself. At the end, **Save or send** opens the phone's own menu, to save the report to Files or email it to oneself; it can also be copied, downloaded or printed.
+The [witness report web form](https://witnessmark.org/witness-report/) asks the questions one step at a time and assembles the report as it goes. It works entirely inside the browser: its security settings block every connection, so nothing typed into it is sent anywhere, and it works offline once open. It asks first when and where, then who, then what happened, and starts the account with that first line already written. It calculates the verification code and file fingerprints itself. At the end, **Save or send** opens the phone's own menu, to save the report to Files or email it to oneself; it can also be copied, downloaded or printed.
 
 Opened from inside another app, such as Instagram, the page often cannot save. The app's menu (often ⋯ or ⋮) has an option to open the page in the phone's own browser.
 
