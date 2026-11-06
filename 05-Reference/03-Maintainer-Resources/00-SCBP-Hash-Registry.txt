@@ -4,11 +4,11 @@ SHA-256 of each published file. Check any file with: sha256sum FILE
 A fingerprint shows whether a file's contents match the recorded version. It does not show whether that version was authorized or is in effect (rule 6.6).
 This file is regenerated automatically; its commit history dates each entry.
 
-2974f839543f46a3b510b37ec22bd3d1200c3cbb13dad437d00a6c562dd2fa87  00-Reading/00-Start-Here.md
+4e24dd64fea1e35883ee407fc640ea9b771538f19a01a884965c752c8ce358cb  00-Reading/00-Start-Here.md
 2599820d1bb1386a7b8c5825c3699538a53deb37eda5aad2bb36dc4973c21f0b  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
 3c00582a2489fe60b7312121ef39bb28ecb983b1e2af1f1688caf395acd1127a  00-Reading/1-Something-Happened/Bill-of-Rights-Crosswalk.md
 96ad7c44a9a6f48e90f363cea4473cf79e6c85159b19385a4fe6dc1151240419  00-Reading/1-Something-Happened/What-You-Can-Do.md
-34a63abed75a49fd380593920976a5ae706dbc729c5998884d7adb6ab1f169db  00-Reading/1-Something-Happened/Witness-Report-Guide.md
+03f8f65be8ea645132e2951123d46a70b5fd53923bd7bd924412ccd8fdefeb3e  00-Reading/1-Something-Happened/Witness-Report-Guide.md
 e93ebcf608c86f425d6f54db2d0b02e3ed58e89ed1abfad7da494ac9e38a627e  00-Reading/2-Examine-an-Institution/AI-Registration-Bundle.md
 076244a32bd419edd607f9a3a4eba652075a9003d6a43af5a0705f8339ca82bf  00-Reading/2-Examine-an-Institution/Inquiry-Guide.md
 c1ea0ec4586f03a007741bb5f3eb0476c300377094c3744f0c892a04f3a13df4  00-Reading/3-Understand-the-Framework/BPF-Reasoning.md
