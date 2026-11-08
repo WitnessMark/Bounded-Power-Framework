@@ -67,6 +67,8 @@ The checker prints three kinds of line:
 | Witness report: the named record and power actually exist | | ✓ (no place collects records in v1) |
 | Witness report: numbers without a source tag outside the witness's own first-hand sections (dates, section 2, block quotes, "my own observation" rows, evidence rows that cite a link, and the list of what exists are not flagged; web addresses are never read as numbers) | WARN | |
 | Witness report: a title or rank followed by a name, anywhere except the witness's own name line | WARN | Replace names with roles |
+| Witness report: a town- or region-level location (`locality`, `region`) whose description names the institution | WARN | Check the place is no more exact than the witness chose |
+| Witness report: an optional question (2f–2i) answered "Not applicable" | WARN | Write UNKNOWN if it was skipped or not asked |
 | A value meaning "unknown" (UNKNOWN or unknown) accepted in any case | — | |
 | Authority response: carries the banner saying it does not replace the record | ERROR | |
 | Authority response: a correction or disagreement quotes the record point by point | WARN | |

@@ -607,6 +607,15 @@ def check_witness(fm, body, vocab, r):
             r.err(f"location.{k} must be decimal degrees, UNKNOWN, or WITHHELD")
     if loc.get("precision") == "withheld" and (loc.get("latitude") not in ("WITHHELD", "UNKNOWN")):
         r.err("precision is withheld but coordinates are given")
+    # a town- or region-level place should not name the institution's own premises
+    inst = str(fm.get("institution_name") or "").strip()
+    desc = str(loc.get("description") or "")
+    if loc.get("precision") in ("locality", "region") and len(inst) > 3 and inst.lower() in desc.lower():
+        r.warn(f"location.description names the institution although precision is {loc.get('precision')}: "
+               "check that the place is no more exact than the witness chose")
+    # an optional question that was skipped or not asked is UNKNOWN, not "Not applicable"
+    for q in re.finditer(r"^(2[fghi])\.[^\n]*?(?:\*\*|:)\s*(?:\n\s*)?not applicable\.?\s*$", body, re.M | re.I):
+        r.warn(f"{q.group(1)} says 'Not applicable': if the witness skipped it or was not asked, write UNKNOWN")
     sb = fm.get("stop_signal_basis", "NONE")
     in_vocab(sb, "stop_signal_basis", vocab, r)
     if fm.get("report_type") == "stop_signal" and sb == "NONE":

@@ -13,7 +13,7 @@ incident_date: 2026-09-02
 incident_end_date: ongoing
 filed_date: 2026-11-05
 location:
-  description: "[TOWN] Unified School District, [TOWN], [STATE]"
+  description: "[TOWN], [STATE]"
   latitude: UNKNOWN
   longitude: UNKNOWN
   precision: locality
