@@ -5,7 +5,7 @@ A fingerprint shows whether a file's contents match the recorded version. It doe
 This file is regenerated automatically; its commit history dates each entry.
 
 4e24dd64fea1e35883ee407fc640ea9b771538f19a01a884965c752c8ce358cb  00-Reading/00-Start-Here.md
-7869b376af4ce8a5c6d6c538dda9e34a64503a293732fcfdc34700e4abd15e25  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
+94c2d1f64470f23dbdac05816414e9c391f65226f6597c5dffddc5de20fc3c33  00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md
 3c00582a2489fe60b7312121ef39bb28ecb983b1e2af1f1688caf395acd1127a  00-Reading/1-Something-Happened/Bill-of-Rights-Crosswalk.md
 96ad7c44a9a6f48e90f363cea4473cf79e6c85159b19385a4fe6dc1151240419  00-Reading/1-Something-Happened/What-You-Can-Do.md
 4474befa8c3c1ae787df4d1d9efdb941e3ed7344f511be9011e032479e5dac31  00-Reading/1-Something-Happened/Witness-Report-Guide.md
