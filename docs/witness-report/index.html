@@ -96,7 +96,7 @@ button.link { border: 0; background: none; padding: 8px 0; text-decoration: unde
 .code { font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; word-break: break-all; }
 pre#preview {
   white-space: pre-wrap; word-wrap: break-word;
-  font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--card); border: 1px solid var(--line); border-radius: 6px;
   padding: 16px; max-height: 50vh; overflow: auto;
 }
@@ -147,7 +147,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   <ul class="plain">
     <li><b>About ten minutes.</b> Anything not known can be left blank.</li>
     <li><b>Nothing is sent or stored.</b> The page works only inside this browser. At the end, the report is saved to the phone or computer, or sent wherever its author chooses.</li>
-    <li><b>Roles, not names:</b> "the manager", "the officer", "the caseworker".</li>
+    <li><b>Two copies at the end:</b> a private one that keeps names and places as written, so nothing is forgotten, and one to share that uses roles: "the manager", "the officer", "the caseworker".</li>
   </ul>
 </section>
 
@@ -170,7 +170,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
     <input type="text" id="loc_desc" autocomplete="off">
   </div>
   <fieldset>
-    <legend>How much of the place goes in the report?</legend>
+    <legend>In a copy to share, how much of the place should show?<span class="hint">The private copy keeps it as written.</span></legend>
     <label class="choice"><input type="radio" name="prec" value="exact"><span>All of it, as written</span></label>
     <label class="choice"><input type="radio" name="prec" value="approximate" checked><span>It is a general area, not an exact address</span></label>
     <label class="choice"><input type="radio" name="prec" value="withheld"><span>Leave the place out<span class="hint">For a place that could identify the person reporting, such as a home or a small workplace.</span></span></label>
@@ -191,7 +191,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <section class="step" data-name="who" hidden>
   <h2 tabindex="-1">Who</h2>
   <div class="field">
-    <label for="inst">Which organization or office was it?<span class="hint">The name people know it by: "Maple Court Apartments management", "[City] Water Department", "[County] Sheriff's Office". Organizations keep their names; people do not.</span></label>
+    <label for="inst">Which organization or office was it?<span class="hint">The name people know it by: "Maple Court Apartments management", "[City] Water Department", "[County] Sheriff's Office". Organizations keep their names in both copies.</span></label>
     <input type="text" id="inst" autocomplete="off">
   </div>
 </section>
@@ -200,11 +200,11 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <section class="step" data-name="account" hidden>
   <h2 tabindex="-1">What happened</h2>
   <div class="field">
-    <label for="own">In your own words<span class="hint">The first line is started from the earlier answers; it can be changed. People by role, not by name. It goes into the report exactly as written.</span></label>
+    <label for="own">In your own words<span class="hint">The first line is started from the earlier answers; it can be changed. Names and places as remembered: the copy to share can replace them at the end. It goes into the report exactly as written.</span></label>
     <textarea id="own" class="tall"></textarea>
   </div>
   <div class="field">
-    <label for="how">How was it done or said? (optional)<span class="hint">In person, by letter, by phone, by email, by a notice on the door.</span></label>
+    <label for="how">How was it done or said? (optional)<span class="hint">In person, by letter, by phone, by email, online, by a notice on the door. For a call: the number, date, time and any reference number. For a website: its address and the date it was seen.</span></label>
     <input type="text" id="how" autocomplete="off">
   </div>
 </section>
@@ -221,7 +221,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
     <textarea id="affected"></textarea>
   </div>
   <div class="field">
-    <label for="seen">Did anyone else see or hear it? (optional)<span class="hint">By role only, such as "a neighbour in the same building". No names or contact details.</span></label>
+    <label for="seen">Did anyone else see or hear it? (optional)<span class="hint">By role, such as "a neighbour in the same building". A name stays in the private copy only. Their contact details are not needed.</span></label>
     <textarea id="seen"></textarea>
   </div>
 </section>
@@ -384,7 +384,18 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <section class="step" data-name="review" hidden>
   <h2 tabindex="-1">Check and save</h2>
   <div id="checks"></div>
-  <label class="choice"><input type="checkbox" id="confirm"><span>This report is made in good faith, from what I saw or heard and from public records. People are named by role, and what is proven is kept apart from what I believe.</span></label>
+  <label class="choice"><input type="checkbox" id="confirm"><span>This report is made in good faith, from what I saw or heard and from public records. Any copy I share names people by role, and what is proven is kept apart from what I believe.</span></label>
+  <fieldset>
+    <legend>Which copy?</legend>
+    <label class="choice"><input type="radio" name="copy" value="full" checked><span><b>Private copy</b><span class="hint">Everything as written, names and places included. For keeping, and for someone trusted with the details, such as a lawyer.</span></span></label>
+    <label class="choice"><input type="radio" name="copy" value="share"><span><b>Copy to share</b><span class="hint">The place only as precisely as chosen, and signed the way chosen on the How to sign it step. Names inside your own words are changed below.</span></span></label>
+  </fieldset>
+  <div id="sharewrap" hidden>
+    <div class="field">
+      <label for="own_share">Your words, in the copy to share<span class="hint">Change any name or detail that points to a private person into a role in square brackets, such as [the manager]. The private copy keeps the original.</span></label>
+      <textarea id="own_share" class="tall"></textarea>
+    </div>
+  </div>
   <div class="actions">
     <button type="button" class="primary" id="share">Save or send</button>
     <button type="button" id="copy">Copy the text</button>
@@ -395,7 +406,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   <p class="small quiet"><b>Save or send</b> opens the phone's own menu: save to Files, email it to yourself, or send it. An email to yourself also shows when it was written.</p>
   <pre id="preview" class="printable"></pre>
   <h3>After saving</h3>
-  <p><i>The report belongs to its author.</i> Nothing has been sent anywhere, and this project has no place to file reports. Whether to share it, and with whom, is the author's decision: a lawyer, a legal aid service or an oversight body can act on it. The <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/What-You-Can-Do.md">usual next steps</a> and <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/Witness-Report-Guide.md">sharing it safely</a> are set out in the guides.</p>
+  <p><i>The report belongs to its author.</i> Nothing has been sent anywhere, and this project has no place to file reports. Save the private copy first; its file name ends in PRIVATE. Whether to share a copy, and with whom, is the author's decision: a lawyer, a legal aid service or an oversight body can act on it. Read the copy to share once as a stranger would before sending it: this page cannot find every name. The <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/What-You-Can-Do.md">usual next steps</a> and <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/Witness-Report-Guide.md">sharing it safely</a> are set out in the guides.</p>
   <p><button type="button" class="link" id="restart">Start a new report</button></p>
 </section>
 </main>
@@ -521,7 +532,7 @@ function autoTag() {
 }
 function reportDate() { return $("inc_unknown").checked || !isDate(val("inc_date")) ? today() : val("inc_date"); }
 function reportId() { return "SCBP-WR-" + (val("tag") || autoTag()) + "-" + reportDate(); }
-function fileName(ext) { return reportId() + (ext || ".md"); }
+function fileName(ext) { return reportId() + (radio("copy") === "share" ? "" : "-PRIVATE") + (ext || ".md"); }
 
 /* sources for key facts */
 var CLAIM_TYPES = [
@@ -593,7 +604,8 @@ function timelineText() {
 }
 
 function build() {
-  var prec = radio("prec"), withheld = prec === "withheld";
+  var full = radio("copy") !== "share";
+  var prec = full ? (radio("prec") === "exact" ? "exact" : "approximate") : radio("prec"), withheld = prec === "withheld";
   var lat = withheld ? "WITHHELD" : (val("lat") || "UNKNOWN");
   var lon = withheld ? "WITHHELD" : (val("lon") || "UNKNOWN");
   var desc = withheld ? "withheld" : (val("loc_desc") || "UNKNOWN");
@@ -635,14 +647,17 @@ function build() {
 
   var recLine = rec === "NONE" ? "NONE" : rec + (pw !== "UNKNOWN" ? ", power " + pw : "");
   var b = [];
+  if (full) { b.push("> **Full copy: private.** It keeps names, places and contact details as the witness gave them. Share the shareable copy instead, or remove those details first."); }
   b.push("> **Public sources and first-hand observation only.** People are referred to by role or title. This is a good-faith report, not a verdict.");
   b.push("# Witness Report — " + inst + " — " + inc);
   b.push("## 1. The institution, and which power\n" +
     "- Which institution, and where: " + inst + (withheld || !val("loc_desc") ? "" : "; the events took place at " + val("loc_desc")) + "\n" +
     "- What power did it use over people? Say it in plain words: " + (val("power") || "UNKNOWN") + "\n" +
     "- Registration record, if one exists: " + recLine);
-  b.push("## 2. What happened\n2a. **In your own words.**\n\n" + quote(val("own")) + "\n\n" +
-    "*Written by the witness with the web form.*\n\n" +
+  var own = full ? val("own") : (val("own_share") || val("own"));
+  var changed = !full && own !== val("own");
+  b.push("## 2. What happened\n2a. **In your own words.**\n\n" + quote(own) + "\n\n" +
+    "*Written by the witness with the web form.*" + (changed ? " *In this copy, names and identifying details in the witness's words were replaced with roles in square brackets by the witness.*" : "") + "\n\n" +
     line("2b. **Timeline.**", timelineText() + (val("how") ? "\n\nHow it was done or said: " + block(val("how")) : "")) + "\n\n" +
     line("2c. **Impact.**", answer("impact")) + "\n\n" +
     line("2d. **Who is affected, and who else saw it.**", answer("affected") + "\n\nAlso saw or heard it: " + (val("seen") ? block(val("seen")) : "UNKNOWN")) + "\n\n" +
@@ -683,10 +698,10 @@ function build() {
   b.push(s5);
 
   var c = $("confirm").checked ? "x" : " ";
-  b.push("## 6. Honesty\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names.\n- [" + c + "] Facts kept separate from allegations.");
+  b.push("## 6. Honesty\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
   b.push("## 7. About you (optional)\n" +
-    "- Name or stable handle: " + (ident === "anonymous" ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
-    "- Contact, for follow-up: " + (ident === "anonymous" ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
+    "- Name or stable handle: " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
+    "- Contact, for follow-up: " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
     "- Relationship to the institution: " + (val("who_rel") || "UNKNOWN") + "\n" +
     "- Verification phrase used? " + (verificationHash ? "yes" : "no"));
   b.push("## 8. Resolution (filled in later by whoever reviews the report)\n" +
@@ -701,12 +716,22 @@ function build() {
 /* review */
 var TITLE_NAME = /\b(?:Officer|Sgt\.?|Sergeant|Lt\.?|Lieutenant|Det\.?|Detective|Deputy|Judge|Mayor|Dr\.|Mr\.?|Ms\.?|Mrs\.?|Commissioner|Chief|Sheriff|Captain|Capt\.)\s+([A-Z][a-zA-Z'-]+)/g;
 var ROLE_OK = /^(Office|Department|Division|Court|County|City|State|District|Executive|Officer|Deputy|Assistant|General|Justice|Judge|Public|Police|Fire|Medical|Clerk|Director|The|Of|And)$/;
+var lastOwn = "";
 function render() {
+  var share = radio("copy") === "share";
+  $("sharewrap").hidden = !share;
+  if (!val("own_share") || $("own_share").value === lastOwn) { $("own_share").value = $("own").value; }
+  lastOwn = $("own").value;
   var text = build(), notes = [], names = [], m, body = text.split("## 7.")[0];
   $("preview").textContent = text;
   TITLE_NAME.lastIndex = 0;
   while ((m = TITLE_NAME.exec(body)) !== null) { if (!ROLE_OK.test(m[1])) { names.push(m[0]); } }
-  if (names.length) { notes.push("Possible names: " + names.slice(0, 5).join(", ") + ". The report concerns the organization; going back and using roles instead of names protects everyone, including the person reporting."); }
+  if (share) {
+    notes.push("Before sending this copy, read it as a stranger would. This page cannot find every name: check your own words above, and the other answers too. A name typed in another answer can be changed there with Back, and that changes both copies.");
+    if (names.length) { notes.push("Possible names in this copy: " + names.slice(0, 5).join(", ") + "."); }
+  } else {
+    notes.push("This is the private copy, with everything as written. Its file name ends in PRIVATE. Save it first; then choose Copy to share for a version to send.");
+  }
   if (inApp()) { notes.push("This page is open inside another app, where saving often does not work. If Save or send does nothing, use Copy the text and paste it into an email or a note."); }
   $("checks").innerHTML = "";
   notes.forEach(function (n) { var p = document.createElement("p"); p.className = "notice"; p.textContent = n; $("checks").appendChild(p); });
@@ -758,6 +783,8 @@ $("phrase").addEventListener("input", function () { verificationHash = ""; $("ha
 $("phrase_show").addEventListener("change", function () { $("phrase").type = this.checked ? "text" : "password"; });
 $("fp_file").addEventListener("change", fingerprint);
 $("share").addEventListener("click", share);
+Array.prototype.forEach.call(document.querySelectorAll("input[name='copy']"), function (r) { r.addEventListener("change", function () { render(); said(""); }); });
+$("own_share").addEventListener("input", function () { $("preview").textContent = build(); });
 $("dl").addEventListener("click", download);
 $("copy").addEventListener("click", copyText);
 $("print").addEventListener("click", function () { window.print(); });

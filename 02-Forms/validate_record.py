@@ -26,7 +26,10 @@ What it checks:
     (never the secret phrase); record_id is NONE or shaped like a
     registration ID, and power_id is UNKNOWN or P1, P2... (UNKNOWN when
     record_id is NONE). The optional questions (2f-2i) and section 8 are
-    never required
+    never required. A witness's private full copy (its body carries the line
+    "**Full copy: private.**") keeps names on purpose: the name and
+    officeholder warnings give way to one warning to keep it private, and its
+    file name should end in -PRIVATE
   - links between files checked together: when a witness report and the
     registration it names are both on the command line, the named power
     must exist in that record; a report listed in a registration's B11 must
@@ -220,6 +223,8 @@ def unsourced_numbers(body, r, as_error=True, offset=0, witness=False):
                 continue
             if s.startswith("|") and re.search(r"https?://", s):
                 continue    # an evidence row whose source is a link: the link is its source
+            if re.match(r"^[-*]\s*Which institution, and where:", s):
+                continue    # a place (a street number, a unit) is not a quantity
             s = ISO_DATE.sub(" ", s)
         for seg in segments(s, skip_cols):
             if SRC_TAG.search(seg) or not seg.strip():
@@ -607,10 +612,20 @@ def check_witness(fm, body, vocab, r):
             r.err(f"location.{k} must be decimal degrees, UNKNOWN, or WITHHELD")
     if loc.get("precision") == "withheld" and (loc.get("latitude") not in ("WITHHELD", "UNKNOWN")):
         r.err("precision is withheld but coordinates are given")
+    # a full copy keeps names and places on purpose; a copy to share must not
+    full = FULL_COPY in body
+    base = os.path.splitext(os.path.basename(r.path))[0]
+    if full:
+        r.warn("full copy: it keeps names, places and contact details as given. Keep it private; "
+               "share a copy without them")
+        if not base.endswith("-PRIVATE") and not base.startswith("TEST"):
+            r.warn(f"file name '{base}' should end in -PRIVATE, since this is a full copy")
+    elif base.endswith("-PRIVATE"):
+        r.warn(f"file name '{base}' ends in -PRIVATE but the file has no 'Full copy: private.' line")
     # a town- or region-level place should not name the institution's own premises
     inst = str(fm.get("institution_name") or "").strip()
     desc = str(loc.get("description") or "")
-    if loc.get("precision") in ("locality", "region") and len(inst) > 3 and inst.lower() in desc.lower():
+    if not full and loc.get("precision") in ("locality", "region") and len(inst) > 3 and inst.lower() in desc.lower():
         r.warn(f"location.description names the institution although precision is {loc.get('precision')}: "
                "check that the place is no more exact than the witness chose")
     # an optional question that was skipped or not asked is UNKNOWN, not "Not applicable"
@@ -631,6 +646,7 @@ def check_witness(fm, body, vocab, r):
               "put only the code here, never the secret phrase")
 
 
+FULL_COPY = "**Full copy: private.**"
 WR_ID = re.compile(r"SCBP-WR-[A-Z0-9-]+-\d{4}-\d{2}-\d{2}(?:-[A-Z])?")
 
 
@@ -752,9 +768,11 @@ def main(argv):
         is_witness = "report_id" in fm
         unsourced_numbers(body, r, as_error=not is_witness, offset=offset, witness=is_witness)
         unsourced_cases(body, r, as_error=not is_witness, offset=offset)
-        office_conduct(body, r, offset=offset)
-        name_heuristic(body, r, offset=offset)
-        title_names(body, r, offset=offset, witness=is_witness)
+        # names are expected in a witness's private full copy; the full-copy warning covers them
+        if not (is_witness and FULL_COPY in body):
+            office_conduct(body, r, offset=offset)
+            name_heuristic(body, r, offset=offset)
+            title_names(body, r, offset=offset, witness=is_witness)
         for i, line in enumerate(body.splitlines(), 1 + offset):
             if PLACEHOLDER_RE.search(line) and "```" not in line:
                 r.warn(f"line {i}: unfilled placeholder: {line.strip()[:80]}")

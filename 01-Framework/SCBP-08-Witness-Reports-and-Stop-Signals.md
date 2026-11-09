@@ -133,7 +133,7 @@ Use the **Witness Report form, v1**. Most people should start with the plain [Wi
 
 - **Write what you know. Leave the rest as UNKNOWN.** You do not need to be a lawyer, an expert, or a formal party (2.C.2).
 - **Public sources and your own observation only.** Nothing private, leaked, or speculative.
-- **Roles, not names.** "The caseworker", not a person's name.
+- **Roles, not names, in any copy you share.** "The caseworker", not a person's name. Your own full copy can keep names and places, so nothing is forgotten; the guide explains the two copies.
 - **Keep facts and allegations apart.** The evidence table asks you to mark each claim as an adjudicated or admitted fact, something settled without admission, your own observation, or an allegation or estimate.
 - **A registration is not required.** If no registration record exists, use `record_id: NONE`. That no record exists is itself worth knowing.
 - **Location** helps reports about the same place be grouped. Give it only as precisely as is safe for you, or choose `withheld`.

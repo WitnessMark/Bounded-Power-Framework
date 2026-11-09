@@ -279,6 +279,7 @@ It reports three levels:
 - Location coordinates are in range, and no coordinates are given when the location is withheld.
 - A stop signal states its basis (defined condition or credible pathway).
 - A registration record named in the report has the shape of a registration ID, the power is P1, P2 and so on, and no power is named without a record. Whether that record and power actually exist is not checked: in v1 no place collects records.
+- A witness's private full copy, marked "Full copy: private.", keeps names on purpose. The checker warns that it is private instead of flagging each name, and expects its file name to end in `-PRIVATE`. A copy to share is checked for names as usual.
 
 ---
 

@@ -8,7 +8,7 @@ There are three ways to make one: a web form, an AI interviewer, or by hand. All
 
 ## With the web form
 
-The [witness report web form](https://witnessmark.org/witness-report/) asks the questions one step at a time and assembles the report as it goes. It works entirely inside the browser: its security settings block every connection, so nothing typed into it is sent anywhere, and it works offline once open. It asks first when and where, then who, then what happened, and starts the account with that first line already written. It calculates the verification code and file fingerprints itself. At the end, **Save or send** opens the phone's own menu, to save the report to Files or email it to oneself; it can also be copied, downloaded or printed.
+The [witness report web form](https://witnessmark.org/witness-report/) asks the questions one step at a time and assembles the report as it goes. It works entirely inside the browser: its security settings block every connection, so nothing typed into it is sent anywhere, and it works offline once open. It asks first when and where, then who, then what happened, and starts the account with that first line already written. It calculates the verification code and file fingerprints itself. At the end it offers two copies: a **private copy** with everything as written, whose file name ends in `PRIVATE`, and a **copy to share**, which shows the place only as precisely as chosen and lets names in the account be changed to roles. The page cannot find every name typed into the other answers, so the copy to share is read once more before it is sent. **Save or send** opens the phone's own menu, to save a copy to Files or email it to oneself; a copy can also be copied, downloaded or printed.
 
 Opened from inside another app, such as Instagram, the page often cannot save. The app's menu (often ⋯ or ⋮) has an option to open the page in the phone's own browser.
 
@@ -39,14 +39,23 @@ A finished example, about a fictional water shutoff, shows the result: [SCBP-WR-
 ## Three rules
 
 1. **Public sources and first-hand observation only.** A report holds what the witness saw or heard, and what public records show. Private, leaked or guessed material is left out.
-2. **Roles, not names.** "The officer", "the caseworker", "the manager". The report concerns the institution. A person's name turns a record into a personal dispute, and can expose the author to legal risk. An office that only one person holds, such as the Sheriff or the Mayor, identifies that person, so conduct is attributed to the office or the institution: "the Sheriff's Office", "the city".
+2. **Roles, not names, in any copy that is shared.** "The officer", "the caseworker", "the manager". The report concerns the institution. A person's name turns a record into a personal dispute, and can expose the author to legal risk. An office that only one person holds, such as the Sheriff or the Mayor, identifies that person, so conduct is attributed to the office or the institution: "the Sheriff's Office", "the city". The author's own copy can keep names, so nothing is forgotten (see below).
 3. **What is proven stays apart from what was seen or believed.** A conviction, a settlement or a final order is stated as fact, with its source. Everything else is the witness's observation or an allegation, and is labelled as such.
+
+## Two copies: one to keep, one to share
+
+A report is first a record for its author, and a record that leaves out names and places tends to lose what makes it useful later. So a report can be kept in two copies:
+
+- **The full copy** keeps names, the exact place, unit numbers, phone numbers and web addresses as the witness gave them. Each person is named by role first, with the name after it in square brackets. It starts with the line "Full copy: private.", and its file name ends in `-PRIVATE`. It is for the author, and for anyone the author chooses to trust with it, such as a lawyer.
+- **The copy to share** is the same report with names and other details that point to a private person replaced by roles, and the place given only as precisely as is safe. In the witness's own words, each replacement is shown in square brackets, such as "[the manager]".
+
+The AI interviewer makes the full copy and then offers the copy to share, listing each thing it will replace. The web form saves both. Either way, the copy to share is read once more before it is sent: no tool catches everything. Pasting the full copy into a new AI chat to strip it gives that company everything in it.
 
 ## The parts of a report
 
 ### Where
 
-The place comes first, because it is usually easier to recall than the order of events, and because reports about the same place can be grouped. It is given only as precisely as is safe. An exact address that could identify the witness, such as a home or a small workplace, is better given as the town or region. The location can also be `withheld`. Map coordinates, if any, come from a map app and are never estimated.
+The place comes first, because it is usually easier to recall than the order of events, and because reports about the same place can be grouped. The full copy keeps it as exactly as the witness gives it. The copy to share gives it only as precisely as is safe: an exact address that could identify the witness, such as a home or a small workplace, is better given as the town or region, and the location can also be `withheld`. Map coordinates, if any, come from a map app and are never estimated.
 
 ### What happened
 
@@ -54,10 +63,10 @@ In plain words, with people named only by role:
 
 - **the account**, in the witness's own words;
 - **when**: dates and times, in order, as far as they are known;
-- **how**: how it was done or said, such as in person, by letter, by phone, by email or by a notice on the door. Whether there is a written record of something tends to depend on this;
+- **how**: how it was done or said, such as in person, by letter, by phone, by email, online or by a notice on the door. Whether there is a written record of something tends to depend on this. For a call: the number, the date and time, and any reference number given. For a website: the page's address and the date it was seen; pages change, so a saved copy or the Wayback Machine (web.archive.org) helps;
 - **the impact**: what it did to people;
 - **who is affected**: roughly how many, and whether any of them never chose to deal with this institution;
-- **who else saw it**: anyone else who saw or heard what happened, by role only, such as "a neighbour in the same building". Their names and contact details stay out of the report;
+- **who else saw it**: anyone else who saw or heard what happened, by role, such as "a neighbour in the same building". A name the witness knows can go in the full copy; it comes out of the copy to share. Their contact details are not asked for;
 - **earlier warnings and attempts to fix it**: whether anyone raised the problem before or after, what followed, and where any letter, complaint, inspection or report can be found.
 
 Four further questions are optional and are answered only where they fit:
@@ -107,12 +116,13 @@ This project has no place to send reports. A private way to send them, and a pub
 
 Whether to share a report, with whom, and when, is the author's decision. Before sharing:
 
-1. **Read it as a stranger would.** A street, a shift or a rare job title can identify the author; a wider area, or leaving the detail out, prevents that.
-2. **Check for names**, the author's included.
-3. **Share the text only**, without the original photos.
-4. **Use a separate email address** for a pseudonymous report.
-5. **Consider who receives it.** A lawyer, a legal aid service or an oversight body (an inspector general, an ombudsman, a licensing board) can act on it. A journalist may publish it; how the author is described is agreed first. The institution itself is sent a report only after retaliation has been considered, unless it has adopted the Core Requirements.
-6. **A report published by its author** is that author's public statement. It holds to what was seen and what public records show.
+1. **Send the copy to share, not the full copy,** unless the person receiving it needs the details and the author trusts them with it.
+2. **Read it as a stranger would.** A street, a shift or a rare job title can identify the author; a wider area, or leaving the detail out, prevents that.
+3. **Check for names**, the author's included.
+4. **Share the text only**, without the original photos.
+5. **Use a separate email address** for a pseudonymous report.
+6. **Consider who receives it.** A lawyer, a legal aid service or an oversight body (an inspector general, an ombudsman, a licensing board) can act on it. A journalist may publish it; how the author is described is agreed first. The institution itself is sent a report only after retaliation has been considered, unless it has adopted the Core Requirements.
+7. **A report published by its author** is that author's public statement. It holds to what was seen and what public records show.
 
 [What You Can Do](What-You-Can-Do.md) sets out the usual next steps. It is information, not legal advice.
 

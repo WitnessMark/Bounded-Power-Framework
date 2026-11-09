@@ -37,16 +37,28 @@ Any free "SHA-256 generator" can calculate the hash. Type the phrase exactly, wi
 ## Three rules that protect you and everyone else
 
 1. **Public sources and your own observation only.** Nothing private, leaked, or speculative.
-2. **Roles, not names.** Write "the arresting officer" or "the caseworker", not a person's name. An office that only one person holds (the Sheriff, the Mayor, the County Executive) identifies that person, so conduct is attributed to the office or the institution ("the Sheriff's Office", "the county"), not to the officeholder.
+2. **Roles, not names, in any copy you share.** Write "the arresting officer" or "the caseworker", not a person's name. An office that only one person holds (the Sheriff, the Mayor, the County Executive) identifies that person, so conduct is attributed to the office or the institution ("the Sheriff's Office", "the county"), not to the officeholder. Your own copy can keep names (see "Two copies" below).
 3. **Keep what's proven apart from what you saw or believe.** Adjudicated facts (a conviction, a settlement, a final order) are stated with their source; everything else is your observation or an allegation.
+
+## Two copies
+
+A report is first a record for you, so nothing you remember is lost. You can keep two copies:
+
+- **A full copy, for you.** Names, the exact place, unit numbers, phone numbers and web addresses, as you remember them. Write each person's role first and the name after it in square brackets: "the manager at the front desk [name]". Put this line at the top of the body, under the `---` block, and end the file name in `-PRIVATE.md`:
+
+  `> **Full copy: private.** It keeps names, places and contact details as the witness gave them. Share the shareable copy instead, or remove those details first.`
+
+- **A copy to share.** The same report with the bracketed names removed and anything else that points to a private person taken out: your own name and contact (unless you choose to be identified), private addresses and phone numbers, a child's school. In your own words (2a), replace each one with its role in square brackets, such as `[the manager]`, and say so in a line under the quote. Give the place only as precisely as is safe (see below). Leave out the "Full copy" line, and name the file without `-PRIVATE`.
+
+A lawyer, legal aid service or oversight body may need the full details; that is your call. Never paste the full copy into a new AI chat to strip it: that gives another company everything in it.
 
 ## Location, and keeping yourself safe
 
-Give the location as precisely as is **safe for you**. Coordinates help reports about the same place be grouped together. If an exact location could identify you, give only the city or region, or choose `withheld`.
+In a copy you share, give the location as precisely as is **safe for you**. Coordinates help reports about the same place be grouped together. If an exact location could identify you, give only the city or region, or choose `withheld`.
 
 ## How to save it
 
-Save the report as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`. SUFFIX is a short uppercase tag you choose for the institution, with an optional place tag, such as `CITYPD-XX`. Use the incident date (if the incident date is UNKNOWN, use the date you wrote the report). Add `-A`, `-B` for more than one report on the same day. Run the checker (`validate_record.py`) if you can. If you can't, skip it, or ask the AI to go through its "before you hand it over" checks. The report is yours: you decide whether to share it, and with whom.
+Save the report as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`, and a full copy as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}-PRIVATE.md`. SUFFIX is a short uppercase tag you choose for the institution, with an optional place tag, such as `CITYPD-XX`. Use the incident date (if the incident date is UNKNOWN, use the date you wrote the report). Add `-A`, `-B` for more than one report on the same day. Run the checker (`validate_record.py`) if you can. If you can't, skip it, or ask the AI to go through its "before you hand it over" checks. The report is yours: you decide whether to share it, and with whom.
 
 ---
 
@@ -116,7 +128,7 @@ status: ongoing
 - Registration record, if one exists: [record_id and power_id, or NONE]
 
 ## 2. What happened
-2a. **In your own words.** What did the institution do, fail to do, or threaten to do? Use roles, not names.
+2a. **In your own words.** What did the institution do, fail to do, or threaten to do? A copy you share uses roles, not names.
 
 > "…"
 
@@ -162,7 +174,7 @@ For each key claim: what are you saying, where does it come from, and what kind 
 ## 6. Honesty
 - [ ] Made in good faith.
 - [ ] Public sources and my own observation only.
-- [ ] Roles, not names.
+- [ ] Roles, not names, in any copy I share.
 - [ ] Facts kept separate from allegations.
 
 ## 7. About you (optional)
