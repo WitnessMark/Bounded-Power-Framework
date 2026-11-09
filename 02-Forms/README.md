@@ -27,7 +27,7 @@ Every form, the bundle, and every record state their versions and dates, so it i
 
 - **Three answers, never a guess.** For each factual field, provide a sourced value, `UNKNOWN`, or `NONE EXISTS`. Use `UNKNOWN` when the available evidence does not establish the answer, including when information cannot be found or verified. Use `NONE EXISTS` only when evidence establishes that the thing is absent. An unsuccessful search is not proof of absence.
 - **Every number has a source tag** in the same sentence, or in its table row.
-- **Roles, not names.** Public sources and your own observation only. A witness may also keep a private full copy of their own report with names; any copy shared follows this rule.
+- **Roles, not names.** Public sources and your own observation only. A witness may also keep a private copy of their own report with names; any copy shared follows this rule.
 - **Power first.** Record the institution, then each power separately.
 - **No silent replacement.** A record changes only by a new version from its original preparer, quoting what changed. An institution answers with an authority response filed beside the record.
 

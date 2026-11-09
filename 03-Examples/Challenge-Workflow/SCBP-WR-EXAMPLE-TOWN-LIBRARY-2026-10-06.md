@@ -1,16 +1,16 @@
 > **WORKED EXAMPLE — not a record of any real institution.** Names, places, and figures are illustrative.
 
-> **Public sources and first-hand observation only.** People are referred to by role. This is a good-faith report, not a verdict.
+> **What I saw and heard, and what public records show.** Written in good faith. It is an account, not a verdict.
 
 # Witness Report - [TOWN] Public Library - 2026-10-06
 
-## 1. In the witness's own words
+## 1. What happened *(in your own words)*
 
 In the witness's own words (unchanged):
 
 > "I use the library computers most days because I don't have internet at home. Since last week a lot of pages about local news and community groups are blocked. The block page says the category is 'Social and Forums'. I thought the filter was only supposed to block the kinds of pictures the subsidy law covers. I asked at the desk and the librarian said the vendor's update turned some new categories on and they'd look into it. Nothing has changed yet."
 
-## 2. Evidence
+## 2. Proof
 
 | Claim | Source | Claim type |
 |---|---|---|
@@ -18,33 +18,33 @@ In the witness's own words (unchanged):
 | A staff member said a vendor update switched on new categories | My own observation (what I was told at the desk) | my_observation |
 | The authorization limits filtering to the required categories, with no new categories without re-entry | Record SCBP-REG-EXAMPLE-TOWN-LIBRARY, P3 B1 and PART E | adjudicated_or_admitted_fact |
 
-**Kept, not attached.** The block page text, which anyone can see by visiting a blocked page from a library terminal. The witness made a note of the dates in a personal notebook. No photos were taken or attached.
+**What I have (not attached).** The block page text, which anyone can see by visiting a blocked page from a library terminal. The witness made a note of the dates in a personal notebook. No photos were taken or attached.
 
-## 3. Effect on people
+## 3. How it affected people
 
 The witness could not reach local news comment pages, a neighbourhood association forum, and a support group's message board from the library. The witness has no home internet, so there was no other way to reach them that week.
 
-## 4. People affected, and other people present
+## 4. Who was affected, and who else was there
 
 Anyone using the public terminals or Wi-Fi, especially people without home internet and patrons under 17, who cannot switch the filter off themselves. Number affected: UNKNOWN.
 
-## 5. Earlier warnings, and attempts to fix it
+## 5. Was it reported before?
 
 Asked at the reference desk on 2026-10-08 (see timeline). No change seen by 2026-10-12. The witness did not use the block page's unblock request, because adults can switch the filter off for their own session; the witness says the problem is that the category is switched on at all.
 
-## 6. What seems wrong (optional)
+## 6. What feels wrong about it (optional)
 
 UNKNOWN
 
-## 7. Protective duty (optional)
+## 7. What they should have done (optional)
 
 UNKNOWN
 
-## 8. What this shows about the power (optional)
+## 8. Does this happen to others? (optional)
 
 UNKNOWN
 
-## 9. Potential harm warning (optional)
+## 9. Could it get worse, or last? (optional)
 
 UNKNOWN
 
@@ -55,13 +55,13 @@ UNKNOWN
 - 2026-10-08: the witness asked at the reference desk. The staff member said a vendor software update had switched on new categories and that staff would look into it.
 - 2026-11-05: pages in that category were still blocked when the witness filed this report.
 
-## 11. The institution and the power
+## 11. Who did it, and what they control
 
 - Name, and place: [TOWN] Public Library, main branch, [TOWN], [STATE].
 - Which power, in plain words: blocking web pages on the public computers and Wi-Fi (internet filtering).
 - **Registration record:** SCBP-REG-EXAMPLE-TOWN-LIBRARY, power P3. This is the library's own authorization record; the library has adopted the Core Requirements.
 
-## 12. Stop signal, challenge, change request, or review petition
+## 12. Asking for something to stop or change
 
 Not applicable. This is a challenge.
 
@@ -87,18 +87,18 @@ Not applicable. This is a challenge.
 - [x] Roles, not names, in any copy I share.
 - [x] Facts kept separate from allegations.
 
-## 14. The witness
+## 14. About you
 
 - **Name or handle:** reading-room-regular
 - **Contact:** NONE
-- **Relationship to the institution:** cardholder and regular user of the public computers
+- **How you are connected to them:** cardholder and regular user of the public computers
 - Verification token used? no
 
-## 15. Resolution
+## 15. What happened next
 
 *Filled in later by whoever reviews the report.*
 
-- Response from the institution, and its date: see the workflow README in this folder for the illustrative outcome.
+- Response from them, and its date: see the workflow README in this folder for the illustrative outcome.
 - For a stop signal, the result of the independent check: not applicable.
 - Outcome: see the workflow README.
 - Linked reports: NONE

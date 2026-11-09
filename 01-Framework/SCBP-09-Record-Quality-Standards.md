@@ -280,7 +280,7 @@ It reports three levels:
 - A stop signal states its basis (defined condition or credible pathway).
 - A registration record named in the report has the shape of a registration ID, the power is P1, P2 and so on, and no power is named without a record. Whether that record and power actually exist is not checked: in v1 no place collects records.
 - A witness report may keep its fields at the end, under "Technical details", so a person reads the report first. Fields on top are also accepted.
-- A witness's private full copy, marked "Full copy. Private.", keeps names on purpose. The checker warns that it is private instead of flagging each name, and expects its file name to end in `-PRIVATE`. A copy to share is checked for names as usual.
+- A witness's private copy, marked "Private copy.", keeps names on purpose. The checker warns that it is private instead of flagging each name, and expects its file name to end in `-PRIVATE`. A copy to share is checked for names as usual.
 
 ---
 

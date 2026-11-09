@@ -25,7 +25,7 @@ These are not exclusive. A written record costs little, and it tends to strength
 ### 2. Witness report (this framework)
 **What it is:** A structured, dated account of what an institution did, failed to do or threatened to do. See the [Witness Report Guide](Witness-Report-Guide.md), or the [AI Witness Interview](AI-Witness-Interview-Bundle.md).
 **When it fits:** A clear, dated record is wanted, especially where the institution's own complaint channel leads nowhere. It also prepares the ground for a complaint, a records request or a lawyer.
-**How it starts:** The guide or the AI interview. Public sources and first-hand observation only; people by role, not by name, in any copy that is shared (the author's own full copy can keep names); UNKNOWN for what is not known.
+**How it starts:** The guide or the AI interview. Public sources and first-hand observation only; people by role, not by name, in any copy that is shared (the author's own private copy can keep names); UNKNOWN for what is not known.
 **What follows:** *The report belongs to its author.* This framework has no place to file it, and writing it starts no official process. Keeping it, sharing it or attaching it to a complaint is the author's decision, as is publishing it, which is also the author's responsibility. See [TERMS](../../TERMS.md).
 
 ### 3. Complaint to an oversight body

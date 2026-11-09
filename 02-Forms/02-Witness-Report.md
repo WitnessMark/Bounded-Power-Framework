@@ -44,13 +44,13 @@ Any free "SHA-256 generator" can calculate the hash. Type the phrase exactly, wi
 
 A report is first a record for its author, so nothing remembered is lost. It can be kept in two copies.
 
-- **A full copy, for the author.** Names, the exact place, unit numbers, phone numbers and web addresses, as remembered. Each person is named by role first, with the name after it in square brackets: "the manager at the front desk [name]". The first line of the report is the full-copy line below. The file name ends in `-PRIVATE.md`.
+- **A private copy, for the author.** Names, the exact place, unit numbers, phone numbers and web addresses, as remembered. Each person is named by role first, with the name after it in square brackets: "the manager at the front desk [name]". The first line of the report is the "Private copy" line below. The file name ends in `-PRIVATE.md`.
 
-  `> **Full copy. Private.** Names, places and contact details are kept as the witness gave them. This copy is not shared. A separate copy exists for sharing.`
+  `> **Private copy.** Names, places and contact details are kept as I gave them. Don't share this copy. Share the copy made for sharing.`
 
-- **A copy to share.** The same report without the bracketed names, and without anything else that points to a private person: the author's own name and contact (unless the author chooses to be identified), private addresses and phone numbers, a child's school, a made-up name that gives away a place. In the witness's own words (section 1), each one is replaced with its role in square brackets, such as `[the manager]`, and a line under the quote says so. The place is given only as precisely as is safe (see below). The full-copy line is left out. The file name has no `-PRIVATE`.
+- **A copy to share.** The same report without the bracketed names, and without anything else that points to a private person: the author's own name and contact (unless the author chooses to be identified), private addresses and phone numbers, a child's school, a made-up name that gives away a place. In the witness's own words (section 1), each one is replaced with its role in square brackets, such as `[the manager]`, and a line under the quote says so. The place is given only as precisely as is safe (see below). The "Private copy" line is left out. The file name has no `-PRIVATE`.
 
-A lawyer, a legal aid service or an oversight body may need the full details; that is the author's call. The full copy is never pasted into a new AI chat to strip it: that gives another company everything in it.
+A lawyer, a legal aid service or an oversight body may need the full details; that is the author's call. The private copy is never pasted into a new AI chat to strip it: that gives another company everything in it.
 
 ## Location, and keeping yourself safe
 
@@ -58,7 +58,7 @@ In a copy to share, the location is given only as precisely as is **safe for the
 
 ## How to save it
 
-Save the copy to share as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`, and the full copy as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}-PRIVATE.md`. SUFFIX is a short uppercase tag for the institution, with an optional place tag, such as `CITYPD-XX`. The date is the incident date, or the date of writing if the incident date is UNKNOWN. Add `-A`, `-B` for more than one report on the same day. Run the checker (`validate_record.py`) if you can. If not, skip it, or ask the AI to go through its "before you hand it over" checks. The report is yours: you decide whether to share it, and with whom.
+Save the copy to share as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`, and the private copy as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}-PRIVATE.md`. SUFFIX is a short uppercase tag for the institution, with an optional place tag, such as `CITYPD-XX`. The date is the incident date, or the date of writing if the incident date is UNKNOWN. Add `-A`, `-B` for more than one report on the same day. Run the checker (`validate_record.py`) if you can. If not, skip it, or ask the AI to go through its "before you hand it over" checks. The report is yours: you decide whether to share it, and with whom.
 
 ---
 
@@ -66,83 +66,83 @@ Save the copy to share as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`, and the full copy 
 
 **How it is laid out.** The report comes first, for people. The technical fields come last, under "Technical details", in a fixed format a computer reads. Keep each field name there as it is; the comment line under each field explains it and lists the allowed answers.
 
-**How it is written.** Short, plain sentences. One fact to a sentence. People by role. No "you" and no "I", except inside the witness's own words. Each section starts with a prompt line in italics; replace it with the answer, or with UNKNOWN.
+**How it is written.** Everyday words, short sentences, one fact to a sentence. It is your report, so it says "I": "I called the office on 2026-10-15." Other people are named by their role. Each section starts with a prompt in italics; replace it with your answer, or with UNKNOWN.
 
 **The optional sections** (6 to 9) can be skipped. Each is UNKNOWN if skipped.
-- **6, what seems wrong,** is the concern in the witness's own words.
-- **7, protective duty,** asks what the witness saw or knows. It does not ask anyone to decide whether a duty was broken.
-- **8, what this shows about the power,** asks whether what happened says something about how the power works for everyone. With a registration record for the institution, it can also name the part the report bears on. No record is needed.
-- **9, potential harm warning,** is a warning, not a severity score or a finding. It does not change the stop-signal rules. An independent checking body still looks at the evidence.
+- **6, what feels wrong about it,** is your concern in your own words. No rule or law needs to be named.
+- **7, what they should have done,** asks what you saw or know. It does not ask you to decide whether a rule was broken.
+- **8, does this happen to others,** asks whether what happened says something about how this works for everyone. If you know of a registration record for whoever did it, it can also name the part of the record this bears on. You do not need one.
+- **9, could it get worse or last,** is a warning, not a finding or a score. It does not change the stop-signal rules. An independent checking body still looks at the evidence.
 
-Section 15, including the effect on the power, is filled in later by whoever reviews the report. It stays blank.
+Section 15 is filled in later by whoever reviews the report. Leave it blank.
 
 ````
-> **Public sources and first-hand observation only.** People are referred to by role. This is a good-faith report, not a verdict.
+> **What I saw and heard, and what public records show.** Written in good faith. It is an account, not a verdict.
 
 # Witness Report - [Institution] - [Incident date]
 
-## 1. In the witness's own words
+## 1. What happened *(in your own words)*
 
-*What the institution did, failed to do, or threatened to do, told the witness's own way. Kept exactly as given.*
+*Tell it your way. It is kept exactly as you write it.*
 
 > "…"
 
-## 2. Evidence
+## 2. Proof
 
-*Each key claim, where it comes from, and what kind of claim it is. Types: `adjudicated_or_admitted_fact` (a court judgment, a final order, an admission); `settled_without_admission` (a settlement where the institution admitted nothing); `institution_statement` (the institution's own published rule, policy, notice or announcement: what it says it does, not proof that it did it); `my_observation` (seen or heard first-hand); `allegation_or_estimate` (everything else).*
+*Each thing you are saying, where it comes from, and what kind of claim it is. Types: `adjudicated_or_admitted_fact` (a court judgment, a final order, an admission); `settled_without_admission` (a settlement where they admitted nothing); `institution_statement` (their own published rule, policy, notice or announcement: what they say they do, not proof that they did it); `my_observation` (I saw or heard it myself); `allegation_or_estimate` (everything else).*
 
 | Claim | Source | Type |
 |---|---|---|
 | | | |
 
-**Kept, not attached.** *Each item, and where it is kept: "letter dated…", "photos on my phone", "case number…".*
+**What I have (not attached).** *Each item, and where you keep it: "letter dated…", "photos on my phone", "case number…".*
 
-## 3. Effect on people
+## 3. How it affected people
 
-*What it did to people: money, health, housing, work, safety, fear.*
+*What it did to you or to others: money, health, housing, work, safety, fear.*
 
-## 4. People affected, and other people present
+## 4. Who was affected, and who else was there
 
-*Who is affected, and roughly how many. Whether any of them never chose to deal with this institution. Who else saw or heard it, by role.*
+*Who was affected, and roughly how many. Whether any of them never chose to deal with whoever did it. Who else saw or heard it, by role.*
 
-## 5. Earlier warnings, and attempts to fix it
+## 5. Was it reported before?
 
-*Whether it was raised with the institution or anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
+*Whether you or anyone else raised it with them, or with anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
 
-## 6. What seems wrong (optional)
+## 6. What feels wrong about it (optional)
 
-*The concern, in the witness's own words. No rule or law needs to be named.*
+*Your concern, in your own words.*
 
-## 7. Protective duty (optional)
+## 7. What they should have done (optional)
 
-*Something the institution was supposed to do to protect people and did not do, did late, or did only for some.*
+*Something they were supposed to do to protect people and did not do, did late, or did only for some.*
 
-## 8. What this shows about the power (optional)
+## 8. Does this happen to others? (optional)
 
-*Whether this shows how the power works for everyone: a protection, exemption or deadline that did not work; a way to challenge the decision that was missing or not explained; a limit that was crossed; a practice written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
+*Whether this shows how it works for everyone: a protection or deadline that did not work, no way to challenge it or no one explaining how, a limit that was crossed, something they do that is written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
 
-## 9. Potential harm warning (optional)
+## 9. Could it get worse, or last? (optional)
 
-*A credible risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What may be affected, for how long, and what was seen that suggests it.*
+*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so.*
 
 ## 10. Timeline
 
-*What happened, in order, with dates and times where known. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date it was seen.*
+*What happened, in order, with dates and times where you know them. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date you saw it.*
 
-## 11. The institution and the power
+## 11. Who did it, and what they control
 
-- **Institution:** *the name people know it by, and where.*
-- **Power used:** *in plain words: an arrest, a fine, a benefit denial, a shutoff, a credit score.*
+- **Who:** *the name people know them by, and where: a company, agency, school, landlord, employer, official.*
+- **What they did:** *in plain words: evicted, fined, cut off, arrested, flagged, watched, denied a benefit.*
 - **Registration record:** [record_id and power_id, or NONE]
 
-## 12. Stop signal, challenge, change request, or review petition
+## 12. Asking for something to stop or change
 
-*Only for these report types. For an incident, write "Not applicable."*
+*Only for a stop signal, a challenge, a change request or a review petition. For anything else, write "Not applicable."*
 
 **Stop signal.**
 - **Basis:**
   - [ ] a **defined condition**: a published limit or stop condition was crossed. Which one?
-  - [ ] a **credible pathway to serious harm**: a real risk of serious harm that no published limit covers. The facts that show it, in the witness's own words.
+  - [ ] a **credible pathway to serious harm**: a real risk of serious harm that no published limit covers. The facts that show it, in your own words.
 - **Now:** whether the harm is happening now or about to, and whether anyone is in immediate danger.
 
 **Challenge, change request, or review petition.**
@@ -167,18 +167,18 @@ Section 15, including the effect on the power, is filled in later by whoever rev
 - [ ] Roles, not names, in any copy I share.
 - [ ] Facts kept separate from allegations.
 
-## 14. The witness
+## 14. About you
 
 - **Name or handle:**
 - **Contact:**
-- **Relationship to the institution:**
+- **How you are connected to them:**
 - **Verification phrase:** yes / no
 
-## 15. Resolution
+## 15. What happened next
 
 *Filled in later by whoever reviews the report.*
 
-- Response from the institution, and its date:
+- Response from them, and its date:
 - For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:
 - Effect on the power (paused, stopped, narrowed, changed in another way, or not changed), its date and source:
 - Outcome:

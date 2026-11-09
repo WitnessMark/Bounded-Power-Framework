@@ -29,8 +29,9 @@ What it checks:
     required. A witness report may keep its fields at the end, in a ```yaml
     block under "## Technical details", so a person reads the report first;
     the older layout, with the fields on top, is still accepted. A witness's
-    private full copy (its first line is "**Full copy. Private.**", or the
-    older "**Full copy: private.**") keeps names on purpose: the name and
+    private copy (its first line is "**Private copy.**"; the older wordings
+    "**Full copy. Private.**" and "**Full copy: private.**" are also read)
+    keeps names on purpose: the name and
     officeholder warnings give way to one warning to keep it private, and its
     file name should end in -PRIVATE
   - links between files checked together: when a witness report and the
@@ -201,8 +202,9 @@ FIRST_HAND_ROW = re.compile(r"my own observation|my_observation", re.I)
 # name, so both layouts work: the older one ("2. What happened", "7. About you") and the
 # current one (single numbers, the witness's account first).
 WITNESS_FIRST_HAND = re.compile(
-    r"What happened|About you|own words|Effect on people|People affected|Earlier warnings|"
-    r"What seems wrong|Protective duty|What this shows|Potential harm|Timeline|^#{1,3}\s*\d+\.\s*The witness\s*$",
+    r"What happened(?! next)|About you|own words|Effect on people|People affected|Earlier warnings|"
+    r"What seems wrong|Protective duty|What this shows|Potential harm|Timeline|^#{1,3}\s*\d+\.\s*The witness\s*$|"
+    r"How it affected|Who was affected|reported before|What feels wrong|should have done|happen to others|get worse",
     re.I)
 
 
@@ -238,14 +240,14 @@ def unsourced_numbers(body, r, as_error=True, offset=0, witness=False):
         if witness:
             # the witness's own account: first-hand sections, quotes, own-observation
             # evidence rows, and the inventory of what exists are their own source
-            if re.match(r"^\*\*(What exists but isn|Kept, not attached)", s):
+            if re.match(r"^\*\*(What exists but isn|Kept, not attached|What I have)", s):
                 in_inventory = True
                 continue
             if first_hand or in_inventory or s.startswith(">") or (s.startswith("|") and FIRST_HAND_ROW.search(s)):
                 continue
             if s.startswith("|") and re.search(r"https?://", s):
                 continue    # an evidence row whose source is a link: the link is its source
-            if re.match(r"^[-*]\s*(Which institution, and where:|\*\*Institution:\*\*)", s):
+            if re.match(r"^[-*]\s*(Which institution, and where:|\*\*Institution:\*\*|\*\*Who:\*\*)", s):
                 continue    # a place (a street number, a unit) is not a quantity
             s = ISO_DATE.sub(" ", s)
         for seg in segments(s, skip_cols):
@@ -639,12 +641,12 @@ def check_witness(fm, body, vocab, r):
     full = bool(FULL_COPY_RE.search(body))
     base = os.path.splitext(os.path.basename(r.path))[0]
     if full:
-        r.warn("full copy: it keeps names, places and contact details as given. Keep it private; "
-               "share a copy without them")
+        r.warn("private copy: it keeps names, places and contact details as given. Keep it private; "
+               "share the copy made for sharing")
         if not base.endswith("-PRIVATE") and not base.startswith("TEST"):
             r.warn(f"file name '{base}' should end in -PRIVATE, since this is a full copy")
     elif base.endswith("-PRIVATE"):
-        r.warn(f"file name '{base}' ends in -PRIVATE but the file has no 'Full copy. Private.' line")
+        r.warn(f"file name '{base}' ends in -PRIVATE but the file has no 'Private copy.' line")
     # a town- or region-level place should not name the institution's own premises
     inst = str(fm.get("institution_name") or "").strip()
     desc = str(loc.get("description") or "")
@@ -671,7 +673,7 @@ def check_witness(fm, body, vocab, r):
               "put only the code here, never the secret phrase")
 
 
-FULL_COPY_RE = re.compile(r"\*\*Full copy(?:: private|\. Private)\.\*\*")
+FULL_COPY_RE = re.compile(r"\*\*(?:Private copy|Full copy(?:: private|\. Private))\.\*\*")
 WR_ID = re.compile(r"SCBP-WR-[A-Z0-9-]+-\d{4}-\d{2}-\d{2}(?:-[A-Z])?")
 
 

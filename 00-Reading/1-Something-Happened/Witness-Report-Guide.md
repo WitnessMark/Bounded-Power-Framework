@@ -46,16 +46,16 @@ A finished example, about a fictional water shutoff, shows the result: [SCBP-WR-
 
 A report is first a record for its author, and a record that leaves out names and places tends to lose what makes it useful later. So a report can be kept in two copies:
 
-- **The full copy** keeps names, the exact place, unit numbers, phone numbers and web addresses as the witness gave them. Each person is named by role first, with the name after it in square brackets. It starts with the line "Full copy. Private.", and its file name ends in `-PRIVATE`. It is for the author, and for anyone the author chooses to trust with it, such as a lawyer.
+- **The private copy** keeps names, the exact place, unit numbers, phone numbers and web addresses as the witness gave them. Each person is named by role first, with the name after it in square brackets. It starts with the line "Private copy.", and its file name ends in `-PRIVATE`. It is for the author, and for anyone the author chooses to trust with it, such as a lawyer.
 - **The copy to share** is the same report with names and other details that point to a private person replaced by roles, and the place given only as precisely as is safe. In the witness's own words, each replacement is shown in square brackets, such as "[the manager]".
 
-The AI interviewer makes the full copy and then offers the copy to share, listing each thing it will replace. The web form saves both. Either way, the copy to share is read once more before it is sent: no tool catches everything. Pasting the full copy into a new AI chat to strip it gives that company everything in it.
+The AI interviewer makes the private copy and then offers the copy to share, listing each thing it will replace. The web form saves both. Either way, the copy to share is read once more before it is sent: no tool catches everything. Pasting the private copy into a new AI chat to strip it gives that company everything in it.
 
 ## The parts of a report
 
 ### Where
 
-The place comes first, because it is usually easier to recall than the order of events, and because reports about the same place can be grouped. The full copy keeps it as exactly as the witness gives it. The copy to share gives it only as precisely as is safe: an exact address that could identify the witness, such as a home or a small workplace, is better given as the town or region, and the location can also be `withheld`. Map coordinates, if any, come from a map app and are never estimated.
+The place comes first, because it is usually easier to recall than the order of events, and because reports about the same place can be grouped. The private copy keeps it as exactly as the witness gives it. The copy to share gives it only as precisely as is safe: an exact address that could identify the witness, such as a home or a small workplace, is better given as the town or region, and the location can also be `withheld`. Map coordinates, if any, come from a map app and are never estimated.
 
 ### What happened
 
@@ -66,7 +66,7 @@ In plain words, with people named only by role:
 - **how**: how it was done or said, such as in person, by letter, by phone, by email, online or by a notice on the door. Whether there is a written record of something tends to depend on this. For a call: the number, the date and time, and any reference number given. For a website: the page's address and the date it was seen; pages change, so a saved copy or the Wayback Machine (web.archive.org) helps;
 - **the impact**: what it did to people;
 - **who is affected**: roughly how many, and whether any of them never chose to deal with this institution;
-- **who else saw it**: anyone else who saw or heard what happened, by role, such as "a neighbour in the same building". A name the witness knows can go in the full copy; it comes out of the copy to share. Their contact details are not asked for;
+- **who else saw it**: anyone else who saw or heard what happened, by role, such as "a neighbour in the same building". A name the witness knows can go in the private copy; it comes out of the copy to share. Their contact details are not asked for;
 - **earlier warnings and attempts to fix it**: whether anyone raised the problem before or after, what followed, and where any letter, complaint, inspection or report can be found.
 
 Four further questions are optional and are answered only where they fit:
@@ -116,7 +116,7 @@ This project has no place to send reports. A private way to send them, and a pub
 
 Whether to share a report, with whom, and when, is the author's decision. Before sharing:
 
-1. **Send the copy to share, not the full copy,** unless the person receiving it needs the details and the author trusts them with it.
+1. **Send the copy to share, not the private copy,** unless the person receiving it needs the details and the author trusts them with it.
 2. **Read it as a stranger would.** A street, a shift or a rare job title can identify the author; a wider area, or leaving the detail out, prevents that.
 3. **Check for names**, the author's included.
 4. **Share the text only**, without the original photos.

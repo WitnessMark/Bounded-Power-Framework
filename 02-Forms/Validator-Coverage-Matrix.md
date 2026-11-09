@@ -70,8 +70,8 @@ The checker prints three kinds of line:
 | Witness report: a town- or region-level location (`locality`, `region`) whose description names the institution | WARN | Check the place is no more exact than the witness chose |
 | Witness report: an optional section answered "Not applicable" | WARN | Write UNKNOWN if it was skipped or not asked |
 | Witness report: fields at the end, in a ```yaml block under "Technical details" (the current layout), or on top (the older one) | ERROR if neither | Both are read; only witness reports may keep fields at the end |
-| Witness report: a private full copy (the "Full copy. Private." line) | WARN | Keep it private; share a copy without names. Name and officeholder warnings are not repeated for it |
-| Witness report: a full copy whose file name does not end in `-PRIVATE`, or a `-PRIVATE` file without the line | WARN | Rename the file, or add the line |
+| Witness report: a private copy (the "Private copy." line) | WARN | Keep it private; share a copy without names. Name and officeholder warnings are not repeated for it |
+| Witness report: a private copy whose file name does not end in `-PRIVATE`, or a `-PRIVATE` file without the line | WARN | Rename the file, or add the line |
 | A value meaning "unknown" (UNKNOWN or unknown) accepted in any case | — | |
 | Authority response: carries the banner saying it does not replace the record | ERROR | |
 | Authority response: a correction or disagreement quotes the record point by point | WARN | |

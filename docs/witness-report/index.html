@@ -302,7 +302,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
       <label class="choice"><input type="radio" name="rtype" value="challenge"><span><b>Challenge</b><span class="hint">They are acting outside their limits, or punishing someone for speaking up.</span></span></label>
       <label class="choice"><input type="radio" name="rtype" value="change_request"><span><b>Change request</b><span class="hint">A limit or safeguard should change, even before anyone is harmed.</span></span></label>
       <label class="choice"><input type="radio" name="rtype" value="stop_signal"><span><b>Stop signal</b><span class="hint">A defined limit was crossed, or there is a real risk of serious harm. Pauses something only where the framework's rules have been adopted.</span></span></label>
-      <label class="choice"><input type="radio" name="rtype" value="review_petition"><span><b>Review petition</b><span class="hint">A request by affected people to review, narrow or end a power early. Has an effect only where the framework's rules have been adopted.</span></span></label>
+      <label class="choice"><input type="radio" name="rtype" value="review_petition"><span><b>Review petition</b><span class="hint">A request by the people affected to review, narrow or end what they are allowed to do. Has an effect only where the framework's rules have been adopted.</span></span></label>
     </fieldset>
     <div id="ss" hidden>
       <fieldset>
@@ -339,8 +339,8 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   </details>
 
   <details>
-    <summary>The power used, and a registration record</summary>
-    <div class="field"><label for="power">What power did they use over people, in plain words?<span class="hint">An eviction, a fine, a benefit denial, a shutoff, an arrest, data collected about people.</span></label><input type="text" id="power" autocomplete="off"></div>
+    <summary>What they did, and a registration record</summary>
+    <div class="field"><label for="power">What did they do, in plain words?<span class="hint">An eviction, a fine, a benefit denial, a shutoff, an arrest, data collected about people.</span></label><input type="text" id="power" autocomplete="off"></div>
     <div class="field"><label for="who_rel">Relationship to them<span class="hint">Tenant, customer, employee, neighbour, student's parent.</span></label><input type="text" id="who_rel" autocomplete="off"></div>
     <p class="small">A registration record is a separate document describing an organization's powers. Most reports have none.</p>
     <div class="row">
@@ -600,7 +600,7 @@ function timelineText() {
   var d = !$("inc_unknown").checked && isDate(val("inc_date")) ? val("inc_date") : "";
   var t = humanTime(val("inc_time"));
   if (!d && !t) { return "UNKNOWN"; }
-  return (d || "Date unknown") + (t ? ", at about " + t : "") + ": the events in section 1.";
+  return (d || "Date unknown") + (t ? ", at about " + t : "") + ": what I describe in section 1.";
 }
 
 function build() {
@@ -645,41 +645,41 @@ function build() {
 
   var recLine = rec === "NONE" ? "NONE" : rec + (pw !== "UNKNOWN" ? ", power " + pw : "");
   var b = [];
-  if (full) { b.push("> **Full copy. Private.** Names, places and contact details are kept as the witness gave them. This copy is not shared. A separate copy exists for sharing."); }
-  b.push("> **Public sources and first-hand observation only.** People are referred to by role. This is a good-faith report, not a verdict.");
+  if (full) { b.push("> **Private copy.** Names, places and contact details are kept as I gave them. Don't share this copy. Share the copy made for sharing."); }
+  b.push("> **What I saw and heard, and what public records show.** Written in good faith. It is an account, not a verdict.");
   b.push("# Witness Report - " + inst + " - " + inc);
 
   var own = full ? val("own") : (val("own_share") || val("own"));
   var changed = !full && own !== val("own");
-  b.push("## 1. In the witness's own words\n\n" + quote(own) + "\n\n" +
-    "*Written by the witness with the web form." + (changed ? " In this copy, names and identifying details in the witness's words are replaced with roles in square brackets, by the witness." : "") + "*");
+  b.push("## 1. What happened *(in your own words)*\n\n" + quote(own) + "\n\n" +
+    "*I wrote this report with the web form." + (changed ? " In this copy, I replaced names and details that could identify people with roles in square brackets." : "") + "*");
 
   var rows = Array.prototype.slice.call(document.querySelectorAll("#ev_rows .ev")).map(function (box) {
     return [box.querySelector(".evc").value.trim(), box.querySelector(".evs").value.trim(), box.querySelector(".evt").value];
   }).filter(function (r) { return r[0]; });
-  var s2 = "## 2. Evidence\n\n";
+  var s2 = "## 2. Proof\n\n";
   s2 += rows.length ? "| Claim | Source | Type |\n|---|---|---|\n" +
     rows.map(function (r) { return "| " + cell(r[0]) + " | " + cell(r[1] || "UNKNOWN") + " | " + r[2] + " |"; }).join("\n")
-    : "Everything in this report is the witness's own observation unless stated otherwise.";
-  s2 += "\n\n**Kept, not attached.**" + (val("inventory") ? "\n\n" + val("inventory").split(/\r?\n/).filter(function (l) { return l.trim(); }).map(function (l) { return "- " + block(l.replace(/^\s*[-*]\s*/, "")); }).join("\n") : " Nothing listed.");
+    : "Everything here is what I saw or heard myself, unless it says otherwise.";
+  s2 += "\n\n**What I have (not attached).**" + (val("inventory") ? "\n\n" + val("inventory").split(/\r?\n/).filter(function (l) { return l.trim(); }).map(function (l) { return "- " + block(l.replace(/^\s*[-*]\s*/, "")); }).join("\n") : " Nothing listed.");
   b.push(s2);
 
-  b.push("## 3. Effect on people\n\n" + answer("impact"));
-  b.push("## 4. People affected, and other people present\n\n" +
+  b.push("## 3. How it affected people\n\n" + answer("impact"));
+  b.push("## 4. Who was affected, and who else was there\n\n" +
     "- **Affected:** " + answer("affected") + "\n" +
-    "- **Also present:** " + (val("seen") ? block(val("seen")) : "UNKNOWN"));
-  b.push("## 5. Earlier warnings, and attempts to fix it\n\n" + answer("warnings"));
-  b.push("## 6. What seems wrong (optional)\n\n" + optional("opt_wrong"));
-  b.push("## 7. Protective duty (optional)\n\n" + optional("opt_duty"));
-  b.push("## 8. What this shows about the power (optional)\n\n" + optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
-  b.push("## 9. Potential harm warning (optional)\n\n" + optional("opt_harm"));
+    "- **Also there:** " + (val("seen") ? block(val("seen")) : "UNKNOWN"));
+  b.push("## 5. Was it reported before?\n\n" + answer("warnings"));
+  b.push("## 6. What feels wrong about it (optional)\n\n" + optional("opt_wrong"));
+  b.push("## 7. What they should have done (optional)\n\n" + optional("opt_duty"));
+  b.push("## 8. Does this happen to others? (optional)\n\n" + optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
+  b.push("## 9. Could it get worse, or last? (optional)\n\n" + optional("opt_harm"));
   b.push("## 10. Timeline\n\n" + timelineText() + (val("how") ? "\n\n**How it was done or said:** " + block(val("how")) : ""));
-  b.push("## 11. The institution and the power\n\n" +
-    "- **Institution:** " + inst + (withheld || !val("loc_desc") ? "" : ". The events took place at " + val("loc_desc") + ".") + "\n" +
-    "- **Power used:** " + (val("power") || "UNKNOWN") + "\n" +
+  b.push("## 11. Who did it, and what they control\n\n" +
+    "- **Who:** " + inst + (withheld || !val("loc_desc") ? "" : ". It happened at " + val("loc_desc") + ".") + "\n" +
+    "- **What they did:** " + (val("power") || "UNKNOWN") + "\n" +
     "- **Registration record:** " + recLine);
 
-  var s12 = "## 12. Stop signal, challenge, change request, or review petition\n\n";
+  var s12 = "## 12. Asking for something to stop or change\n\n";
   if (rtype === "stop_signal") {
     s12 += "**Stop signal.**\n- **Basis:**\n" +
       "  - [" + (ssb === "defined_condition" ? "x" : " ") + "] a **defined condition**: a published limit or stop condition was crossed.\n" +
@@ -701,13 +701,13 @@ function build() {
 
   var c = $("confirm").checked ? "x" : " ";
   b.push("## 13. Honesty\n\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
-  b.push("## 14. The witness\n\n" +
+  b.push("## 14. About you\n\n" +
     "- **Name or handle:** " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
     "- **Contact:** " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
-    "- **Relationship to the institution:** " + (val("who_rel") || "UNKNOWN") + "\n" +
+    "- **How you are connected to them:** " + (val("who_rel") || "UNKNOWN") + "\n" +
     "- **Verification phrase:** " + (verificationHash ? "yes" : "no"));
-  b.push("## 15. Resolution\n\n*Filled in later by whoever reviews the report.*\n\n" +
-    "- Response from the institution, and its date:\n" +
+  b.push("## 15. What happened next\n\n*Filled in later by whoever reviews the report.*\n\n" +
+    "- Response from them, and its date:\n" +
     "- For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:\n" +
     "- Effect on the power (paused, stopped, narrowed, changed in another way, or not changed), its date and source:\n" +
     "- Outcome:\n" +

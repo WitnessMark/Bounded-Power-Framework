@@ -1,16 +1,16 @@
 > **WORKED EXAMPLE — not a record of any real institution.** Names, places, and figures are illustrative.
 
-> **Public sources and first-hand observation only.** People are referred to by role. This is a good-faith report, not a verdict.
+> **What I saw and heard, and what public records show.** Written in good faith. It is an account, not a verdict.
 
 # Witness Report - [COUNTY] Solid Waste Authority - 2026-09-29
 
-## 1. In the witness's own words
+## 1. What happened *(in your own words)*
 
 > "The authority posts the well test results on the board outside the scale house and on its website. The permit says if the leachate number in the downhill well goes over 50, they stop putting waste in the new cell and tell the state. The September sheet says 74 for that well. August was 48. They kept dumping in the new cell the whole next week, I watched the trucks go up there. The creek behind the fence has been orange near the culvert since about the middle of the month. I'm not giving my name because I need to keep working around here."
 
 *Sections 2 to 12 are organized by the AI interviewer from the witness's answers. The witness checked them.*
 
-## 2. Evidence
+## 2. Proof
 
 | Claim | Source | Type |
 |---|---|---|
@@ -20,33 +20,33 @@
 | The creek is orange near the culvert | My own observation | my_observation |
 | Leachate may reach private wells | The witness's concern | allegation_or_estimate |
 
-**Kept, not attached.** The posted monitoring sheets for August and September, on the board outside the scale house and on the authority's website. The published permit, on the authority's website. The witness wrote down the well numbers in a notebook kept at home. No photos are attached.
+**What I have (not attached).** The posted monitoring sheets for August and September, on the board outside the scale house and on the authority's website. The published permit, on the authority's website. The witness wrote down the well numbers in a notebook kept at home. No photos are attached.
 
-## 3. Effect on people
+## 3. How it affected people
 
 The witness says the creek water has changed colour near the culvert. The witness does not know whether anyone's drinking water has been affected. Health effects: UNKNOWN.
 
-## 4. People affected, and other people present
+## 4. Who was affected, and who else was there
 
 Households near the landfill that use private wells, people who fish or walk along the creek, and the creek itself. The witness does not know how many households use wells nearby. None of the neighbours chose to live next to this cell; the witness says the new cell opened after most of them already lived there.
 
-## 5. Earlier warnings, and attempts to fix it
+## 5. Was it reported before?
 
 The published permit sets the limit and the stop step, so the authority knew the risk in advance. The witness does not know whether anyone has told the authority or the state about the September result. The witness has not raised it directly, for fear of losing work. Whether the state has inspected since: UNKNOWN.
 
-## 6. What seems wrong (optional)
+## 6. What feels wrong about it (optional)
 
 "They wrote their own rule and put the number on the board and then just kept going like it didn't say anything."
 
-## 7. Protective duty (optional)
+## 7. What they should have done (optional)
 
 The witness says the permit requires the authority to stop placing waste in the new cell and tell the state when the downhill well goes over the limit. The witness saw waste still going into the cell after the result was posted.
 
-## 8. What this shows about the power (optional)
+## 8. Does this happen to others? (optional)
 
 UNKNOWN
 
-## 9. Potential harm warning (optional)
+## 9. Could it get worse, or last? (optional)
 
 The witness is worried that leachate could reach the groundwater and the creek and stay there for years, and that it could not be cleaned up once it spreads. What may be affected: private wells downhill, the creek, and the fish and plants in it. Extent and duration: UNKNOWN. What supports the concern: the rise in the posted well result from August to September, and the orange water near the culvert.
 
@@ -58,13 +58,13 @@ The witness is worried that leachate could reach the groundwater and the creek a
 - 2026-09-30 to 2026-10-06: the witness saw trucks keep tipping waste in the new cell.
 - 2026-11-05: the witness says waste is still going into the new cell.
 
-## 11. The institution and the power
+## 11. Who did it, and what they control
 
-- **Institution:** [COUNTY] Solid Waste Authority, which runs the regional landfill in [COUNTY], [STATE].
-- **Power used:** running a landfill and deciding what goes into it, which affects the water that neighbours and the creek depend on.
+- **Who:** [COUNTY] Solid Waste Authority, which runs the regional landfill in [COUNTY], [STATE].
+- **What they did:** running a landfill and deciding what goes into it, which affects the water that neighbours and the creek depend on.
 - **Registration record:** NONE
 
-## 12. Stop signal, challenge, change request, or review petition
+## 12. Asking for something to stop or change
 
 **Stop signal.**
 
@@ -83,18 +83,18 @@ Whether the authority has adopted the Core Requirements: UNKNOWN. If it has not,
 - [x] Roles, not names, in any copy I share.
 - [x] Facts kept separate from allegations.
 
-## 14. The witness
+## 14. About you
 
 - **Name or handle:** NONE (anonymous)
 - **Contact:** NONE
-- **Relationship to the institution:** works nearby and sees the landfill most days
+- **How you are connected to them:** works nearby and sees the landfill most days
 - **Verification phrase:** no
 
-## 15. Resolution
+## 15. What happened next
 
 *Filled in later by whoever reviews the report.*
 
-- Response from the institution, and its date:
+- Response from them, and its date:
 - For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:
 - Effect on the power (paused, stopped, narrowed, changed in another way, or not changed), its date and source:
 - Outcome:
