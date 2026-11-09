@@ -68,8 +68,9 @@ The checker prints three kinds of line:
 | Witness report: numbers without a source tag outside the witness's own first-hand sections (dates, section 2, block quotes, "my own observation" rows, evidence rows that cite a link, and the list of what exists are not flagged; web addresses are never read as numbers) | WARN | |
 | Witness report: a title or rank followed by a name, anywhere except the witness's own name line | WARN | Replace names with roles |
 | Witness report: a town- or region-level location (`locality`, `region`) whose description names the institution | WARN | Check the place is no more exact than the witness chose |
-| Witness report: an optional question (2f–2i) answered "Not applicable" | WARN | Write UNKNOWN if it was skipped or not asked |
-| Witness report: a private full copy (the "Full copy: private." line) | WARN | Keep it private; share a copy without names. Name and officeholder warnings are not repeated for it |
+| Witness report: an optional section answered "Not applicable" | WARN | Write UNKNOWN if it was skipped or not asked |
+| Witness report: fields at the end, in a ```yaml block under "Technical details" (the current layout), or on top (the older one) | ERROR if neither | Both are read; only witness reports may keep fields at the end |
+| Witness report: a private full copy (the "Full copy. Private." line) | WARN | Keep it private; share a copy without names. Name and officeholder warnings are not repeated for it |
 | Witness report: a full copy whose file name does not end in `-PRIVATE`, or a `-PRIVATE` file without the line | WARN | Rename the file, or add the line |
 | A value meaning "unknown" (UNKNOWN or unknown) accepted in any case | — | |
 | Authority response: carries the banner saying it does not replace the record | ERROR | |

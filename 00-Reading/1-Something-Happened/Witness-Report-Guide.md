@@ -32,7 +32,7 @@ The file can be [read here](AI-Witness-Interview-Bundle.md) before it is used.
 
 ## By hand
 
-Copy the template from the [Witness Report form](../../02-Forms/02-Witness-Report.md) into a new text file and work from top to bottom. The top part holds short technical field names; they stay as written. The line under each field asks its question in plain words.
+Copy the template from the [Witness Report form](../../02-Forms/02-Witness-Report.md) into a new text file and work from top to bottom. The technical fields come last, under "Technical details"; their names stay as written. The line under each field asks its question in plain words.
 
 A finished example, about a fictional water shutoff, shows the result: [SCBP-WR-EXAMPLE-WATER-SHUTOFF](../../03-Examples/Witness-Reports/SCBP-WR-EXAMPLE-WATER-SHUTOFF-2026-08-12.md).
 
@@ -46,7 +46,7 @@ A finished example, about a fictional water shutoff, shows the result: [SCBP-WR-
 
 A report is first a record for its author, and a record that leaves out names and places tends to lose what makes it useful later. So a report can be kept in two copies:
 
-- **The full copy** keeps names, the exact place, unit numbers, phone numbers and web addresses as the witness gave them. Each person is named by role first, with the name after it in square brackets. It starts with the line "Full copy: private.", and its file name ends in `-PRIVATE`. It is for the author, and for anyone the author chooses to trust with it, such as a lawyer.
+- **The full copy** keeps names, the exact place, unit numbers, phone numbers and web addresses as the witness gave them. Each person is named by role first, with the name after it in square brackets. It starts with the line "Full copy. Private.", and its file name ends in `-PRIVATE`. It is for the author, and for anyone the author chooses to trust with it, such as a lawyer.
 - **The copy to share** is the same report with names and other details that point to a private person replaced by roles, and the place given only as precisely as is safe. In the witness's own words, each replacement is shown in square brackets, such as "[the manager]".
 
 The AI interviewer makes the full copy and then offers the copy to share, listing each thing it will replace. The web form saves both. Either way, the copy to share is read once more before it is sent: no tool catches everything. Pasting the full copy into a new AI chat to strip it gives that company everything in it.

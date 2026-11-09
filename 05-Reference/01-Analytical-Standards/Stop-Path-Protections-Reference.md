@@ -12,7 +12,7 @@
 
 Most authorities that can harm people are also subject to protections: courts, oversight offices, complaint routes, laws that let citizens sue. Some of these are **stop paths** in the framework's sense. Many are not.
 
-This reference helps you tell the difference when you fill in the stop-path table of the [Registration form](../../02-Forms/01-Registration.md) (B5), and when you describe earlier warnings and attempts to fix a problem in a [Witness Report](../../02-Forms/02-Witness-Report.md) (2e).
+This reference helps you tell the difference when you fill in the stop-path table of the [Registration form](../../02-Forms/01-Registration.md) (B5), and when you describe earlier warnings and attempts to fix a problem in a [Witness Report](../../02-Forms/02-Witness-Report.md) (section 5).
 
 ---
 

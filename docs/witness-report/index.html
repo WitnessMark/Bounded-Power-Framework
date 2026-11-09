@@ -600,7 +600,7 @@ function timelineText() {
   var d = !$("inc_unknown").checked && isDate(val("inc_date")) ? val("inc_date") : "";
   var t = humanTime(val("inc_time"));
   if (!d && !t) { return "UNKNOWN"; }
-  return (d || "Date unknown") + (t ? ", at about " + t : "") + ": the events in 2a.";
+  return (d || "Date unknown") + (t ? ", at about " + t : "") + ": the events in section 1.";
 }
 
 function build() {
@@ -620,7 +620,6 @@ function build() {
   var ident = radio("ident"), inst = val("inst");
 
   var fm = [
-    "---",
     "report_id: " + reportId(),
     "report_type: " + rtype,
     "form: {name: witness-report, version: " + FORM.version + ", date: " + FORM.date + "}",
@@ -641,76 +640,80 @@ function build() {
     "stop_signal_basis: " + ssb,
     "identity_disclosure: " + ident,
     "verification_hash: " + (verificationHash || "NONE"),
-    "status: " + status,
-    "---"
+    "status: " + status
   ].join("\n");
 
   var recLine = rec === "NONE" ? "NONE" : rec + (pw !== "UNKNOWN" ? ", power " + pw : "");
   var b = [];
-  if (full) { b.push("> **Full copy: private.** It keeps names, places and contact details as the witness gave them. Share the shareable copy instead, or remove those details first."); }
-  b.push("> **Public sources and first-hand observation only.** People are referred to by role or title. This is a good-faith report, not a verdict.");
-  b.push("# Witness Report — " + inst + " — " + inc);
-  b.push("## 1. The institution, and which power\n" +
-    "- Which institution, and where: " + inst + (withheld || !val("loc_desc") ? "" : "; the events took place at " + val("loc_desc")) + "\n" +
-    "- What power did it use over people? Say it in plain words: " + (val("power") || "UNKNOWN") + "\n" +
-    "- Registration record, if one exists: " + recLine);
+  if (full) { b.push("> **Full copy. Private.** Names, places and contact details are kept as the witness gave them. This copy is not shared. A separate copy exists for sharing."); }
+  b.push("> **Public sources and first-hand observation only.** People are referred to by role. This is a good-faith report, not a verdict.");
+  b.push("# Witness Report - " + inst + " - " + inc);
+
   var own = full ? val("own") : (val("own_share") || val("own"));
   var changed = !full && own !== val("own");
-  b.push("## 2. What happened\n2a. **In your own words.**\n\n" + quote(own) + "\n\n" +
-    "*Written by the witness with the web form.*" + (changed ? " *In this copy, names and identifying details in the witness's words were replaced with roles in square brackets by the witness.*" : "") + "\n\n" +
-    line("2b. **Timeline.**", timelineText() + (val("how") ? "\n\nHow it was done or said: " + block(val("how")) : "")) + "\n\n" +
-    line("2c. **Impact.**", answer("impact")) + "\n\n" +
-    line("2d. **Who is affected, and who else saw it.**", answer("affected") + "\n\nAlso saw or heard it: " + (val("seen") ? block(val("seen")) : "UNKNOWN")) + "\n\n" +
-    line("2e. **Earlier warnings and attempts to fix it.**", answer("warnings")) + "\n\n" +
-    line("2f. **Potential harm warning (optional):**", optional("opt_harm")) + "\n\n" +
-    line("2g. **Protective duty (optional).**", optional("opt_duty")) + "\n\n" +
-    line("2h. **What seems wrong to you? (optional)**", optional("opt_wrong")) + "\n\n" +
-    line("2i. **What this shows about the power (optional).**", optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : "")));
-
-  if (rtype === "stop_signal") {
-    b.push("## 3. For a stop signal only\n3a. **Basis:**\n" +
-      "  - [" + (ssb === "defined_condition" ? "x" : " ") + "] a **defined condition**: a published limit or stop condition was crossed. Which one?\n" +
-      "  - [" + (ssb === "credible_pathway" ? "x" : " ") + "] a **credible pathway to serious harm**: a real risk of serious harm that no published limit covers. What facts show it?\n\n" +
-      answer("ss_which") + "\n\n3b. Is the harm happening **now**, or about to? Is anyone in immediate danger? " + answer("ss_now"));
-  } else {
-    b.push("## 3. For a stop signal only\nNot applicable.");
-  }
-  if (["challenge", "change_request", "review_petition"].indexOf(rtype) >= 0) {
-    var items = Array.prototype.slice.call(document.querySelectorAll("input.ch")).map(function (c) {
-      var label = c.value === "a Floor is at stake" ? "a Floor is at stake (which one?)" + (c.checked && val("floor_which") ? " " + val("floor_which") : "") : c.value;
-      return "  - [" + (c.checked ? "x" : " ") + "] " + label;
-    }).join("\n");
-    var s4 = "## 4. For a challenge, change request, or review petition only\n4a. **What limit is being exceeded, or what should change?**\n" + items + "\n\n" + line("4b. **What would fix it?** (optional)", optional("fix"));
-    if (rtype === "review_petition") { s4 += "\n\n4c. **For a review petition:** joining an existing petition? " + (val("petition_id") || "NONE"); }
-    b.push(s4);
-  } else {
-    b.push("## 4. For a challenge, change request, or review petition only\nNot applicable.");
-  }
+  b.push("## 1. In the witness's own words\n\n" + quote(own) + "\n\n" +
+    "*Written by the witness with the web form." + (changed ? " In this copy, names and identifying details in the witness's words are replaced with roles in square brackets, by the witness." : "") + "*");
 
   var rows = Array.prototype.slice.call(document.querySelectorAll("#ev_rows .ev")).map(function (box) {
     return [box.querySelector(".evc").value.trim(), box.querySelector(".evs").value.trim(), box.querySelector(".evt").value];
   }).filter(function (r) { return r[0]; });
-  var s5 = "## 5. Evidence\n";
-  s5 += rows.length ? "| Claim | Source (link, record number, or \"my own observation\") | Claim type |\n|---|---|---|\n" +
+  var s2 = "## 2. Evidence\n\n";
+  s2 += rows.length ? "| Claim | Source | Type |\n|---|---|---|\n" +
     rows.map(function (r) { return "| " + cell(r[0]) + " | " + cell(r[1] || "UNKNOWN") + " | " + r[2] + " |"; }).join("\n")
-    : "Everything in section 2 is the witness's own observation unless stated otherwise.";
-  s5 += "\n\n**What exists but isn't attached.** " + (val("inventory") ? block(val("inventory")) : "Nothing listed.");
-  b.push(s5);
+    : "Everything in this report is the witness's own observation unless stated otherwise.";
+  s2 += "\n\n**Kept, not attached.**" + (val("inventory") ? "\n\n" + val("inventory").split(/\r?\n/).filter(function (l) { return l.trim(); }).map(function (l) { return "- " + block(l.replace(/^\s*[-*]\s*/, "")); }).join("\n") : " Nothing listed.");
+  b.push(s2);
+
+  b.push("## 3. Effect on people\n\n" + answer("impact"));
+  b.push("## 4. People affected, and other people present\n\n" +
+    "- **Affected:** " + answer("affected") + "\n" +
+    "- **Also present:** " + (val("seen") ? block(val("seen")) : "UNKNOWN"));
+  b.push("## 5. Earlier warnings, and attempts to fix it\n\n" + answer("warnings"));
+  b.push("## 6. What seems wrong (optional)\n\n" + optional("opt_wrong"));
+  b.push("## 7. Protective duty (optional)\n\n" + optional("opt_duty"));
+  b.push("## 8. What this shows about the power (optional)\n\n" + optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
+  b.push("## 9. Potential harm warning (optional)\n\n" + optional("opt_harm"));
+  b.push("## 10. Timeline\n\n" + timelineText() + (val("how") ? "\n\n**How it was done or said:** " + block(val("how")) : ""));
+  b.push("## 11. The institution and the power\n\n" +
+    "- **Institution:** " + inst + (withheld || !val("loc_desc") ? "" : ". The events took place at " + val("loc_desc") + ".") + "\n" +
+    "- **Power used:** " + (val("power") || "UNKNOWN") + "\n" +
+    "- **Registration record:** " + recLine);
+
+  var s12 = "## 12. Stop signal, challenge, change request, or review petition\n\n";
+  if (rtype === "stop_signal") {
+    s12 += "**Stop signal.**\n- **Basis:**\n" +
+      "  - [" + (ssb === "defined_condition" ? "x" : " ") + "] a **defined condition**: a published limit or stop condition was crossed.\n" +
+      "  - [" + (ssb === "credible_pathway" ? "x" : " ") + "] a **credible pathway to serious harm**: a real risk of serious harm that no published limit covers.\n" +
+      "- **Which limit, or the facts that show the risk:** " + answer("ss_which") + "\n" +
+      "- **Now:** " + answer("ss_now");
+  } else if (["challenge", "change_request", "review_petition"].indexOf(rtype) >= 0) {
+    var items = Array.prototype.slice.call(document.querySelectorAll("input.ch")).map(function (c) {
+      var label = c.value === "a Floor is at stake" ? "a Floor is at stake (which one?)" + (c.checked && val("floor_which") ? " " + val("floor_which") : "") : c.value;
+      return "  - [" + (c.checked ? "x" : " ") + "] " + label;
+    }).join("\n");
+    s12 += "**Challenge, change request, or review petition.**\n- **What limit is exceeded, or what should change:**\n" + items + "\n" +
+      "- **What would fix it (optional):** " + optional("fix");
+    if (rtype === "review_petition") { s12 += "\n- **Joining an existing petition:** " + (val("petition_id") || "NONE"); }
+  } else {
+    s12 += "Not applicable.";
+  }
+  b.push(s12);
 
   var c = $("confirm").checked ? "x" : " ";
-  b.push("## 6. Honesty\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
-  b.push("## 7. About you (optional)\n" +
-    "- Name or stable handle: " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
-    "- Contact, for follow-up: " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
-    "- Relationship to the institution: " + (val("who_rel") || "UNKNOWN") + "\n" +
-    "- Verification phrase used? " + (verificationHash ? "yes" : "no"));
-  b.push("## 8. Resolution (filled in later by whoever reviews the report)\n" +
+  b.push("## 13. Honesty\n\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
+  b.push("## 14. The witness\n\n" +
+    "- **Name or handle:** " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
+    "- **Contact:** " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
+    "- **Relationship to the institution:** " + (val("who_rel") || "UNKNOWN") + "\n" +
+    "- **Verification phrase:** " + (verificationHash ? "yes" : "no"));
+  b.push("## 15. Resolution\n\n*Filled in later by whoever reviews the report.*\n\n" +
     "- Response from the institution, and its date:\n" +
-    "- For a stop signal, the result of the independent check: did the trigger fact occur? yes / no / not checked. Date:\n" +
-    "- Effect on the power: did the power itself change (for example paused, stopped, narrowed, changed in another way, or not changed)? Date and source:\n" +
+    "- For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:\n" +
+    "- Effect on the power (paused, stopped, narrowed, changed in another way, or not changed), its date and source:\n" +
     "- Outcome:\n" +
     "- Linked reports:");
-  return fm + "\n\n" + b.join("\n\n") + "\n";
+  b.push("---\n\n## Technical details\n\n*For computers. Left as written.*\n\n```yaml\n" + fm + "\n```");
+  return b.join("\n\n") + "\n";
 }
 
 /* review */
@@ -722,7 +725,7 @@ function render() {
   $("sharewrap").hidden = !share;
   if (!val("own_share") || $("own_share").value === lastOwn) { $("own_share").value = $("own").value; }
   lastOwn = $("own").value;
-  var text = build(), notes = [], names = [], m, body = text.split("## 7.")[0];
+  var text = build(), notes = [], names = [], m, body = text.split("## 14.")[0];
   $("preview").textContent = text;
   TITLE_NAME.lastIndex = 0;
   while ((m = TITLE_NAME.exec(body)) !== null) { if (!ROLE_OK.test(m[1])) { names.push(m[0]); } }

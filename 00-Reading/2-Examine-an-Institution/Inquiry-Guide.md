@@ -105,7 +105,7 @@ An answer from the institution belongs beside the record, as an **authority resp
 
 A record and a witness report are two halves of one picture. A **record** shows how an institution's powers are built: their limits, their stop paths, and their gaps. A **witness report** puts on record what one of those powers did. See the [Witness Report Guide](../1-Something-Happened/Witness-Report-Guide.md).
 
-Either can be made without the other. When both exist, a witness report can name the record, the power, and the part of the record the incident bears on, such as a stop path that did not work (question 2i of the [witness report form](../../02-Forms/02-Witness-Report.md)). A shared record lets people who make reports use it this way.
+Either can be made without the other. When both exist, a witness report can name the record, the power, and the part of the record the incident bears on, such as a stop path that did not work (section 8 of the [witness report form](../../02-Forms/02-Witness-Report.md)). A shared record lets people who make reports use it this way.
 
 ## Purpose
 

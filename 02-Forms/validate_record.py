@@ -25,9 +25,12 @@ What it checks:
     identity choice; verification_hash is NONE or a 64-character SHA-256 code
     (never the secret phrase); record_id is NONE or shaped like a
     registration ID, and power_id is UNKNOWN or P1, P2... (UNKNOWN when
-    record_id is NONE). The optional questions (2f-2i) and section 8 are
-    never required. A witness's private full copy (its body carries the line
-    "**Full copy: private.**") keeps names on purpose: the name and
+    record_id is NONE). The optional sections and the resolution are never
+    required. A witness report may keep its fields at the end, in a ```yaml
+    block under "## Technical details", so a person reads the report first;
+    the older layout, with the fields on top, is still accepted. A witness's
+    private full copy (its first line is "**Full copy. Private.**", or the
+    older "**Full copy: private.**") keeps names on purpose: the name and
     officeholder warnings give way to one warning to keep it private, and its
     file name should end in -PRIVATE
   - links between files checked together: when a witness report and the
@@ -88,6 +91,19 @@ PLACEHOLDER_RE = re.compile(r"\[(Institution name|Institution|short name|S#|Inci
 def load_vocab(path):
     with open(path) as f:
         return yaml.safe_load(f)
+
+
+TECH_BLOCK = re.compile(r"^#{1,3}\s*Technical details[^\n]*\n[\s\S]*?^```ya?ml[ \t]*\n([\s\S]*?)^```[ \t]*\n*\Z", re.M)
+
+
+def split_trailing_block(text):
+    """A witness report may keep its fields at the end, under '## Technical details',
+    in a ```yaml block, so a person reads the report first."""
+    m = TECH_BLOCK.search(text)
+    if not m:
+        return None, text
+    body = re.sub(r"\n---[ \t]*\n\s*$", "\n", text[: m.start()])
+    return m.group(1), body
 
 
 def split_front_matter(text):
@@ -181,7 +197,13 @@ def segments(line, skip_cols):
 ISO_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
 FIRST_HAND_ROW = re.compile(r"my own observation|my_observation", re.I)
 # witness-report sections written from the witness's own experience
-WITNESS_FIRST_HAND = re.compile(r"^#{1,3}\s*(2\.|7\.)|What happened|About you", re.I)
+# Witness report sections that hold the witness's own account and answers. Matched by
+# name, so both layouts work: the older one ("2. What happened", "7. About you") and the
+# current one (single numbers, the witness's account first).
+WITNESS_FIRST_HAND = re.compile(
+    r"What happened|About you|own words|Effect on people|People affected|Earlier warnings|"
+    r"What seems wrong|Protective duty|What this shows|Potential harm|Timeline|^#{1,3}\s*\d+\.\s*The witness\s*$",
+    re.I)
 
 
 def unsourced_numbers(body, r, as_error=True, offset=0, witness=False):
@@ -216,14 +238,14 @@ def unsourced_numbers(body, r, as_error=True, offset=0, witness=False):
         if witness:
             # the witness's own account: first-hand sections, quotes, own-observation
             # evidence rows, and the inventory of what exists are their own source
-            if re.match(r"^\*\*What exists but isn", s):
+            if re.match(r"^\*\*(What exists but isn|Kept, not attached)", s):
                 in_inventory = True
                 continue
             if first_hand or in_inventory or s.startswith(">") or (s.startswith("|") and FIRST_HAND_ROW.search(s)):
                 continue
             if s.startswith("|") and re.search(r"https?://", s):
                 continue    # an evidence row whose source is a link: the link is its source
-            if re.match(r"^[-*]\s*Which institution, and where:", s):
+            if re.match(r"^[-*]\s*(Which institution, and where:|\*\*Institution:\*\*)", s):
                 continue    # a place (a street number, a unit) is not a quantity
             s = ISO_DATE.sub(" ", s)
         for seg in segments(s, skip_cols):
@@ -243,6 +265,7 @@ def _number_in(s):
         cleaned = RULE_REF.sub(" ", cleaned)
         cleaned = re.sub(r"\b(P|S)\d+\b", " ", cleaned)             # power / source ids
         cleaned = re.sub(r"SCBP-[A-Z]+-[\w-]+", " ", cleaned)       # record ids
+        cleaned = re.sub(r"\b[A-Z]{2,}[-/]\d[\w/-]*", " ", cleaned)  # case and complaint numbers such as OPA-2026-0912
         cleaned = re.sub(r"\btier[:\s]*\d\b|\b\d\s*[–-]\s*\d\b", " ", cleaned, flags=re.I)
         cleaned = re.sub(r"^\s*[-*]?\s*\d+[.)]\s", " ", cleaned)    # list numbering
         cleaned = re.sub(r"^\|\s*\d+\s*\|", "|", cleaned)          # table row numbering
@@ -373,7 +396,7 @@ def title_names(body, r, offset=0, witness=False):
             continue
         if skip or in_code or re.match(r"^\|\s*S\d+\s*\|", s):
             continue
-        if witness and re.match(r"^[-*]?\s*Name or stable handle", s):
+        if witness and re.match(r"^[-*]?\s*(Name or stable handle|\*\*Name or handle:\*\*)", s):
             continue        # an identified witness gives their own name here
         for m in TITLE_NAME.finditer(line):
             word = m.group(1)
@@ -613,7 +636,7 @@ def check_witness(fm, body, vocab, r):
     if loc.get("precision") == "withheld" and (loc.get("latitude") not in ("WITHHELD", "UNKNOWN")):
         r.err("precision is withheld but coordinates are given")
     # a full copy keeps names and places on purpose; a copy to share must not
-    full = FULL_COPY in body
+    full = bool(FULL_COPY_RE.search(body))
     base = os.path.splitext(os.path.basename(r.path))[0]
     if full:
         r.warn("full copy: it keeps names, places and contact details as given. Keep it private; "
@@ -621,7 +644,7 @@ def check_witness(fm, body, vocab, r):
         if not base.endswith("-PRIVATE") and not base.startswith("TEST"):
             r.warn(f"file name '{base}' should end in -PRIVATE, since this is a full copy")
     elif base.endswith("-PRIVATE"):
-        r.warn(f"file name '{base}' ends in -PRIVATE but the file has no 'Full copy: private.' line")
+        r.warn(f"file name '{base}' ends in -PRIVATE but the file has no 'Full copy. Private.' line")
     # a town- or region-level place should not name the institution's own premises
     inst = str(fm.get("institution_name") or "").strip()
     desc = str(loc.get("description") or "")
@@ -631,6 +654,8 @@ def check_witness(fm, body, vocab, r):
     # an optional question that was skipped or not asked is UNKNOWN, not "Not applicable"
     for q in re.finditer(r"^(2[fghi])\.[^\n]*?(?:\*\*|:)\s*(?:\n\s*)?not applicable\.?\s*$", body, re.M | re.I):
         r.warn(f"{q.group(1)} says 'Not applicable': if the witness skipped it or was not asked, write UNKNOWN")
+    for sec in re.finditer(r"^#{1,3}\s*(\d+\.[^\n]*\(optional\)[^\n]*)\n+\s*not applicable\.?\s*(?=\n#|\n*\Z)", body, re.M | re.I):
+        r.warn(f"'{sec.group(1).strip()}' says 'Not applicable': if the witness skipped it or was not asked, write UNKNOWN")
     sb = fm.get("stop_signal_basis", "NONE")
     in_vocab(sb, "stop_signal_basis", vocab, r)
     if fm.get("report_type") == "stop_signal" and sb == "NONE":
@@ -646,7 +671,7 @@ def check_witness(fm, body, vocab, r):
               "put only the code here, never the secret phrase")
 
 
-FULL_COPY = "**Full copy: private.**"
+FULL_COPY_RE = re.compile(r"\*\*Full copy(?:: private|\. Private)\.\*\*")
 WR_ID = re.compile(r"SCBP-WR-[A-Z0-9-]+-\d{4}-\d{2}-\d{2}(?:-[A-Z])?")
 
 
@@ -662,7 +687,7 @@ def b11_reports(body):
 
 
 def build_index(paths):
-    """Read every file's front matter once, so links between files given
+    """Read every file's fields once (at the top, or at the end of a witness report), so links between files given
     together can be checked: registrations by record ID (latest version wins)
     and witness reports by report ID."""
     regs, reports = {}, {}
@@ -670,6 +695,8 @@ def build_index(paths):
         try:
             text = open(path, encoding="utf-8").read()
             fm_text, body = split_front_matter(re.sub(r"^(>.*\n|\s*\n)+", "", text))
+            if fm_text is None:
+                fm_text, body = split_trailing_block(text)
             fm = yaml.safe_load(fm_text) if fm_text else None
         except (OSError, yaml.YAMLError):
             continue
@@ -741,8 +768,12 @@ def main(argv):
         # allow a test banner (lines starting with '>') before the front matter
         stripped = re.sub(r"^(>.*\n|\s*\n)+", "", text)
         fm_text, body = split_front_matter(stripped)
+        trailing = False
         if fm_text is None:
-            r.err("no front matter (--- block at top)")
+            fm_text, body = split_trailing_block(text)
+            trailing = fm_text is not None
+        if fm_text is None:
+            r.err("no fields found: a --- block at the top, or a ```yaml block under '## Technical details' at the end")
             r.show(); any_err = True; continue
         try:
             fm = yaml.safe_load(fm_text) or {}
@@ -753,7 +784,9 @@ def main(argv):
             r.show(); any_err = True; continue
         if fm.get("vocab_version") and not vocab_compatible(fm.get("vocab_version"), vocab.get("vocab_version")):
             r.warn(f"record uses vocab {fm.get('vocab_version')}, checker has {vocab.get('vocab_version')}")
-        offset = stripped[: stripped.find(body)].count("\n") + (len(text) - len(stripped) and text[: len(text) - len(stripped)].count("\n"))
+        offset = 0 if trailing else stripped[: stripped.find(body)].count("\n") + (len(text) - len(stripped) and text[: len(text) - len(stripped)].count("\n"))
+        if trailing and "report_id" not in fm:
+            r.err("only witness reports may keep their fields at the end")
         if "response_id" in fm:
             check_response(fm, body, vocab, r)
             check_sources(body, r)
@@ -769,7 +802,7 @@ def main(argv):
         unsourced_numbers(body, r, as_error=not is_witness, offset=offset, witness=is_witness)
         unsourced_cases(body, r, as_error=not is_witness, offset=offset)
         # names are expected in a witness's private full copy; the full-copy warning covers them
-        if not (is_witness and FULL_COPY in body):
+        if not (is_witness and bool(FULL_COPY_RE.search(body))):
             office_conduct(body, r, offset=offset)
             name_heuristic(body, r, offset=offset)
             title_names(body, r, offset=offset, witness=is_witness)

@@ -34,10 +34,10 @@ A regular user of the public computers notices that pages about local news and c
 3. **The library must not decide its own scope.** Whether "Social and Forums" falls inside the authorization is a question about the library's own limits. The library may not settle it by its own reading; it goes to an independent body and into the public interpretation log (Interpretation; 7.3). Meanwhile the narrower reading applies (1.5).
 4. **The independent check (illustrative).** The library's independent reviewer compares the filter settings with the authorization. It confirms that a vendor software update switched on two categories that were not authorized. The vendor is part of the power, so the update is the library's responsibility (4.5).
 5. **Growth is stopped.** A new restriction category is a change of scope, and growth without new authorization is stopped (3.B.1). Only the two added categories are switched off; the authorized filtering continues, because a stop reaches only the operation implicated (3.C.5).
-6. **The library responds on the record.** It answers publicly within its published response window, and its answer is entered in section 8 of the report. It logs the failure in its failure record (7.4) and adds a check of vendor updates to its routine.
+6. **The library responds on the record.** It answers publicly within its published response window, and its answer is entered in section 15 of the report. It logs the failure in its failure record (7.4) and adds a check of vendor updates to its routine.
 7. **Later: renewal.** The event is evidence at P3's renewal. Drift that was found and corrected is part of the drift review; drift found and not corrected would bar renewal (3.E.2). See the [Renewal Workflow](../Renewal-Workflow/Renewal-Review-EXAMPLE.md).
 
-### What section 8 of the report would say afterwards (illustrative)
+### What section 15 of the report would say afterwards (illustrative)
 
 - *Response from the institution, and its date:* the library confirmed a vendor update had switched on two unauthorized categories, and switched them off.
 - *Outcome:* growth stopped under 3.B.1; failure recorded (7.4); vendor-update check added.
