@@ -119,7 +119,7 @@ People subject to a power can require that it be brought for **early review, nar
 - **Outcome:** early review may narrow, shorten, or end a power. It may never lengthen its term.
 - **No pause by itself.** A petition does not pause the power. Stop signals do that.
 
-To join an existing petition, give its ID in the form (section 4c).
+To join an existing petition, give its ID in the form (section 13).
 
 A successful review petition also takes away a power's minor status (3.A.4).
 
@@ -142,11 +142,11 @@ Use the **Witness Report form, v1**. Most people should start with the plain [Wi
 
 A registration record shows how a power is built: its limits, its protections, and what can stop it. A witness report shows what the power did to a person. Each makes the other easier to read.
 
-The form's optional section 8, "What this shows about the power", asks what the incident shows about the power in general: a protection or exemption that did not work, a way to challenge it that was not there, a limit that was crossed, or something the institution does that is not written down. If the reporter knows of a registration record, they can name it, the power, and the part the report bears on: a stop path (B5), a requirement row (B4), or a Floor.
+The form's optional section 10, "Does this happen to others?", asks what the incident shows about the power in general: a protection or exemption that did not work, a way to challenge it that was not there, a limit that was crossed, or something the institution does that is not written down. If the reporter knows of a registration record, they can name it, the power, and the part the report bears on: a stop path (B5), a requirement row (B4), or a Floor.
 
 In v1 nothing is collected, so the connection lives in the report itself. It lets anyone the reporter chooses to share it with, such as a lawyer, an oversight body, or a journalist, see what the incident says about how the power works, not only what happened once. If a place to send reports exists in future, the same answers would let reports about one power be read together (7.5, 7.7).
 
-No one needs a record, or needs to answer section 8, to make a report.
+No one needs a record, or needs to answer section 10, to make a report.
 
 ### Choosing how identified you are
 

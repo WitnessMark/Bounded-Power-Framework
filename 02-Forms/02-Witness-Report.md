@@ -68,11 +68,11 @@ Save the copy to share as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`, and the private co
 
 **How it is written.** Everyday words, short sentences, one fact to a sentence. It is your report, so it says "I": "I called the office on 2026-10-15." Other people are named by their role. Each section starts with a prompt in italics; replace it with your answer, or with UNKNOWN.
 
-**The optional sections** (6 to 9) can be skipped. Each is UNKNOWN if skipped.
-- **6, what feels wrong about it,** is your concern in your own words. No rule or law needs to be named.
-- **7, what they should have done,** asks what you saw or know. It does not ask you to decide whether a rule was broken.
-- **8, does this happen to others,** asks whether what happened says something about how this works for everyone. If you know of a registration record for whoever did it, it can also name the part of the record this bears on. You do not need one.
-- **9, could it get worse or last,** is a warning, not a finding or a score. It does not change the stop-signal rules. An independent checking body still looks at the evidence.
+**The optional sections** (8 to 11) can be skipped. Each is UNKNOWN if skipped.
+- **8, what feels wrong about it,** is your concern in your own words. No rule or law needs to be named.
+- **9, what they should have done,** asks what you saw or know. It does not ask you to decide whether a rule was broken.
+- **10, does this happen to others,** asks whether what happened says something about how this works for everyone. If you know of a registration record for whoever did it, it can also name the part of the record this bears on. You do not need one.
+- **11, could it get worse or last,** is a warning, not a finding or a score. It does not change the stop-signal rules. An independent checking body still looks at the evidence.
 
 Section 15 is filled in later by whoever reviews the report. Leave it blank.
 
@@ -97,45 +97,52 @@ Section 15 is filled in later by whoever reviews the report. Leave it blank.
 
 **What I have (not attached).** *Each item, and where you keep it: "letter dated…", "photos on my phone", "case number…".*
 
-## 3. How it affected people
-
-*What it did to you or to others: money, health, housing, work, safety, fear.*
-
-## 4. Who was affected, and who else was there
-
-*Who was affected, and roughly how many. Whether any of them never chose to deal with whoever did it. Who else saw or heard it, by role.*
-
-## 5. Was it reported before?
-
-*Whether you or anyone else raised it with them, or with anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
-
-## 6. What feels wrong about it (optional)
-
-*Your concern, in your own words.*
-
-## 7. What they should have done (optional)
-
-*Something they were supposed to do to protect people and did not do, did late, or did only for some.*
-
-## 8. Does this happen to others? (optional)
-
-*Whether this shows how it works for everyone: a protection or deadline that did not work, no way to challenge it or no one explaining how, a limit that was crossed, something they do that is written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
-
-## 9. Could it get worse, or last? (optional)
-
-*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so.*
-
-## 10. Timeline
-
-*What happened, in order, with dates and times where you know them. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date you saw it.*
-
-## 11. Who did it, and what they control
+## 3. Who did it, and what they control
 
 - **Who:** *the name people know them by, and where: a company, agency, school, landlord, employer, official.*
 - **What they did:** *in plain words: evicted, fined, cut off, arrested, flagged, watched, denied a benefit.*
 - **Registration record:** [record_id and power_id, or NONE]
 
-## 12. Asking for something to stop or change
+## 4. About you
+
+- **Name or handle:**
+- **Contact:**
+- **How you are connected to them:**
+- **Verification phrase:** yes / no
+
+## 5. How it affected people
+
+*What it did to you or to others: money, health, housing, work, safety, fear.*
+
+## 6. Who was affected, and who else was there
+
+*Who was affected, and roughly how many. Whether any of them never chose to deal with whoever did it. Who else saw or heard it, by role.*
+
+## 7. Was it reported before?
+
+*Whether you or anyone else raised it with them, or with anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
+
+## 8. What feels wrong about it (optional)
+
+*Your concern, in your own words.*
+
+## 9. What they should have done (optional)
+
+*Something they were supposed to do to protect people and did not do, did late, or did only for some.*
+
+## 10. Does this happen to others? (optional)
+
+*Whether this shows how it works for everyone: a protection or deadline that did not work, no way to challenge it or no one explaining how, a limit that was crossed, something they do that is written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
+
+## 11. Could it get worse, or last? (optional)
+
+*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so.*
+
+## 12. Timeline
+
+*What happened, in order, with dates and times where you know them. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date you saw it.*
+
+## 13. Asking for something to stop or change
 
 *Only for a stop signal, a challenge, a change request or a review petition. For anything else, write "Not applicable."*
 
@@ -160,19 +167,12 @@ Section 15 is filled in later by whoever reviews the report. Leave it blank.
 - **What would fix it (optional):**
 - **Joining an existing petition:** its ID, or NONE.
 
-## 13. Honesty
+## 14. Honesty
 
 - [ ] Made in good faith.
 - [ ] Public sources and my own observation only.
 - [ ] Roles, not names, in any copy I share.
 - [ ] Facts kept separate from allegations.
-
-## 14. About you
-
-- **Name or handle:**
-- **Contact:**
-- **How you are connected to them:**
-- **Verification phrase:** yes / no
 
 ## 15. What happened next
 

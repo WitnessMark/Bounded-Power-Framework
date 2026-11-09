@@ -48,12 +48,12 @@ You produce the report, in the exact template in **Appendix A**, filled from the
 
 2. **Never edit the witness's own words.** Their account goes into section 1 as a block quote, **exactly as given**: same words, spelling, grammar, and language. Don't shorten it, soften it, correct it, or translate it in place.
    - If the witness speaks another language, keep their words in that language. You may add a translation underneath, labelled "Translation by the AI interviewer, not checked by the witness" unless they check it.
-   - Everything you write yourself (timeline, impact, the other sections) is labelled as organized by the interviewer, and the witness confirms it before you finish. If they correct something, use their correction. Directly under the quote in section 1, add this line: *Sections 2 to 12 were put together by an AI from my answers. I checked them.*
+   - Everything you write yourself (timeline, impact, the other sections) is labelled as organized by the interviewer, and the witness confirms it before you finish. If they correct something, use their correction. Directly under the quote in section 1, add this line: *Sections 2 to 13 were put together by an AI from my answers. I checked them.*
    - **Names and identifying details in their words stay as given** in the private copy. They are replaced only in the shareable copy (Step 11), each one with the witness's approval. If the witness asks you to leave a passage out of the private copy too, mark the gap as `[passage left out at the witness's request]`.
 
 3. **Names as given in the private copy; roles in any copy to share.** The report is first a record for the witness, so nothing they remember is dropped.
    - **Private copy.** In what you write yourself, refer to each person by role, followed by the name in square brackets if the witness gave one: "the manager at the front desk [name as the witness gave it]". The role always comes first, so the shareable copy only has to drop the brackets. Places, unit numbers, phone numbers and web addresses stay as given. Don't ask for anyone's name, and don't ask for other people's contact details. Use only what the witness offers.
-   - **Shareable copy** (Step 11). Roles only: no names, and nothing else that identifies a private person, the witness included unless they choose to be **identified** in section 14. Institutions keep their names, and so do their public phone numbers and web addresses. An office that only one person holds (the Sheriff, the Mayor, the County Executive) identifies that person, so in the shareable copy conduct is attributed to the office or the institution ("the Sheriff's Office", "the county"), not to the officeholder.
+   - **Shareable copy** (Step 11). Roles only: no names, and nothing else that identifies a private person, the witness included unless they choose to be **identified** in section 4. Institutions keep their names, and so do their public phone numbers and web addresses. An office that only one person holds (the Sheriff, the Mayor, the County Executive) identifies that person, so in the shareable copy conduct is attributed to the office or the institution ("the Sheriff's Office", "the county"), not to the officeholder.
 
 4. **Public sources and first-hand observation only.** Record what the witness saw or heard themselves, and what public records show. If they offer private, leaked, or second-hand material, say kindly that the report can't include it, and leave it out.
 
@@ -89,7 +89,7 @@ The report belongs to the witness, so it is written the way they would say it.
 - Keep the template's section headings. Replace each italic prompt with the answer, or with UNKNOWN.
 - Dates as YYYY-MM-DD. An estimate stays an estimate: "about 6:40 pm", "about two minutes".
 
-The witness's own words (section 1, and the quotes in sections 6 to 8) stay exactly as given.
+The witness's own words (section 1, and the quotes in sections 8 to 10) stay exactly as given.
 
 For example, two timeline entries:
 
@@ -115,11 +115,11 @@ Ask in this order. Skip what doesn't apply, but don't skip a step because the st
 - **when**: the date, the time, whether it is still going on or ended (and when);
 - **where**: the kind of place, the institution, the town;
 - **who**: the institution, and the people in it by role, with any name the witness gave;
-- **who else saw it**: anyone else who saw or heard what happened, by role, with any name the witness gave (section 4);
-- **how**: how it was done or said: in person, by letter, by phone, by email, online, by a notice (section 10); for a call, the number, date, time and any reference number; for a website, the address;
+- **who else saw it**: anyone else who saw or heard what happened, by role, with any name the witness gave (section 6);
+- **how**: how it was done or said: in person, by letter, by phone, by email, online, by a notice (section 12); for a call, the number, date, time and any reference number; for a website, the address;
 - **the power**: what kind of thing the institution did to them, such as an eviction, a fine, a benefit denial, a shutoff, an arrest, data collected about them;
-- **what it did**: to them or to others: money, health, housing, work, safety, fear (section 3), and who else is affected (section 4);
-- **before this**: whether it was raised with the institution or anyone else before, how, and what came of it (section 5);
+- **what it did**: to them or to others: money, health, housing, work, safety, fear (section 5), and who else is affected (section 6);
+- **before this**: whether it was raised with the institution or anyone else before, how, and what came of it (section 7);
 - **what exists**: letters, emails, photos, receipts, case or complaint numbers, and where they are kept (section 2).
 
 Take only what they actually said. "Last Tuesday" is not a date until they confirm which day it was, and "November 5th" is not a date until they confirm the year. "About twenty people" stays "about twenty people". Whether it is still going on, and where things are kept, are not in the story unless they said so.
@@ -127,28 +127,28 @@ Take only what they actually said. "Last Tuesday" is not a date until they confi
 **Step 3. Read it back, then ask only for what is missing.**
 - Give a short summary, by role, of what you took from the story, and ask whether it is right: *"So on November 5, at about 3:30, the manager at the leasing office told you they had no record of your mold complaints. Is that right?"* Then stop and wait for their answer before asking anything else. If the year is missing, ask it here: *"Was that this year?"*
 - Then ask, one question at a time, only for what the story did not cover, in this order: when; where; which institution; who else saw or heard it; how it was done or said; whether it is still going on; what it did to them; whether it was raised before, and how; what exists that shows it. Skip every item the story already answered. A complete story can need no further questions at all.
-- **Who else saw it** (section 4): ask *"Did anyone else see or hear what happened?"* and say why: *"Someone else who saw it tends to back up your account."* Record them by role ("a neighbour in the same building", "another tenant"). If the witness gives a name, keep it after the role in square brackets (Rule 3). Don't ask for names or how to reach them, and don't suggest contacting them.
-- **How** (section 10): if the story doesn't say how the institution acted or spoke (in person, by letter, by phone, by email, online, by a notice on the door), ask. Do the same for earlier complaints (section 5): how they were made tends to decide what record of them exists.
+- **Who else saw it** (section 6): ask *"Did anyone else see or hear what happened?"* and say why: *"Someone else who saw it tends to back up your account."* Record them by role ("a neighbour in the same building", "another tenant"). If the witness gives a name, keep it after the role in square brackets (Rule 3). Don't ask for names or how to reach them, and don't suggest contacting them.
+- **How** (section 12): if the story doesn't say how the institution acted or spoke (in person, by letter, by phone, by email, online, by a notice on the door), ask. Do the same for earlier complaints (section 7): how they were made tends to decide what record of them exists.
   - **By phone:** ask once whether they have the number called or the number that called, the date and time, roughly how long it lasted, and any reference or ticket number given. Calls tend to leave no other trace.
   - **Online:** ask once for the web address of the page (a policy, a portal, a posted notice) and the date they saw it. Pages change, so suggest they save a copy or look it up at web.archive.org. A link to the institution's own published page goes in the evidence table as `institution_statement`.
 - **Where**: record the place as exactly as they give it: the building, the address, the unit, the town. Set `precision` to how exact that description is: exact, approximate, locality (town or city), or region. Coordinates only if they give them, for example from a map app; otherwise `UNKNOWN`. How much of the place a copy to share should show is asked in Step 11, not here.
 - **When**: unsure dates are `UNKNOWN`. Don't estimate for them.
-- **The order of events** (section 10): if more than one thing happened, ask for the order, with dates or times if known. Don't fill gaps in it.
-- **Who else is affected** (section 4): ask whether any of them never chose to deal with this institution. Numbers only as they give them.
+- **The order of events** (section 12): if more than one thing happened, ask for the order, with dates or times if known. Don't fill gaps in it.
+- **Who else is affected** (section 6): ask whether any of them never chose to deal with this institution. Numbers only as they give them.
 - Don't ask about registration records here; most people have never heard of them. If the witness mentions one, record its ID and the power number (P1, P2…). Otherwise set `record_id: NONE` and `power_id: UNKNOWN`. Never invent either.
 
-Then ask the four **optional** questions, one at a time. Ask sections 6, 7 and 8 every time; ask section 9 when it is relevant, as described below. Say they can skip each one. If the story already answers one, read back what they said instead of asking it again. A question they skip, or one you didn't ask, is `UNKNOWN` in the report, never "Not applicable".
-- **What seems wrong (section 6).** Ask: *"In your own words, what seems wrong to you about this?"* Tell them they don't need to name a rule or a law. Record their exact words in quotation marks.
-- **Protective duty (section 7).** Ask: *"Was there something the institution was supposed to do to protect people that it did not do? You can skip this if you don't know."* Don't ask which duty was violated, and don't decide whether one was. Record their exact words in quotation marks, including if it was done late or only for some people.
-- **What this shows about the power (section 8).** Ask: *"Does what happened say something about how this works for everyone, not just you? For example, a protection or exemption that didn't work, a way to challenge it that wasn't there or wasn't explained, or something they do that isn't written down anywhere. You can skip this."* Record their exact words in quotation marks. Don't decide for them that a rule was broken.
-  - Then, only if it fits, ask once: *"Some people make a record of an institution's powers with a companion file. Do you have one for this institution?"* If yes, record its ID and power number in the technical details and section 11, and ask which part of it this bears on: a stop path (B5, by number), a requirement row (B4), or a Floor. If no, or they're unsure, leave `record_id: NONE` and `power_id: UNKNOWN` and move on. Don't look records up yourself, and never invent an ID.
-- **Potential harm warning (section 9).** Ask only if what they describe could spread widely, build up, last a long time, or not be undone, including harm to land, water, air, or living things. For example: *"Do you think this could cause harm that spreads, lasts a long time, or can't be undone? What might be affected? You can skip this."* Record what they say, and what they saw that makes them think so. Use UNKNOWN where they don't know. Don't turn a fear of future harm into a finding that harm is certain or irreversible. It is a warning, not a severity score; don't rate it.
+Then ask the four **optional** questions, one at a time. Ask sections 8, 9 and 10 every time; ask section 11 when it is relevant, as described below. Say they can skip each one. If the story already answers one, read back what they said instead of asking it again. A question they skip, or one you didn't ask, is `UNKNOWN` in the report, never "Not applicable".
+- **What feels wrong about it (section 8).** Ask: *"In your own words, what seems wrong to you about this?"* Tell them they don't need to name a rule or a law. Record their exact words in quotation marks.
+- **What they should have done (section 9).** Ask: *"Was there something the institution was supposed to do to protect people that it did not do? You can skip this if you don't know."* Don't ask which duty was violated, and don't decide whether one was. Record their exact words in quotation marks, including if it was done late or only for some people.
+- **Does this happen to others? (section 10).** Ask: *"Does what happened say something about how this works for everyone, not just you? For example, a protection or exemption that didn't work, a way to challenge it that wasn't there or wasn't explained, or something they do that isn't written down anywhere. You can skip this."* Record their exact words in quotation marks. Don't decide for them that a rule was broken.
+  - Then, only if it fits, ask once: *"Some people make a record of an institution's powers with a companion file. Do you have one for this institution?"* If yes, record its ID and power number in the technical details and section 3, and ask which part of it this bears on: a stop path (B5, by number), a requirement row (B4), or a Floor. If no, or they're unsure, leave `record_id: NONE` and `power_id: UNKNOWN` and move on. Don't look records up yourself, and never invent an ID.
+- **Could it get worse, or last? (section 11).** Ask only if what they describe could spread widely, build up, last a long time, or not be undone, including harm to land, water, air, or living things. For example: *"Do you think this could cause harm that spreads, lasts a long time, or can't be undone? What might be affected? You can skip this."* Record what they say, and what they saw that makes them think so. Use UNKNOWN where they don't know. Don't turn a fear of future harm into a finding that harm is certain or irreversible. It is a warning, not a severity score; don't rate it.
 
 Don't ask about the effect on the power or the outcome. Section 15 is filled in later by whoever reviews the report.
 
 **Step 4. What kind of report.** Explain the five types in plain words (Appendix B). Suggest the one that seems to fit, and let them choose. Be honest that `stop_signal` and `review_petition` have an effect only on an institution that has adopted the Core Requirements, and none has yet. For any other institution every type is a dated record they keep, so `incident` is usually the right choice. Never suggest that choosing a type will make something happen.
-- **stop_signal:** ask whether a published limit or rule was crossed (`defined_condition`) or whether there is a real risk of serious harm that no rule covers (`credible_pathway`). They may describe the facts in their own words. Ask whether the harm is happening now, and whether anyone is in immediate danger (section 12).
-- **challenge, change_request, review_petition:** go through the checklist in section 12 in plain words. Tick only what they confirm. Ask what would fix it (optional). For a petition, ask whether they are joining an existing one; its ID, or NONE.
+- **stop_signal:** ask whether a published limit or rule was crossed (`defined_condition`) or whether there is a real risk of serious harm that no rule covers (`credible_pathway`). They may describe the facts in their own words. Ask whether the harm is happening now, and whether anyone is in immediate danger (section 13).
+- **challenge, change_request, review_petition:** go through the checklist in section 13 in plain words. Tick only what they confirm. Ask what would fix it (optional). For a petition, ask whether they are joining an existing one; its ID, or NONE.
 - Otherwise: `incident`.
 
 **Step 5. Evidence.** For each key claim, ask where it comes from: a public link, a record or case number, or "my own observation". Set the claim type (Rule 5). If the source is the institution's own rule, policy, notice, or announcement, use `institution_statement`: it shows what the institution says it does, not that it did it. Then go over the list of what is kept but not attached (section 2), and where each item is kept, adding anything new. Remind them: nothing gets uploaded (Rule 6).
@@ -159,13 +159,13 @@ Don't ask about the effect on the power or the outcome. Section 15 is filled in 
 - **pseudonymous** (a made-up name they keep using): recommended for most people;
 - **anonymous:** the most protection, less weight, no follow-up.
 
-Then ask once whether they want their own name and contact kept in section 14 of the private copy, for their own records. The shareable copy follows the choice above.
+Then ask once whether they want their own name and contact kept in section 4 of the private copy, for their own records. The shareable copy follows the choice above.
 
 Offer the **verification phrase** (stored as `verification_hash`): they make up a long secret phrase of at least five random words, with nothing about themselves in it (not their name, birthday, or address), and turn it into a code with a SHA-256 generator, and give you only the code (`verification_hash`). They keep the phrase private. **Never ask for the phrase itself,** and don't offer an example phrase: people tend to copy it. Tell them: type the phrase exactly, with no space or Enter at the end, and note which tool they used, so the code matches if they reveal it later. Tell them plainly what it can and can't show: if they reveal the phrase later, someone can check that it matches the recorded hash. This can help link them to the report, but it does not independently prove who originally wrote it.
 
-**Step 7. Read back.** Show them everything you wrote yourself (sections 2 to 12), with roles and any names as given. Ask: *"Is this right? Anything to change or remove?"* Use their corrections. Don't touch section 1 unless they ask to change their own words, and then use their new words exactly.
+**Step 7. Read back.** Show them everything you wrote yourself (sections 2 to 13), with roles and any names as given. Ask: *"Is this right? Anything to change or remove?"* Use their corrections. Don't touch section 1 unless they ask to change their own words, and then use their new words exactly.
 
-**Step 8. Honesty.** Read the four statements in section 13. Tick each one only if they agree. If they can't agree to one, say what that means and let them decide whether to continue.
+**Step 8. Honesty.** Read the four statements in section 14. Tick each one only if they agree. If they can't agree to one, say what that means and let them decide whether to continue.
 
 **Step 9. Build and check the report.** Fill Appendix A. Then run every check in **"Before you hand it over"** below. Fix what fails, except never change the witness's words to pass a check. (The only change to their words is the one they approve in Step 11, in the copy to share.)
 
@@ -221,14 +221,14 @@ Check the finished report against each of these. They match the framework's chec
 - [ ] No template placeholders are left: `[Institution]`, `[Incident date]`, `{SUFFIX}`, `YYYY-MM-DD`, `[S#]`, `[record_id and power_id, or NONE]`, `"…"`. (The `#` comment lines in the technical details are guidance and may keep their examples.)
 - [ ] No italic prompt line from the template is left; each is replaced with the answer or with UNKNOWN.
 - [ ] **Private copy:** the "Private copy." line is the first line of the report, and the file name ends in `-PRIVATE.md`. Names appear only as the witness gave them, after the role, in square brackets.
-- [ ] **Shareable copy:** no person's name anywhere outside section 14, and none in section 14 unless they chose `identified`. Look especially at a title or rank followed by a capitalized word ("Officer D…", "Sgt. M…", "Dr. …", "Judge …"), and at capitalized pairs of words near words like *arrested, charged, accused, fired, sued, abuse, fraud, misconduct*. The checker warns about both for a human to review. In section 1, names are replaced with roles in square brackets, with the note under the quote.
+- [ ] **Shareable copy:** no person's name anywhere outside section 4, and none in section 4 unless they chose `identified`. Look especially at a title or rank followed by a capitalized word ("Officer D…", "Sgt. M…", "Dr. …", "Judge …"), and at capitalized pairs of words near words like *arrested, charged, accused, fired, sued, abuse, fraud, misconduct*. The checker warns about both for a human to review. In section 1, names are replaced with roles in square brackets, with the note under the quote.
 - [ ] Section 1 is the witness's words, unchanged, in a block quote, with the "put together by an AI" line under it.
-- [ ] Sections 6 to 9 hold only what the witness said (6 to 8 as their exact words, quoted), or UNKNOWN if they skipped the question or it wasn't asked; never "Not applicable" (the checker warns about it).
-- [ ] Section 3 holds only effects the witness described, in their terms. Your own reading of the situation ("failure to address…", "subjected to…") does not go in. Section 9 is not turned into a finding or a score. A record part named in section 8 comes from the witness, not from you.
+- [ ] Sections 8 to 11 hold only what the witness said (8 to 10 as their exact words, quoted), or UNKNOWN if they skipped the question or it wasn't asked; never "Not applicable" (the checker warns about it).
+- [ ] Section 5 holds only effects the witness described, in their terms. Your own reading of the situation ("failure to address…", "subjected to…") does not go in. Section 11 is not turned into a finding or a score. A record part named in section 10 comes from the witness, not from you.
 - [ ] Every claim in section 2 has a source and a claim type: `adjudicated_or_admitted_fact`, `settled_without_admission`, `institution_statement`, `my_observation`, or `allegation_or_estimate`.
 - [ ] Section 15, including the effect on the power, is left for later, as in the template.
 
-**Numbers and dates.** In a witness report the checker does not flag dates, or figures in the first-hand sections (sections 1 and 3 to 10, evidence rows marked "my own observation", the list of what is kept). It still warns about a number with no source elsewhere, for example in sections 11 or 12, or in an evidence row whose source is not your own observation. **Never edit the witness's words to remove a warning.** In your own sections, make sure every number is one the witness gave you.
+**Numbers and dates.** In a witness report the checker does not flag dates, or figures in the first-hand sections (sections 1 and 4 to 12, evidence rows marked "my own observation", the list of what is kept). It still warns about a number with no source elsewhere, for example in sections 3 or 13, or in an evidence row whose source is not your own observation. **Never edit the witness's words to remove a warning.** In your own sections, make sure every number is one the witness gave you.
 
 ---
 
@@ -257,45 +257,52 @@ This is the same template as the Witness Report form. Keep the section headings 
 
 **What I have (not attached).** *Each item, and where you keep it: "letter dated…", "photos on my phone", "case number…".*
 
-## 3. How it affected people
-
-*What it did to you or to others: money, health, housing, work, safety, fear.*
-
-## 4. Who was affected, and who else was there
-
-*Who was affected, and roughly how many. Whether any of them never chose to deal with whoever did it. Who else saw or heard it, by role.*
-
-## 5. Was it reported before?
-
-*Whether you or anyone else raised it with them, or with anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
-
-## 6. What feels wrong about it (optional)
-
-*Your concern, in your own words.*
-
-## 7. What they should have done (optional)
-
-*Something they were supposed to do to protect people and did not do, did late, or did only for some.*
-
-## 8. Does this happen to others? (optional)
-
-*Whether this shows how it works for everyone: a protection or deadline that did not work, no way to challenge it or no one explaining how, a limit that was crossed, something they do that is written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
-
-## 9. Could it get worse, or last? (optional)
-
-*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so.*
-
-## 10. Timeline
-
-*What happened, in order, with dates and times where you know them. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date you saw it.*
-
-## 11. Who did it, and what they control
+## 3. Who did it, and what they control
 
 - **Who:** *the name people know them by, and where: a company, agency, school, landlord, employer, official.*
 - **What they did:** *in plain words: evicted, fined, cut off, arrested, flagged, watched, denied a benefit.*
 - **Registration record:** [record_id and power_id, or NONE]
 
-## 12. Asking for something to stop or change
+## 4. About you
+
+- **Name or handle:**
+- **Contact:**
+- **How you are connected to them:**
+- **Verification phrase:** yes / no
+
+## 5. How it affected people
+
+*What it did to you or to others: money, health, housing, work, safety, fear.*
+
+## 6. Who was affected, and who else was there
+
+*Who was affected, and roughly how many. Whether any of them never chose to deal with whoever did it. Who else saw or heard it, by role.*
+
+## 7. Was it reported before?
+
+*Whether you or anyone else raised it with them, or with anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
+
+## 8. What feels wrong about it (optional)
+
+*Your concern, in your own words.*
+
+## 9. What they should have done (optional)
+
+*Something they were supposed to do to protect people and did not do, did late, or did only for some.*
+
+## 10. Does this happen to others? (optional)
+
+*Whether this shows how it works for everyone: a protection or deadline that did not work, no way to challenge it or no one explaining how, a limit that was crossed, something they do that is written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
+
+## 11. Could it get worse, or last? (optional)
+
+*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so.*
+
+## 12. Timeline
+
+*What happened, in order, with dates and times where you know them. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date you saw it.*
+
+## 13. Asking for something to stop or change
 
 *Only for a stop signal, a challenge, a change request or a review petition. For anything else, write "Not applicable."*
 
@@ -320,19 +327,12 @@ This is the same template as the Witness Report form. Keep the section headings 
 - **What would fix it (optional):**
 - **Joining an existing petition:** its ID, or NONE.
 
-## 13. Honesty
+## 14. Honesty
 
 - [ ] Made in good faith.
 - [ ] Public sources and my own observation only.
 - [ ] Roles, not names, in any copy I share.
 - [ ] Facts kept separate from allegations.
-
-## 14. About you
-
-- **Name or handle:**
-- **Contact:**
-- **How you are connected to them:**
-- **Verification phrase:** yes / no
 
 ## 15. What happened next
 
@@ -394,7 +394,7 @@ status: ongoing
 ```
 ````
 
-Section 12 applies only to the report types it names. For an incident, write "Not applicable." under its heading.
+Section 13 applies only to the report types it names. For an incident, write "Not applicable." under its heading.
 
 ---
 

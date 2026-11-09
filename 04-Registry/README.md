@@ -12,7 +12,7 @@ It is a **self-assessment, not a self-certification.** The project classified it
 
 The framework is designed to hold records of real institutions as a public register, and to report across them. A later version is intended to keep registration records as a public record, under published operating rules, and to publish aggregate reports drawn from them: which powers have no independent stop, which have no expiry, which reach a Floor, how findings change from one version of a record to the next, and how many witness reports concern each power and place.
 
-The forms already carry what a register needs: stable record and report identifiers; a link from each witness report to the record and power it concerns (section 8 of the witness report), and from each power to the reports about it (B11); versions that never replace what they supersede; and authority responses filed beside the records they answer.
+The forms already carry what a register needs: stable record and report identifiers; a link from each witness report to the record and power it concerns (section 10 of the witness report), and from each power to the reports about it (B11); versions that never replace what they supersede; and authority responses filed beside the records they answer.
 
 How witness reports would be received, and what of them would be published, is for the register's operating rules to set. The Core Requirements already set the standard such a record would follow: it never identifies the people who give reports (7.5).
 

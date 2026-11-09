@@ -8,7 +8,7 @@
 
 > "The authority posts the well test results on the board outside the scale house and on its website. The permit says if the leachate number in the downhill well goes over 50, they stop putting waste in the new cell and tell the state. The September sheet says 74 for that well. August was 48. They kept dumping in the new cell the whole next week, I watched the trucks go up there. The creek behind the fence has been orange near the culvert since about the middle of the month. I'm not giving my name because I need to keep working around here."
 
-*Sections 2 to 12 are organized by the AI interviewer from the witness's answers. The witness checked them.*
+*Sections 2 to 13 are organized by the AI interviewer from the witness's answers. The witness checked them.*
 
 ## 2. Proof
 
@@ -22,35 +22,48 @@
 
 **What I have (not attached).** The posted monitoring sheets for August and September, on the board outside the scale house and on the authority's website. The published permit, on the authority's website. The witness wrote down the well numbers in a notebook kept at home. No photos are attached.
 
-## 3. How it affected people
+## 3. Who did it, and what they control
+
+- **Who:** [COUNTY] Solid Waste Authority, which runs the regional landfill in [COUNTY], [STATE].
+- **What they did:** running a landfill and deciding what goes into it, which affects the water that neighbours and the creek depend on.
+- **Registration record:** NONE
+
+## 4. About you
+
+- **Name or handle:** NONE (anonymous)
+- **Contact:** NONE
+- **How you are connected to them:** works nearby and sees the landfill most days
+- **Verification phrase:** no
+
+## 5. How it affected people
 
 The witness says the creek water has changed colour near the culvert. The witness does not know whether anyone's drinking water has been affected. Health effects: UNKNOWN.
 
-## 4. Who was affected, and who else was there
+## 6. Who was affected, and who else was there
 
 Households near the landfill that use private wells, people who fish or walk along the creek, and the creek itself. The witness does not know how many households use wells nearby. None of the neighbours chose to live next to this cell; the witness says the new cell opened after most of them already lived there.
 
-## 5. Was it reported before?
+## 7. Was it reported before?
 
 The published permit sets the limit and the stop step, so the authority knew the risk in advance. The witness does not know whether anyone has told the authority or the state about the September result. The witness has not raised it directly, for fear of losing work. Whether the state has inspected since: UNKNOWN.
 
-## 6. What feels wrong about it (optional)
+## 8. What feels wrong about it (optional)
 
 "They wrote their own rule and put the number on the board and then just kept going like it didn't say anything."
 
-## 7. What they should have done (optional)
+## 9. What they should have done (optional)
 
 The witness says the permit requires the authority to stop placing waste in the new cell and tell the state when the downhill well goes over the limit. The witness saw waste still going into the cell after the result was posted.
 
-## 8. Does this happen to others? (optional)
+## 10. Does this happen to others? (optional)
 
 UNKNOWN
 
-## 9. Could it get worse, or last? (optional)
+## 11. Could it get worse, or last? (optional)
 
 The witness is worried that leachate could reach the groundwater and the creek and stay there for years, and that it could not be cleaned up once it spreads. What may be affected: private wells downhill, the creek, and the fish and plants in it. Extent and duration: UNKNOWN. What supports the concern: the rise in the posted well result from August to September, and the orange water near the culvert.
 
-## 10. Timeline
+## 12. Timeline
 
 - August 2026: the posted monitoring sheet showed 48 for the downhill well, under the published limit of 50 that the witness read in the permit.
 - Around the middle of September 2026 (exact day UNKNOWN): the witness first saw orange water in the creek near the culvert.
@@ -58,13 +71,7 @@ The witness is worried that leachate could reach the groundwater and the creek a
 - 2026-09-30 to 2026-10-06: the witness saw trucks keep tipping waste in the new cell.
 - 2026-11-05: the witness says waste is still going into the new cell.
 
-## 11. Who did it, and what they control
-
-- **Who:** [COUNTY] Solid Waste Authority, which runs the regional landfill in [COUNTY], [STATE].
-- **What they did:** running a landfill and deciding what goes into it, which affects the water that neighbours and the creek depend on.
-- **Registration record:** NONE
-
-## 12. Asking for something to stop or change
+## 13. Asking for something to stop or change
 
 **Stop signal.**
 
@@ -76,19 +83,12 @@ The witness is worried that leachate could reach the groundwater and the creek a
 
 Whether the authority has adopted the Core Requirements: UNKNOWN. If it has not, this signal is a dated record and does not pause anything.
 
-## 13. Honesty
+## 14. Honesty
 
 - [x] Made in good faith.
 - [x] Public sources and my own observation only.
 - [x] Roles, not names, in any copy I share.
 - [x] Facts kept separate from allegations.
-
-## 14. About you
-
-- **Name or handle:** NONE (anonymous)
-- **Contact:** NONE
-- **How you are connected to them:** works nearby and sees the landfill most days
-- **Verification phrase:** no
 
 ## 15. What happened next
 

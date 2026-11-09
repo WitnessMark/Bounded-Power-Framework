@@ -8,7 +8,7 @@
 
 > "At back to school night the assistant principal showed us a slide about the new behavior system. It reads the hallway pass logs and the teachers' notes and the attendance and it gives a flag when a kid hits a certain score. She said three flags means an automatic referral to the discipline office. I asked who checks the flags before they count and she said the system is very accurate. I asked if parents get told and can see why, and she said they were still working that out. My son hasn't been flagged that I know of. I just don't want him or any kid to get a referral on their record because a computer added up some numbers."
 
-*Sections 2 to 12 are organized by the AI interviewer from the witness's answers. The witness checked them.*
+*Sections 2 to 13 are organized by the AI interviewer from the witness's answers. The witness checked them.*
 
 ## 2. Proof
 
@@ -21,47 +21,54 @@
 
 **What I have (not attached).** The witness's email to the district office, dated 2026-09-08, in the witness's sent mail. The presentation slide, which the district showed on screen; whether it was handed out or posted: UNKNOWN. Nothing is attached.
 
-## 3. How it affected people
-
-No harm to the witness's child that the witness knows of. The witness is worried that a student could get a discipline referral, and a mark on their school record, without any person checking the flags first and without parents being told why.
-
-## 4. Who was affected, and who else was there
-
-All students in the district's schools where the system is used, and their families. Number: UNKNOWN. The witness says the students must attend school, so they did not choose to be scored by the system.
-
-## 5. Was it reported before?
-
-The witness raised it in person at back-to-school night on 2026-09-02 and by email to the district office on 2026-09-08. No reply to the email. The witness does not know whether other parents have raised it.
-
-## 6. What feels wrong about it (optional)
-
-"A kid can get in trouble and nobody has to look at why. And we don't even get told how it works."
-
-## 7. What they should have done (optional)
-
-UNKNOWN. The witness said they don't know what the district is required to do.
-
-## 8. Does this happen to others? (optional)
-
-UNKNOWN
-
-## 9. Could it get worse, or last? (optional)
-
-UNKNOWN. The witness skipped this question.
-
-## 10. Timeline
-
-- 2026-09-02: at back-to-school night, the assistant principal presented the new behaviour flagging system to parents. The witness asked two questions (see section 1).
-- 2026-09-08: the witness emailed the district office asking for the written rules for the system. The witness has not had a reply.
-- 2026-11-05: the witness says the system is in use and no written rules have been shared with parents.
-
-## 11. Who did it, and what they control
+## 3. Who did it, and what they control
 
 - **Who:** [TOWN] Unified School District, [TOWN], [STATE].
 - **What they did:** student discipline. The district has started a computer system that flags students for discipline referrals.
 - **Registration record:** NONE
 
-## 12. Asking for something to stop or change
+## 4. About you
+
+- **Name or handle:** hallway-pass-parent
+- **Contact:** [A SEPARATE EMAIL ADDRESS THE WITNESS USES FOR THIS HANDLE]
+- **How you are connected to them:** parent of a student in the district
+- **Verification phrase:** yes
+
+## 5. How it affected people
+
+No harm to the witness's child that the witness knows of. The witness is worried that a student could get a discipline referral, and a mark on their school record, without any person checking the flags first and without parents being told why.
+
+## 6. Who was affected, and who else was there
+
+All students in the district's schools where the system is used, and their families. Number: UNKNOWN. The witness says the students must attend school, so they did not choose to be scored by the system.
+
+## 7. Was it reported before?
+
+The witness raised it in person at back-to-school night on 2026-09-02 and by email to the district office on 2026-09-08. No reply to the email. The witness does not know whether other parents have raised it.
+
+## 8. What feels wrong about it (optional)
+
+"A kid can get in trouble and nobody has to look at why. And we don't even get told how it works."
+
+## 9. What they should have done (optional)
+
+UNKNOWN. The witness said they don't know what the district is required to do.
+
+## 10. Does this happen to others? (optional)
+
+UNKNOWN
+
+## 11. Could it get worse, or last? (optional)
+
+UNKNOWN. The witness skipped this question.
+
+## 12. Timeline
+
+- 2026-09-02: at back-to-school night, the assistant principal presented the new behaviour flagging system to parents. The witness asked two questions (see section 1).
+- 2026-09-08: the witness emailed the district office asking for the written rules for the system. The witness has not had a reply.
+- 2026-11-05: the witness says the system is in use and no written rules have been shared with parents.
+
+## 13. Asking for something to stop or change
 
 **Challenge, change request, or review petition.**
 
@@ -85,19 +92,12 @@ UNKNOWN. The witness skipped this question.
 
 - **Joining an existing petition:** Not applicable.
 
-## 13. Honesty
+## 14. Honesty
 
 - [x] Made in good faith.
 - [x] Public sources and my own observation only.
 - [x] Roles, not names, in any copy I share.
 - [x] Facts kept separate from allegations.
-
-## 14. About you
-
-- **Name or handle:** hallway-pass-parent
-- **Contact:** [A SEPARATE EMAIL ADDRESS THE WITNESS USES FOR THIS HANDLE]
-- **How you are connected to them:** parent of a student in the district
-- **Verification phrase:** yes
 
 ## 15. What happened next
 

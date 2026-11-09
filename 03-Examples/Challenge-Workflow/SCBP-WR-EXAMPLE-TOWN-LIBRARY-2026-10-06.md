@@ -20,48 +20,55 @@ In the witness's own words (unchanged):
 
 **What I have (not attached).** The block page text, which anyone can see by visiting a blocked page from a library terminal. The witness made a note of the dates in a personal notebook. No photos were taken or attached.
 
-## 3. How it affected people
+## 3. Who did it, and what they control
+
+- Name, and place: [TOWN] Public Library, main branch, [TOWN], [STATE].
+- Which power, in plain words: blocking web pages on the public computers and Wi-Fi (internet filtering).
+- **Registration record:** SCBP-REG-EXAMPLE-TOWN-LIBRARY, power P3. This is the library's own authorization record; the library has adopted the Core Requirements.
+
+## 4. About you
+
+- **Name or handle:** reading-room-regular
+- **Contact:** NONE
+- **How you are connected to them:** cardholder and regular user of the public computers
+- Verification token used? no
+
+## 5. How it affected people
 
 The witness could not reach local news comment pages, a neighbourhood association forum, and a support group's message board from the library. The witness has no home internet, so there was no other way to reach them that week.
 
-## 4. Who was affected, and who else was there
+## 6. Who was affected, and who else was there
 
 Anyone using the public terminals or Wi-Fi, especially people without home internet and patrons under 17, who cannot switch the filter off themselves. Number affected: UNKNOWN.
 
-## 5. Was it reported before?
+## 7. Was it reported before?
 
 Asked at the reference desk on 2026-10-08 (see timeline). No change seen by 2026-10-12. The witness did not use the block page's unblock request, because adults can switch the filter off for their own session; the witness says the problem is that the category is switched on at all.
 
-## 6. What feels wrong about it (optional)
+## 8. What feels wrong about it (optional)
 
 UNKNOWN
 
-## 7. What they should have done (optional)
+## 9. What they should have done (optional)
 
 UNKNOWN
 
-## 8. Does this happen to others? (optional)
+## 10. Does this happen to others? (optional)
 
 UNKNOWN
 
-## 9. Could it get worse, or last? (optional)
+## 11. Could it get worse, or last? (optional)
 
 UNKNOWN
 
-## 10. Timeline
+## 12. Timeline
 
 *(Put in order by the interviewer from the witness's answers; the witness checked it.)*
 - Around 2026-10-06: the witness first saw pages blocked under a category called "Social and Forums".
 - 2026-10-08: the witness asked at the reference desk. The staff member said a vendor software update had switched on new categories and that staff would look into it.
 - 2026-11-05: pages in that category were still blocked when the witness filed this report.
 
-## 11. Who did it, and what they control
-
-- Name, and place: [TOWN] Public Library, main branch, [TOWN], [STATE].
-- Which power, in plain words: blocking web pages on the public computers and Wi-Fi (internet filtering).
-- **Registration record:** SCBP-REG-EXAMPLE-TOWN-LIBRARY, power P3. This is the library's own authorization record; the library has adopted the Core Requirements.
-
-## 12. Asking for something to stop or change
+## 13. Asking for something to stop or change
 
 Not applicable. This is a challenge.
 
@@ -80,19 +87,12 @@ Not applicable. This is a challenge.
 
 - **Joining an existing petition:** NONE.
 
-## 13. Honesty
+## 14. Honesty
 
 - [x] Filed in good faith.
 - [x] Public sources and my own observation only.
 - [x] Roles, not names, in any copy I share.
 - [x] Facts kept separate from allegations.
-
-## 14. About you
-
-- **Name or handle:** reading-room-regular
-- **Contact:** NONE
-- **How you are connected to them:** cardholder and regular user of the public computers
-- Verification token used? no
 
 ## 15. What happened next
 

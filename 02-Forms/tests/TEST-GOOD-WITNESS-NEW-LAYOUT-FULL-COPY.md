@@ -17,7 +17,7 @@
 >
 > It went on for about two minutes with the knee on his back. Then they sat him up and he was coughing really bad. They put him in the car. Nobody told us why they stopped him. Another car came and the officers talked for a while and then the bike was put in the trunk and they left. I found out later from the news that his name is Marcus Hale and he was charged with riding on the sidewalk and resisting, and the resisting charge got dropped.
 
-*Sections 2 to 12 were put together by an AI from my answers. I checked them.*
+*Sections 2 to 13 were put together by an AI from my answers. I checked them.*
 
 ## 2. Proof
 
@@ -35,37 +35,50 @@
 - The confirmation email (2026-10-15) and the update (2026-10-29), in my email inbox.
 - My phone's call log, showing the call to 555-0142 on 2026-10-15.
 
-## 3. How it affected people
+## 3. Who did it, and what they control
+
+- **Who:** Riverton Police Department, Riverton.
+- **What they did:** stopped and held a man, used force on him, and ordered me to stop recording and delete my video.
+- **Registration record:** NONE.
+
+## 4. About you
+
+- **Name or handle:** Sam Okafor. The copy to share is signed "Bus Stop Witness".
+- **Contact:** sam.okafor@example.com, 555-0187.
+- **How you are connected to them:** I'm not. I was waiting for the bus.
+- **Verification phrase:** no.
+
+## 5. How it affected people
 
 The man was pulled to the ground and held face down with a knee on his back. He said he couldn't breathe. Afterwards he was coughing badly. I was threatened with arrest and told to delete my video. I don't use that bus stop anymore: "I haven't taken that bus stop since. I walk to the next one."
 
-## 4. Who was affected, and who else was there
+## 6. Who was affected, and who else was there
 
 - **Affected:** the man who was stopped [Marcus Hale], and me, because I was told to stop recording. Neither of us chose to deal with the police.
 - **Also there:** a woman who works at the laundromat [Rosa], and about four other people at the bus stop.
 
-## 5. Was it reported before?
+## 7. Was it reported before?
 
 - **Before:** UNKNOWN.
 - **After:** I called the non-emergency line on 2026-10-15. I filed a complaint with the Office of Police Accountability the same day (OPA-2026-0912). On 2026-10-29 they emailed that it is "under review". I haven't heard anything since.
 
-## 6. What feels wrong about it (optional)
+## 8. What feels wrong about it (optional)
 
 "He had his hands up. And they tried to make me delete the video, which is the only reason anybody believes what happened."
 
-## 7. What they should have done (optional)
+## 9. What they should have done (optional)
 
 "When somebody says they can't breathe you get off them. That's the first thing. And somebody should have told him why they stopped him."
 
-## 8. Does this happen to others? (optional)
+## 10. Does this happen to others? (optional)
 
 "If they can make you delete it, then it's just their word. Every time." Registration record part: UNKNOWN. I don't know of a record.
 
-## 9. Could it get worse, or last? (optional)
+## 11. Could it get worse, or last? (optional)
 
 UNKNOWN. I skipped this question.
 
-## 10. Timeline
+## 12. Timeline
 
 - **2026-10-14, about 6:40 pm.** I was at the bus stop on Delancey Street and 5th Avenue, outside the Suds laundromat. A police car stopped in front of a man riding a bike on the sidewalk [Marcus Hale]. Two officers got out: the driver [Officer Dorsey, badge 4471] and a second officer. I couldn't see the second officer's name.
 - The driving officer pulled the man off the bike by his backpack. The man asked what he had done. His hands were up.
@@ -78,29 +91,16 @@ UNKNOWN. I skipped this question.
 - **2026-10-15.** I filed a complaint online with the Riverton Office of Police Accountability. Case number OPA-2026-0912. An email confirmed it.
 - **Date UNKNOWN.** I read in the news that the man was charged with riding on the sidewalk and with resisting, and that the resisting charge was dropped.
 
-## 11. Who did it, and what they control
-
-- **Who:** Riverton Police Department, Riverton.
-- **What they did:** stopped and held a man, used force on him, and ordered me to stop recording and delete my video.
-- **Registration record:** NONE.
-
-## 12. Asking for something to stop or change
+## 13. Asking for something to stop or change
 
 Not applicable.
 
-## 13. Honesty
+## 14. Honesty
 
 - [x] Made in good faith.
 - [x] Public sources and my own observation only.
 - [x] Roles, not names, in any copy I share.
 - [x] Facts kept separate from allegations.
-
-## 14. About you
-
-- **Name or handle:** Sam Okafor. The copy to share is signed "Bus Stop Witness".
-- **Contact:** sam.okafor@example.com, 555-0187.
-- **How you are connected to them:** I'm not. I was waiting for the bus.
-- **Verification phrase:** no.
 
 ## 15. What happened next
 

@@ -664,22 +664,27 @@ function build() {
   s2 += "\n\n**What I have (not attached).**" + (val("inventory") ? "\n\n" + val("inventory").split(/\r?\n/).filter(function (l) { return l.trim(); }).map(function (l) { return "- " + block(l.replace(/^\s*[-*]\s*/, "")); }).join("\n") : " Nothing listed.");
   b.push(s2);
 
-  b.push("## 3. How it affected people\n\n" + answer("impact"));
-  b.push("## 4. Who was affected, and who else was there\n\n" +
-    "- **Affected:** " + answer("affected") + "\n" +
-    "- **Also there:** " + (val("seen") ? block(val("seen")) : "UNKNOWN"));
-  b.push("## 5. Was it reported before?\n\n" + answer("warnings"));
-  b.push("## 6. What feels wrong about it (optional)\n\n" + optional("opt_wrong"));
-  b.push("## 7. What they should have done (optional)\n\n" + optional("opt_duty"));
-  b.push("## 8. Does this happen to others? (optional)\n\n" + optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
-  b.push("## 9. Could it get worse, or last? (optional)\n\n" + optional("opt_harm"));
-  b.push("## 10. Timeline\n\n" + timelineText() + (val("how") ? "\n\n**How it was done or said:** " + block(val("how")) : ""));
-  b.push("## 11. Who did it, and what they control\n\n" +
+  b.push("## 3. Who did it, and what they control\n\n" +
     "- **Who:** " + inst + (withheld || !val("loc_desc") ? "" : ". It happened at " + val("loc_desc") + ".") + "\n" +
     "- **What they did:** " + (val("power") || "UNKNOWN") + "\n" +
     "- **Registration record:** " + recLine);
+  b.push("## 4. About you\n\n" +
+    "- **Name or handle:** " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
+    "- **Contact:** " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
+    "- **How you are connected to them:** " + (val("who_rel") || "UNKNOWN") + "\n" +
+    "- **Verification phrase:** " + (verificationHash ? "yes" : "no"));
+  b.push("## 5. How it affected people\n\n" + answer("impact"));
+  b.push("## 6. Who was affected, and who else was there\n\n" +
+    "- **Affected:** " + answer("affected") + "\n" +
+    "- **Also there:** " + (val("seen") ? block(val("seen")) : "UNKNOWN"));
+  b.push("## 7. Was it reported before?\n\n" + answer("warnings"));
+  b.push("## 8. What feels wrong about it (optional)\n\n" + optional("opt_wrong"));
+  b.push("## 9. What they should have done (optional)\n\n" + optional("opt_duty"));
+  b.push("## 10. Does this happen to others? (optional)\n\n" + optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
+  b.push("## 11. Could it get worse, or last? (optional)\n\n" + optional("opt_harm"));
+  b.push("## 12. Timeline\n\n" + timelineText() + (val("how") ? "\n\n**How it was done or said:** " + block(val("how")) : ""));
 
-  var s12 = "## 12. Asking for something to stop or change\n\n";
+  var s12 = "## 13. Asking for something to stop or change\n\n";
   if (rtype === "stop_signal") {
     s12 += "**Stop signal.**\n- **Basis:**\n" +
       "  - [" + (ssb === "defined_condition" ? "x" : " ") + "] a **defined condition**: a published limit or stop condition was crossed.\n" +
@@ -700,12 +705,7 @@ function build() {
   b.push(s12);
 
   var c = $("confirm").checked ? "x" : " ";
-  b.push("## 13. Honesty\n\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
-  b.push("## 14. About you\n\n" +
-    "- **Name or handle:** " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
-    "- **Contact:** " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
-    "- **How you are connected to them:** " + (val("who_rel") || "UNKNOWN") + "\n" +
-    "- **Verification phrase:** " + (verificationHash ? "yes" : "no"));
+  b.push("## 14. Honesty\n\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
   b.push("## 15. What happened next\n\n*Filled in later by whoever reviews the report.*\n\n" +
     "- Response from them, and its date:\n" +
     "- For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:\n" +
@@ -725,7 +725,7 @@ function render() {
   $("sharewrap").hidden = !share;
   if (!val("own_share") || $("own_share").value === lastOwn) { $("own_share").value = $("own").value; }
   lastOwn = $("own").value;
-  var text = build(), notes = [], names = [], m, body = text.split("## 14.")[0];
+  var text = build(), notes = [], names = [], m, body = text.replace(/## 4\. About you[\s\S]*?(?=## 5\.)/, "");
   $("preview").textContent = text;
   TITLE_NAME.lastIndex = 0;
   while ((m = TITLE_NAME.exec(body)) !== null) { if (!ROLE_OK.test(m[1])) { names.push(m[0]); } }
