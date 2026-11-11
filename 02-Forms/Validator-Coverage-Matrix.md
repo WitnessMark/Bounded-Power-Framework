@@ -64,14 +64,23 @@ The checker prints three kinds of line:
 | Witness report: coordinates in range; withheld location has no coordinates; a stop signal states its basis | ERROR | |
 | Witness report: `verification_hash` is NONE or a 64-character SHA-256 code, never the phrase itself | ERROR | |
 | Witness report: `record_id` is NONE or shaped like a registration ID; `power_id` is UNKNOWN or P1, P2…; a power is not named without a record | ERROR | |
+| Witness report: `situation_kind`, `action_category`, `harm_type`, `evidence_held`, `memory_influences` are lists of vocabulary values; `none` stands alone | ERROR | |
+| Witness report: `incident_time` is "HH:MM" in quotes or UNKNOWN; `jurisdiction` has locality, region and a two-letter country code | ERROR | |
+| Witness report: `statement_confirmed` is true or false; `truth_statement` and `composed_by` are vocabulary values | ERROR | |
+| Witness report: the retired `status` field | ERROR | Use `incident_end_date`; the outcome goes in What happened next |
+| Witness report: a Statement section; and "In my own words" when someone other than the witness wrote the statement | ERROR | |
+| Witness report: the statement holds only what the witness said | | ✓ |
+| Witness report: the witness has not confirmed the statement (`statement_confirmed: false`) | WARN | Read it with the witness |
 | Witness report: the named record and power actually exist | | ✓ (no place collects records in v1) |
 | Witness report: numbers without a source tag outside the witness's own first-hand sections (dates, section 2, block quotes, "my own observation" rows, evidence rows that cite a link, and the list of what exists are not flagged; web addresses are never read as numbers) | WARN | |
-| Witness report: a title or rank followed by a name, anywhere except the witness's own name line | WARN | Replace names with roles |
-| Witness report: a town- or region-level location (`locality`, `region`) whose description names the institution | WARN | Check the place is no more exact than the witness chose |
+| Witness report (copy for sharing): a town- or region-level location (`locality`, `region`) whose description names the institution | WARN | Check the place is no more exact than the witness chose |
 | Witness report: an optional section answered "Not applicable" | WARN | Write UNKNOWN if it was skipped or not asked |
 | Witness report: fields at the end, in a ```yaml block under "Technical details" (the current layout), or on top (the older one) | ERROR if neither | Both are read; only witness reports may keep fields at the end |
-| Witness report: a private copy (the "Private copy." line) | WARN | Keep it private; share a copy without names. Name and officeholder warnings are not repeated for it |
-| Witness report: a private copy whose file name does not end in `-PRIVATE`, or a `-PRIVATE` file without the line | WARN | Rename the file, or add the line |
+| Witness report: names, badge numbers and descriptions | — | Kept on purpose: the name and officeholder checks are not run on witness reports |
+| Witness report: a "Private copy." line from the earlier layout | WARN | Remove it |
+| Witness report (copy for sharing): About me is left out | ERROR | |
+| Witness report (copy for sharing): a file name not ending in `-SHARE`, or a `-SHARE` file without the line | WARN | Rename the file, or add the line |
+| Witness report (copy for sharing): no private person can still be identified | REVIEW | ✓ Read it as a stranger would |
 | A value meaning "unknown" (UNKNOWN or unknown) accepted in any case | — | |
 | Authority response: carries the banner saying it does not replace the record | ERROR | |
 | Authority response: a correction or disagreement quotes the record point by point | WARN | |

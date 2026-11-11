@@ -142,12 +142,12 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <section class="step" data-name="start">
   <h1 tabindex="-1">Make a witness report</h1>
   <div class="notice" id="inapp" hidden><b>This page is open inside another app.</b> Reports often cannot be saved from inside apps. Open it in the phone's own browser first: tap the menu (often &#8943; or &#8942;) and choose <b>Open in browser</b>, <b>Open in Safari</b> or <b>Open in Chrome</b>.</div>
-  <p class="lead">A written account, in your own words, of something an organization or an office did, failed to do, or threatened to do. Written like a police report: when and where, who, and what happened.</p>
+  <p class="lead">A signed statement of something an organization or an office did, failed to do, or threatened to do, with your own words kept beside it. Written like a police witness statement: when and where, who, and what happened, in order.</p>
   <div class="safety"><b>If anyone is in immediate danger, emergency services come first.</b> A report is a record, not a rescue.</div>
   <ul class="plain">
-    <li><b>About ten minutes.</b> Anything not known can be left blank.</li>
+    <li><b>About fifteen minutes.</b> Anything not known can be left blank.</li>
     <li><b>Nothing is sent or stored.</b> The page works only inside this browser. At the end, the report is saved to the phone or computer, or sent wherever its author chooses.</li>
-    <li><b>Two copies at the end:</b> a private one that keeps names and places as written, so nothing is forgotten, and one to share that uses roles: "the manager", "the officer", "the caseworker".</li>
+    <li><b>Names and details are kept.</b> The report is a record to help you remember and to identify what happened: names, badge numbers, car numbers, descriptions, places. At the end you can also make a copy for sharing that identifies no private person.</li>
   </ul>
 </section>
 
@@ -166,22 +166,27 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   </div>
   <label class="choice"><input type="checkbox" id="inc_unknown"><span>The date is not known</span></label>
   <div class="field">
-    <label for="loc_desc">Where did it happen?<span class="hint">For example "the leasing office, Maple Court Apartments, [city], [state]" or "outside the courthouse, [city]".</span></label>
+    <label for="loc_desc">Where did it happen?<span class="hint">As exactly as you can. For example "the intersection of John R and Kirby streets, Detroit, MI" or "the leasing office, Maple Court Apartments".</span></label>
     <input type="text" id="loc_desc" autocomplete="off">
   </div>
   <fieldset>
-    <legend>In a copy to share, how much of the place should show?<span class="hint">The private copy keeps it as written.</span></legend>
-    <label class="choice"><input type="radio" name="prec" value="exact"><span>All of it, as written</span></label>
-    <label class="choice"><input type="radio" name="prec" value="approximate" checked><span>It is a general area, not an exact address</span></label>
-    <label class="choice"><input type="radio" name="prec" value="withheld"><span>Leave the place out<span class="hint">For a place that could identify the person reporting, such as a home or a small workplace.</span></span></label>
+    <legend>How exact is that?</legend>
+    <label class="choice"><input type="radio" name="prec" value="exact" checked><span>An exact address, building or intersection</span></label>
+    <label class="choice"><input type="radio" name="prec" value="approximate"><span>A general area</span></label>
+    <label class="choice"><input type="radio" name="prec" value="locality"><span>Only the town or city</span></label>
   </fieldset>
+  <div class="row">
+    <div class="field"><label for="j_loc">Town or city</label><input type="text" id="j_loc" autocomplete="off"></div>
+    <div class="field"><label for="j_reg">State or province</label><input type="text" id="j_reg" autocomplete="off"></div>
+    <div class="field"><label for="j_cty">Country<span class="hint">Two letters: US, CA, GB…</span></label><input type="text" id="j_cty" autocomplete="off" autocapitalize="characters" maxlength="2" spellcheck="false"></div>
+  </div>
   <fieldset>
     <legend>Is it still going on?</legend>
-    <label class="choice"><input type="radio" name="going" value="yes" checked><span>Yes</span></label>
-    <label class="choice"><input type="radio" name="going" value="no"><span>No, it has ended</span></label>
+    <label class="choice"><input type="radio" name="going" value="yes"><span>Yes</span></label>
+    <label class="choice"><input type="radio" name="going" value="no" checked><span>No, it has ended</span></label>
     <label class="choice"><input type="radio" name="going" value="unsure"><span>Not sure</span></label>
   </fieldset>
-  <div class="field" id="endwrap" hidden>
+  <div class="field" id="endwrap">
     <label for="end_date">When did it end? (optional)</label>
     <input type="date" id="end_date">
   </div>
@@ -189,23 +194,99 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 
 <!-- who -->
 <section class="step" data-name="who" hidden>
-  <h2 tabindex="-1">Who</h2>
+  <h2 tabindex="-1">Which organization</h2>
   <div class="field">
-    <label for="inst">Which organization or office was it?<span class="hint">The name people know it by: "Maple Court Apartments management", "[City] Water Department", "[County] Sheriff's Office". Organizations keep their names in both copies.</span></label>
+    <label for="inst">Which organization or office was it?<span class="hint">The name people know it by: "Detroit Police Department", "[City] Water Department", "Maple Court Apartments management".</span></label>
     <input type="text" id="inst" autocomplete="off">
   </div>
+  <div class="field">
+    <label for="power">What did they do, in a few words? (optional)<span class="hint">"Beat a man in handcuffs", "cut off our water", "stopped my food assistance".</span></label>
+    <input type="text" id="power" autocomplete="off">
+  </div>
+  <fieldset>
+    <legend>Which of these fit? Mark any that apply.</legend>
+    <div id="acts"></div>
+  </fieldset>
 </section>
 
 <!-- account -->
 <section class="step" data-name="account" hidden>
   <h2 tabindex="-1">What happened</h2>
   <div class="field">
-    <label for="own">In your own words<span class="hint">The first line is started from the earlier answers; it can be changed. Names and places as remembered: the copy to share can replace them at the end. It goes into the report exactly as written.</span></label>
+    <label for="own">In your own words<span class="hint">Tell it your way, from the beginning. It goes into the report exactly as written. The next steps ask only about what is missing.</span></label>
     <textarea id="own" class="tall"></textarea>
   </div>
+  <fieldset>
+    <legend>What kind of situation was it? Mark any that fit.</legend>
+    <label class="choice"><input type="checkbox" class="kind" value="scene"><span><b>Something I saw or went through as it happened</b><span class="hint">A stop, an arrest, a raid, a confrontation at a counter.</span></span></label>
+    <label class="choice"><input type="checkbox" class="kind" value="process"><span><b>Something done to me through decisions, letters or calls</b><span class="hint">An eviction, a benefit stopped, a fine, a firing.</span></span></label>
+    <label class="choice"><input type="checkbox" class="kind" value="condition"><span><b>Something ongoing I have noticed</b><span class="hint">Bad water, mould, cameras, a policy being applied.</span></span></label>
+  </fieldset>
+</section>
+
+<!-- people -->
+<section class="step" data-name="people" hidden>
+  <h2 tabindex="-1">Who was involved</h2>
+  <fieldset>
+    <legend>How do you know about it?</legend>
+    <label class="choice"><input type="radio" name="role" value="affected_person"><span>It happened to me</span></label>
+    <label class="choice"><input type="radio" name="role" value="eyewitness" checked><span>I saw or heard it happen</span></label>
+    <label class="choice"><input type="radio" name="role" value="learned_after"><span>I learned of it myself afterwards<span class="hint">From papers, messages, or what was left after.</span></span></label>
+    <label class="choice"><input type="radio" name="role" value="told_by_others"><span>Someone told me</span></label>
+    <label class="choice"><input type="radio" name="role" value="on_behalf_of"><span>I am reporting it for someone else</span></label>
+  </fieldset>
   <div class="field">
-    <label for="how">How was it done or said? (optional)<span class="hint">In person, by letter, by phone, by email, online, by a notice on the door. For a call: the number, date, time and any reference number. For a website: its address and the date it was seen.</span></label>
-    <input type="text" id="how" autocomplete="off">
+    <label for="who_did">Who did it? (optional)<span class="hint">Any name, badge or ID number, job title, unit or car number, and what they looked like: height, build, hair, clothing, uniform, anything written on it. These are what let someone find out exactly who it was.</span></label>
+    <textarea id="who_did"></textarea>
+  </div>
+  <div class="field">
+    <label for="who_to">Who was it done to? (optional)<span class="hint">What they looked like, or what you know about them.</span></label>
+    <textarea id="who_to"></textarea>
+  </div>
+  <div class="field">
+    <label for="seen">Did anyone else see or hear it? (optional)<span class="hint">Who they were, and how to reach them if you know.</span></label>
+    <textarea id="seen"></textarea>
+  </div>
+  <div class="field">
+    <label for="after">How did it end? (optional)<span class="hint">Was anyone hurt, taken away, or left without something?</span></label>
+    <textarea id="after"></textarea>
+  </div>
+</section>
+
+<!-- add-on, by kind -->
+<section class="step" data-name="addon" hidden>
+  <h2 tabindex="-1">A few more details</h2>
+  <p>All optional. Answer what you can.</p>
+  <div id="add_scene" hidden>
+    <h3>What you saw</h3>
+    <div class="field"><label for="sc_where">Where were you, and roughly how far away?</label><input type="text" id="sc_where" autocomplete="off"></div>
+    <div class="field"><label for="sc_see">Could you see clearly, and hear what was said?<span class="hint">The light, anything in the way, what you could not see or hear.</span></label><textarea id="sc_see"></textarea></div>
+    <div class="field"><label for="sc_long">How long did you watch? When did you leave, and why?</label><input type="text" id="sc_long" autocomplete="off"></div>
+    <div class="field"><label for="sc_many">How many of them were there? How many other people?</label><input type="text" id="sc_many" autocomplete="off"></div>
+    <div class="field"><label for="sc_veh">Any vehicles?<span class="hint">Kind, colour, plate, car or unit number.</span></label><textarea id="sc_veh"></textarea></div>
+    <div class="field"><label for="sc_said">Anything anyone said, as close to word for word as you can</label><textarea id="sc_said"></textarea></div>
+    <div class="field"><label for="sc_did">What did you do?<span class="hint">Recorded, spoke up, stepped in, left.</span></label><textarea id="sc_did"></textarea></div>
+  </div>
+  <div id="add_process" hidden>
+    <h3>Each contact</h3>
+    <div class="field"><label for="pr_list">Each contact, in order, one per line<span class="hint">The date, how (letter, call, visit, online), with whom, and what was said or decided. For example "2026-09-05 - phone call to 555-0100 - the worker said the form was not in the system".</span></label><textarea id="pr_list" class="tall"></textarea></div>
+    <div class="field"><label for="pr_ref">Case, account, ticket or reference numbers</label><input type="text" id="pr_ref" autocomplete="off"></div>
+    <div class="field"><label for="pr_dec">What did they decide? Were you given a reason?</label><textarea id="pr_dec"></textarea></div>
+    <div class="field"><label for="pr_chal">Were you told how to challenge it, and by when? Did you try?</label><textarea id="pr_chal"></textarea></div>
+    <div class="field"><label for="pr_dead">Any deadlines? Were they met, by you or by them?</label><input type="text" id="pr_dead" autocomplete="off"></div>
+  </div>
+  <div id="add_condition" hidden>
+    <h3>What you have noticed</h3>
+    <div class="field"><label for="co_first">When did you first notice it?</label><input type="text" id="co_first" autocomplete="off"></div>
+    <div class="field"><label for="co_list">Each time you noticed it, in order, one per line<span class="hint">The date, and what you saw, smelled, measured or went through.</span></label><textarea id="co_list" class="tall"></textarea></div>
+    <div class="field"><label for="co_test">Has anything been measured or tested? By whom, and with what result?</label><textarea id="co_test"></textarea></div>
+    <fieldset>
+      <legend>Is it getting better or worse?</legend>
+      <label class="choice"><input type="radio" name="trend" value="better"><span>Better</span></label>
+      <label class="choice"><input type="radio" name="trend" value="worse"><span>Worse</span></label>
+      <label class="choice"><input type="radio" name="trend" value="the same"><span>About the same</span></label>
+      <label class="choice"><input type="radio" name="trend" value="" checked><span>Not sure</span></label>
+    </fieldset>
   </div>
 </section>
 
@@ -213,24 +294,23 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <section class="step" data-name="impact" hidden>
   <h2 tabindex="-1">What it did</h2>
   <div class="field">
-    <label for="impact">What did it do to you, or to others?<span class="hint">Money, health, housing, work, safety, fear. Anything left blank is recorded as not known.</span></label>
+    <label for="impact">What did it do to you, or to others?<span class="hint">Money, health, housing, work, safety, fear.</span></label>
     <textarea id="impact"></textarea>
   </div>
+  <fieldset>
+    <legend>Which of these fit? Mark any that apply.</legend>
+    <div id="harms"></div>
+  </fieldset>
+  <fieldset>
+    <legend>Roughly how many people were affected?</legend>
+    <label class="choice"><input type="radio" name="count" value="one"><span>One</span></label>
+    <label class="choice"><input type="radio" name="count" value="2_10"><span>2 to 10</span></label>
+    <label class="choice"><input type="radio" name="count" value="11_100"><span>11 to 100</span></label>
+    <label class="choice"><input type="radio" name="count" value="over_100"><span>More than 100</span></label>
+    <label class="choice"><input type="radio" name="count" value="unknown" checked><span>Not sure</span></label>
+  </fieldset>
   <div class="field">
-    <label for="affected">Is anyone else affected? (optional)<span class="hint">Who, and roughly how many. For example "the other tenants in building C".</span></label>
-    <textarea id="affected"></textarea>
-  </div>
-  <div class="field">
-    <label for="seen">Did anyone else see or hear it? (optional)<span class="hint">By role, such as "a neighbour in the same building". A name stays in the private copy only. Their contact details are not needed.</span></label>
-    <textarea id="seen"></textarea>
-  </div>
-</section>
-
-<!-- before -->
-<section class="step" data-name="before" hidden>
-  <h2 tabindex="-1">Before this</h2>
-  <div class="field">
-    <label for="warnings">Was this raised with them before, or reported anywhere? (optional)<span class="hint">With whom, when, how (a phone call, an email, a form, in person), and what happened. Where any letter, email or complaint number can be found.</span></label>
+    <label for="warnings">Has anyone reported it, to them or anyone else? (optional)<span class="hint">With whom, when, how, and what happened. Any case or reference number.</span></label>
     <textarea id="warnings"></textarea>
   </div>
 </section>
@@ -239,57 +319,73 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <section class="step" data-name="have" hidden>
   <h2 tabindex="-1">What you have</h2>
   <div class="field">
-    <label for="inventory">What exists that shows what happened? (optional)<span class="hint">One per line, with where it is kept. For example "email to the office, March 3, in my inbox", "photos of the mold, on my phone", "rent receipts, at home". Only the list goes in the report; the files stay where they are.</span></label>
+    <label for="inventory">What exists that shows what happened? (optional)<span class="hint">One per line, with where it is kept. For example "video, on my phone", "letter dated March 3, at home". Only the list goes in the report; the files stay where they are.</span></label>
     <textarea id="inventory"></textarea>
   </div>
+  <fieldset>
+    <legend>Which kinds? Mark any that apply.</legend>
+    <div id="evs"></div>
+  </fieldset>
+</section>
+
+<!-- memory -->
+<section class="step" data-name="memory" hidden>
+  <h2 tabindex="-1">How sure</h2>
+  <div class="field">
+    <label for="sure">Which details are you sure of, and which less so? (optional)<span class="hint">For example "I am sure of the badge number. I think the car was a Civic."</span></label>
+    <textarea id="sure"></textarea>
+  </div>
+  <fieldset>
+    <legend>Before writing this, did anything else shape what you remember? Mark any that apply.</legend>
+    <div id="mems"></div>
+  </fieldset>
 </section>
 
 <!-- sign -->
 <section class="step" data-name="sign" hidden>
-  <h2 tabindex="-1">How to sign it</h2>
+  <h2 tabindex="-1">About you</h2>
   <fieldset>
     <legend class="sr">How to sign it</legend>
-    <label class="choice"><input type="radio" name="ident" value="identified"><span><b>My name</b><span class="hint">Carries the most weight, and can expose the person to retaliation.</span></span></label>
-    <label class="choice"><input type="radio" name="ident" value="pseudonymous" checked><span><b>A made-up name, used every time</b><span class="hint">Allows follow-up, and reports can be linked over time. Suits most people.</span></span></label>
+    <label class="choice"><input type="radio" name="ident" value="identified" checked><span><b>My name</b><span class="hint">Carries the most weight, and can expose the person to retaliation.</span></span></label>
+    <label class="choice"><input type="radio" name="ident" value="pseudonymous"><span><b>A made-up name, used every time</b><span class="hint">Allows follow-up, and reports can be linked over time.</span></span></label>
     <label class="choice"><input type="radio" name="ident" value="anonymous"><span><b>No name</b><span class="hint">The most protection, less weight, and no follow-up.</span></span></label>
   </fieldset>
   <div class="field" id="whowrap">
-    <label for="who_name" id="who_label">Made-up name</label>
+    <label for="who_name" id="who_label">Name</label>
     <input type="text" id="who_name" autocomplete="off">
   </div>
   <div class="field" id="contactwrap">
-    <label for="who_contact">Contact for follow-up (optional)<span class="hint">With a made-up name, a separate email address.</span></label>
+    <label for="who_contact">Contact for follow-up (optional)</label>
     <input type="text" id="who_contact" autocomplete="off">
+  </div>
+  <div class="field">
+    <label for="who_rel">How are you connected to them? (optional)<span class="hint">"I'm not; I was passing by", tenant, customer, employee, neighbour.</span></label>
+    <input type="text" id="who_rel" autocomplete="off">
   </div>
 </section>
 
 <!-- more details -->
 <section class="step" data-name="more" hidden>
   <h2 tabindex="-1">More details</h2>
-  <p>All optional. Most reports need none of these; the next step shows the report.</p>
-
-  <details>
-    <summary>A timeline, if there was more than one event</summary>
-    <div class="field"><label for="timeline">Dates and times, in order</label><textarea id="timeline"></textarea></div>
-  </details>
+  <p>All optional. Most reports need none of these; the next step shows the statement.</p>
 
   <details>
     <summary>Four further questions</summary>
     <div class="field">
-      <label for="opt_harm">A warning of wider harm<span class="hint">Could this cause harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things? A warning, not a finding.</span></label>
-      <textarea id="opt_harm"></textarea>
-    </div>
-    <div class="field">
-      <label for="opt_duty">A duty to protect<span class="hint">Something they were supposed to do to protect people that they did not do, did late, or did only for some.</span></label>
-      <textarea id="opt_duty"></textarea>
-    </div>
-    <div class="field">
-      <label for="opt_wrong">What seems wrong<span class="hint">In your own words. No rule or law needs to be named.</span></label>
+      <label for="opt_wrong">What feels wrong about it<span class="hint">In your own words. No rule or law needs to be named.</span></label>
       <textarea id="opt_wrong"></textarea>
     </div>
     <div class="field">
-      <label for="opt_power">What this shows about how they operate<span class="hint">Whether it says something about how this works for everyone: a protection that did not work, no way to challenge the decision, a practice written down nowhere.</span></label>
+      <label for="opt_duty">What they should have done<span class="hint">Something they were supposed to do to protect people that they did not do, did late, or did only for some.</span></label>
+      <textarea id="opt_duty"></textarea>
+    </div>
+    <div class="field">
+      <label for="opt_power">Does this happen to others?<span class="hint">Whether it says something about how this works for everyone: a protection that did not work, no way to challenge the decision, a practice written down nowhere.</span></label>
       <textarea id="opt_power"></textarea>
+    </div>
+    <div class="field">
+      <label for="opt_harm">Could it get worse, or last?<span class="hint">Harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. A warning, not a finding.</span></label>
+      <textarea id="opt_harm"></textarea>
     </div>
   </details>
 
@@ -333,15 +429,13 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 
   <details>
     <summary>Sources for key facts</summary>
-    <p class="small">For a fact that comes from somewhere other than what was seen or heard: a link, a record or case number, and what kind of source it is.</p>
+    <p class="small">For a fact that comes from somewhere other than what you saw or heard: a link, a record or case number, and what kind of source it is.</p>
     <div id="ev_rows"></div>
     <button type="button" id="ev_add">Add a fact</button>
   </details>
 
   <details>
-    <summary>What they did, and a registration record</summary>
-    <div class="field"><label for="power">What did they do, in plain words?<span class="hint">An eviction, a fine, a benefit denial, a shutoff, an arrest, data collected about people.</span></label><input type="text" id="power" autocomplete="off"></div>
-    <div class="field"><label for="who_rel">Relationship to them<span class="hint">Tenant, customer, employee, neighbour, student's parent.</span></label><input type="text" id="who_rel" autocomplete="off"></div>
+    <summary>A registration record</summary>
     <p class="small">A registration record is a separate document describing an organization's powers. Most reports have none.</p>
     <div class="row">
       <div class="field"><label for="rec_id">Record ID<span class="hint">Such as SCBP-REG-NNNN-TAG</span></label><input type="text" id="rec_id" autocomplete="off" spellcheck="false"></div>
@@ -380,19 +474,43 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   </details>
 </section>
 
+<!-- statement -->
+<section class="step" data-name="statement" hidden>
+  <h2 tabindex="-1">Your statement</h2>
+  <p>This statement is put together from your answers. It holds nothing you did not say. Read it, and change anything that is wrong or reads badly. Your own words stay as you wrote them, beside it.</p>
+  <div class="field">
+    <label for="stmt">Statement</label>
+    <textarea id="stmt" class="tall"></textarea>
+  </div>
+  <p><button type="button" class="link" id="stmt_reset">Start the statement again from my answers</button></p>
+  <label class="choice"><input type="checkbox" id="stmt_ok"><span>I have read this statement and it is right.</span></label>
+  <label class="choice"><input type="checkbox" id="confirm"><span>It is made in good faith, from what I saw, heard or went through and from public records. What is proven is kept apart from what I believe, and nothing in it is leaked or private.</span></label>
+  <label class="choice"><input type="checkbox" id="truth" checked><span>Add the line "This statement is true to the best of my knowledge and belief." above my signature.</span></label>
+</section>
+
 <!-- review -->
 <section class="step" data-name="review" hidden>
   <h2 tabindex="-1">Check and save</h2>
   <div id="checks"></div>
-  <label class="choice"><input type="checkbox" id="confirm"><span>This report is made in good faith, from what I saw or heard and from public records. Any copy I share names people by role, and what is proven is kept apart from what I believe.</span></label>
   <fieldset>
     <legend>Which copy?</legend>
-    <label class="choice"><input type="radio" name="copy" value="full" checked><span><b>Private copy</b><span class="hint">Everything as written, names and places included. For keeping, and for someone trusted with the details, such as a lawyer.</span></span></label>
-    <label class="choice"><input type="radio" name="copy" value="share"><span><b>Copy to share</b><span class="hint">The place only as precisely as chosen, and signed the way chosen on the How to sign it step. Names inside your own words are changed below.</span></span></label>
+    <label class="choice"><input type="radio" name="copy" value="full" checked><span><b>The full report</b><span class="hint">Everything as written, names and places included. Save this one first.</span></span></label>
+    <label class="choice"><input type="radio" name="copy" value="share"><span><b>A copy for sharing (optional)</b><span class="hint">Leaves out About me. You replace details that identify private people below. People acting in an official role keep their names and badge numbers.</span></span></label>
   </fieldset>
   <div id="sharewrap" hidden>
+    <p class="small">Replace each detail that points to a <b>private</b> person with a description in square brackets, such as [a bystander] or [the man in handcuffs]: your own name, bystanders, the person it was done to, private addresses, licence plates of private cars, phone numbers, account numbers. Officers and officials on duty keep their names and numbers.</p>
+    <fieldset>
+      <legend>How much of the place should show?</legend>
+      <label class="choice"><input type="radio" name="sprec" value="same" checked><span>The same as the full report</span></label>
+      <label class="choice"><input type="radio" name="sprec" value="locality"><span>Only the town or city</span></label>
+      <label class="choice"><input type="radio" name="sprec" value="withheld"><span>Leave the place out</span></label>
+    </fieldset>
     <div class="field">
-      <label for="own_share">Your words, in the copy to share<span class="hint">Change any name or detail that points to a private person into a role in square brackets, such as [the manager]. The private copy keeps the original.</span></label>
+      <label for="stmt_share">The statement, in the copy for sharing</label>
+      <textarea id="stmt_share" class="tall"></textarea>
+    </div>
+    <div class="field">
+      <label for="own_share">Your own words, in the copy for sharing</label>
       <textarea id="own_share" class="tall"></textarea>
     </div>
   </div>
@@ -406,7 +524,7 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
   <p class="small quiet"><b>Save or send</b> opens the phone's own menu: save to Files, email it to yourself, or send it. An email to yourself also shows when it was written.</p>
   <pre id="preview" class="printable"></pre>
   <h3>After saving</h3>
-  <p><i>The report belongs to its author.</i> Nothing has been sent anywhere, and this project has no place to file reports. Save the private copy first; its file name ends in PRIVATE. Whether to share a copy, and with whom, is the author's decision: a lawyer, a legal aid service or an oversight body can act on it. Read the copy to share once as a stranger would before sending it: this page cannot find every name. The <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/What-You-Can-Do.md">usual next steps</a> and <a href="https://github.com/WitnessMark/Bounded-Power-Framework/blob/main/00-Reading/1-Something-Happened/Witness-Report-Guide.md">sharing it safely</a> are set out in the guides.</p>
+  <p><i>The report belongs to its author.</i> Nothing has been sent anywhere, and this project has no place to file reports. <b>The full report names people.</b> Sharing or publishing it can expose you to retaliation or a legal claim, so think about who receives it. A lawyer, a legal aid service or an oversight body can act on it. Before sending the copy for sharing, read it once as a stranger would: this page cannot find every name.</p>
   <p><button type="button" class="link" id="restart">Start a new report</button></p>
 </section>
 </main>
@@ -421,18 +539,43 @@ ul.plain { padding-left: 20px; margin: 0 0 12px; }
 <script>
 "use strict";
 /* Values the report declares. Changed only when the Witness Report form changes. */
-var FORM = { version: "v1", date: "2026-11-05" };
+var FORM = { version: "v1", date: "2026-11-11" };
 var CORE = { version: "v1", date: "2026-11-05" };
 var VOCAB = "v1";
 
+var ACTS = [
+  ["use_of_force", "Used force on someone"], ["arrest_or_detention", "Arrested or held someone"],
+  ["stop_or_search", "Stopped or searched someone"], ["threat_or_intimidation", "Threatened or intimidated someone"],
+  ["surveillance_or_data_collection", "Watched people or collected data about them"], ["eviction_or_removal", "Evicted or removed someone"],
+  ["utility_shutoff", "Cut off water, power or another service"], ["fine_fee_or_seizure", "Fined, charged, or took property"],
+  ["benefit_or_service_denied", "Denied or stopped a benefit or service"], ["decision_without_explanation", "Decided something without explaining"],
+  ["retaliation", "Punished someone for speaking up"], ["discrimination", "Treated someone unequally"],
+  ["failure_to_act", "Failed to do something it should have"], ["records_error", "Got records or information wrong"],
+  ["environmental_harm", "Harmed land, water, air or living things"], ["other", "Something else"]
+];
+var HARMS = [
+  ["physical_injury", "Someone was hurt"], ["death", "Someone died"], ["loss_of_liberty", "Someone lost their freedom: held or arrested"],
+  ["financial", "Money"], ["housing", "Housing"], ["health", "Health"], ["employment", "Work"], ["privacy", "Privacy"],
+  ["emotional_distress", "Fear or distress"], ["property", "Property"], ["environmental", "Land, water, air or living things"]
+];
+var EVS = [
+  ["video", "Video"], ["photo", "Photos"], ["audio", "A sound recording"], ["document", "Papers or letters"],
+  ["message", "Emails, texts or messages"], ["medical_record", "Medical records"], ["physical", "An object"]
+];
+var MEMS = [
+  ["talked_with_witnesses", "I talked about it with others who were there"], ["saw_video", "I saw video of it"],
+  ["saw_news", "I saw news about it"], ["unknown", "Not sure"]
+];
+
 var steps = Array.prototype.slice.call(document.querySelectorAll("section.step"));
-var cur = 0, dirty = false, saved = false, tagEdited = false, verificationHash = "", lastPrefill = "";
+var cur = 0, dirty = false, saved = false, tagEdited = false, verificationHash = "", lastStmt = "", lastShareStmt = "", lastShareOwn = "";
 var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var STEP_NAMES = { when: "When and where", who: "Who", account: "What happened", impact: "What it did", before: "Before this", have: "What you have", sign: "How to sign it", more: "More details (optional)", review: "Check and save" };
+var STEP_NAMES = { when: "When and where", who: "Which organization", account: "What happened", people: "Who was involved", addon: "A few more details", impact: "What it did", have: "What you have", memory: "How sure", sign: "About you", more: "More details (optional)", statement: "Your statement", review: "Check and save" };
 
 function $(id) { return document.getElementById(id); }
 function val(id) { var e = $(id); return e ? e.value.trim() : ""; }
 function radio(name) { var e = document.querySelector("input[name='" + name + "']:checked"); return e ? e.value : ""; }
+function ticked(cls) { return Array.prototype.slice.call(document.querySelectorAll("input." + cls + ":checked")).map(function (c) { return c.value; }); }
 function pad(n) { return (n < 10 ? "0" : "") + n; }
 function today() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
 function isDate(s) { return /^\d{4}-\d{2}-\d{2}$/.test(s); }
@@ -440,41 +583,45 @@ function humanDate(s) { return isDate(s) ? MONTHS[Number(s.slice(5, 7)) - 1] + "
 function humanTime(s) {
   if (!/^\d{2}:\d{2}/.test(s)) { return ""; }
   var h = Number(s.slice(0, 2)), m = s.slice(3, 5);
-  return (h % 12 || 12) + ":" + m + (h < 12 ? " am" : " pm");
+  return (h % 12 || 12) + ":" + m + (h < 12 ? " a.m." : " p.m.");
 }
 function inApp() { return /Instagram|FBAN|FBAV|FB_IAB|FBIOS|Line\/|TikTok|musical_ly|Snapchat|LinkedInApp|Twitter/i.test(navigator.userAgent || ""); }
+function kinds() { return ticked("kind"); }
 
+function boxes(id, list, cls) {
+  $(id).innerHTML = list.map(function (o) {
+    return "<label class='choice'><input type='checkbox' class='" + cls + "' value='" + o[0] + "'><span>" + o[1] + "</span></label>";
+  }).join("");
+}
+
+function visible() {
+  /* the add-on step is shown only when a kind of situation is chosen */
+  return steps.filter(function (s) { return s.getAttribute("data-name") !== "addon" || kinds().length; });
+}
 function show(i) {
-  steps.forEach(function (s, k) { s.hidden = k !== i; });
+  var vs = visible();
+  steps.forEach(function (s) { s.hidden = s !== vs[i]; });
   cur = i;
-  var name = steps[i].getAttribute("data-name");
-  $("progress").textContent = i === 0 ? "" : "Step " + i + " of " + (steps.length - 1) + ": " + STEP_NAMES[name];
-  $("trackfill").style.width = (i / (steps.length - 1) * 100) + "%";
+  var name = vs[i].getAttribute("data-name");
+  $("progress").textContent = i === 0 ? "" : "Step " + i + " of " + (vs.length - 1) + ": " + STEP_NAMES[name];
+  $("trackfill").style.width = (i / (vs.length - 1) * 100) + "%";
   $("back").style.visibility = i === 0 ? "hidden" : "visible";
-  $("next").textContent = i === 0 ? "Begin" : (name === "sign" ? "Next" : (name === "more" ? "See the report" : "Next"));
+  $("next").textContent = i === 0 ? "Begin" : (name === "more" ? "See the statement" : (name === "statement" ? "See the report" : "Next"));
   $("next").hidden = name === "review";
   hideError();
-  if (name === "account") { prefill(); }
+  if (name === "addon") {
+    $("add_scene").hidden = kinds().indexOf("scene") < 0;
+    $("add_process").hidden = kinds().indexOf("process") < 0;
+    $("add_condition").hidden = kinds().indexOf("condition") < 0;
+  }
+  if (name === "statement") { refreshStatement(false); }
   if (name === "review") { render(); }
-  var h = steps[i].querySelector("h1, h2");
+  var h = vs[i].querySelector("h1, h2");
   if (h) { h.focus(); }
   window.scrollTo(0, 0);
 }
 function showError(msg) { var e = $("error"); e.textContent = msg; e.hidden = false; e.scrollIntoView({ block: "center" }); }
 function hideError() { $("error").hidden = true; }
-
-/* The account starts like a police report, from the earlier answers. */
-function opening() {
-  var parts = [];
-  if (!$("inc_unknown").checked && isDate(val("inc_date"))) { parts.push("On " + humanDate(val("inc_date"))); }
-  if (humanTime(val("inc_time"))) { parts.push((parts.length ? "at about " : "At about ") + humanTime(val("inc_time"))); }
-  if (radio("prec") !== "withheld" && val("loc_desc")) { parts.push((parts.length ? "at " : "At ") + val("loc_desc")); }
-  return parts.length ? parts.join(", ") + ", " : "";
-}
-function prefill() {
-  var o = opening(), box = $("own");
-  if (!box.value.trim() || box.value === lastPrefill) { box.value = o; lastPrefill = o; }
-}
 
 var checks = {
   when: function () {
@@ -485,16 +632,17 @@ var checks = {
     if (radio("going") === "no" && val("end_date")) {
       if (!$("inc_unknown").checked && val("end_date") < val("inc_date")) { return "The end date is before the start."; }
     }
-    if (radio("prec") !== "withheld" && !val("loc_desc")) { return "Where did it happen? Or choose to leave the place out."; }
+    if (!val("loc_desc") && !val("j_loc")) { return "Where did it happen? At least the town or city."; }
+    if (val("j_cty") && !/^[A-Za-z]{2}$/.test(val("j_cty"))) { return "The country is two letters, such as US. It can be left blank."; }
     return "";
   },
   who: function () { return val("inst") ? "" : "The name of the organization or office is needed."; },
   account: function () {
-    var t = val("own");
-    if (!t || t === lastPrefill.trim()) { return "The account is the heart of the report. Finish the sentence with what happened."; }
+    if (!val("own")) { return "Your account is the heart of the report. Tell what happened in your own words."; }
+    if (!kinds().length) { return "Mark at least one kind of situation."; }
     return "";
   },
-  sign: function () { return radio("ident") === "identified" && !val("who_name") ? "A report signed with a name gives the name." : ""; },
+  sign: function () { return radio("ident") !== "anonymous" && !val("who_name") ? "A name, or a made-up name, is needed to sign it. Or choose No name." : ""; },
   more: function () {
     if (radio("rtype") === "stop_signal" && !radio("ssb")) { return "A stop signal states what it is based on (under Kind of report)."; }
     var r = val("rec_id"), p = val("pow_id");
@@ -506,7 +654,8 @@ var checks = {
     if (!coord(val("lat"), -90, 90) || !coord(val("lon"), -180, 180) || ((val("lat") === "") !== (val("lon") === ""))) { return "Coordinates need both latitude and longitude, in decimal degrees, or neither."; }
     if (val("phrase") && !verificationHash) { return "Calculate the code for the verification phrase, or clear the phrase."; }
     return "";
-  }
+  },
+  statement: function () { return val("stmt") ? "" : "The statement is empty. Start it again from your answers, or write it."; }
 };
 
 function sync() {
@@ -522,6 +671,7 @@ function sync() {
   $("whowrap").hidden = id === "anonymous";
   $("contactwrap").hidden = id === "anonymous";
   $("who_label").textContent = id === "identified" ? "Name" : "Made-up name";
+  /* "none" stands alone in the memory list */
 }
 
 function autoTag() {
@@ -532,7 +682,13 @@ function autoTag() {
 }
 function reportDate() { return $("inc_unknown").checked || !isDate(val("inc_date")) ? today() : val("inc_date"); }
 function reportId() { return "SCBP-WR-" + (val("tag") || autoTag()) + "-" + reportDate(); }
-function fileName(ext) { return reportId() + (radio("copy") === "share" ? "" : "-PRIVATE") + (ext || ".md"); }
+function isShare() { return radio("copy") === "share"; }
+function fileName(ext) { return reportId() + (isShare() ? "-SHARE" : "") + (ext || ".md"); }
+function signer(share) {
+  var id = radio("ident");
+  if (id === "anonymous") { return share ? "[the witness]" : "Anonymous"; }
+  return val("who_name") || (share ? "[the witness]" : "UNKNOWN");
+}
 
 /* sources for key facts */
 var CLAIM_TYPES = [
@@ -586,38 +742,92 @@ function fingerprint() {
   });
 }
 
+/* the statement, assembled from the answers with fixed sentence patterns: nothing is added */
+function sentence(s) { s = s.replace(/\s*\n\s*/g, " ").trim(); return s ? s.charAt(0).toUpperCase() + s.slice(1) + (/[.!?"”]$/.test(s) ? "" : ".") : ""; }
+function labelled(label, id) { var s = val(id).replace(/\s*\n\s*/g, " "); return s ? label + " " + s + (/[.!?"”]$/.test(s) ? "" : ".") : ""; }
+function listLines(id) {
+  return val(id).split(/\r?\n/).map(function (l) { return l.replace(/^\s*[-*]\s*/, "").trim(); }).filter(Boolean)
+    .map(function (l) { var m = l.match(/^(\d{4}-\d{2}-\d{2})\s*[-–:,]?\s*(.*)$/); return m ? "- **" + m[1] + ".** " + sentence(m[2]) : "- " + sentence(l); }).join("\n");
+}
+var ROLE_VERB = {
+  affected_person: "this happened to me", eyewitness: "I saw it happen", learned_after: "I learned of it myself afterwards",
+  told_by_others: "I was told about it by others", on_behalf_of: "I am reporting it for someone it happened to"
+};
+function compileStatement() {
+  var p = [], when = [], name = radio("ident") === "anonymous" ? "" : val("who_name");
+  if (!$("inc_unknown").checked && isDate(val("inc_date"))) { when.push("On " + humanDate(val("inc_date"))); }
+  if (humanTime(val("inc_time"))) { when.push((when.length ? "at about " : "At about ") + humanTime(val("inc_time"))); }
+  var town = [val("j_loc"), val("j_reg")].filter(Boolean).join(", ");
+  if (val("loc_desc")) { when.push((when.length ? "at " : "At ") + val("loc_desc")); }
+  else if (town) { when.push((when.length ? "in " : "In ") + town); }
+  var open = (when.length ? when.join(", ") + ", " : "") + (name ? "I, " + name + ", " : "I ") +
+    "make this statement about " + val("inst") + (val("power") ? ": " + val("power").replace(/[.\s]+$/, "") : "") + ".";
+  p.push(open.charAt(0).toUpperCase() + open.slice(1));
+  p.push(sentence("How I know: " + ROLE_VERB[radio("role")]));
+  var who = [labelled("Who did it:", "who_did"), labelled("Who it was done to:", "who_to")].filter(Boolean).join(" ");
+  if (who) { p.push(who); }
+  if (kinds().indexOf("scene") >= 0) {
+    var sc = [labelled("Where I was:", "sc_where"), labelled("What I could see and hear:", "sc_see"), labelled("How long I watched:", "sc_long"),
+      labelled("How many people:", "sc_many"), labelled("Vehicles:", "sc_veh"), labelled("What was said:", "sc_said"), labelled("What I did:", "sc_did")].filter(Boolean).join(" ");
+    if (sc) { p.push(sc); }
+  }
+  if (kinds().indexOf("process") >= 0) {
+    if (val("pr_list")) { p.push("**Contacts, in order.**\n\n" + listLines("pr_list")); }
+    var pr = [labelled("Reference numbers:", "pr_ref"), labelled("What they decided, and the reason given:", "pr_dec"),
+      labelled("How to challenge it:", "pr_chal"), labelled("Deadlines:", "pr_dead")].filter(Boolean).join(" ");
+    if (pr) { p.push(pr); }
+  }
+  if (kinds().indexOf("condition") >= 0) {
+    if (val("co_first")) { p.push(sentence("I first noticed it " + val("co_first"))); }
+    if (val("co_list")) { p.push("**Observations, in order.**\n\n" + listLines("co_list")); }
+    var co = [labelled("Tests:", "co_test"), radio("trend") ? "It is getting " + (radio("trend") === "the same" ? "neither better nor worse" : radio("trend")) + "." : ""].filter(Boolean).join(" ");
+    if (co) { p.push(co); }
+  }
+  var rest = [labelled("Others who saw or heard it:", "seen"), labelled("How it ended:", "after")].filter(Boolean).join(" ");
+  if (rest) { p.push(rest); }
+  if (val("impact")) { p.push(labelled("What it did:", "impact")); }
+  if (val("warnings")) { p.push(labelled("Reported:", "warnings")); }
+  if (val("sure")) { p.push(labelled("How sure I am:", "sure")); }
+  var mem = ticked("mem");
+  var memText = { talked_with_witnesses: "talked about it with others who were there", saw_video: "saw video of it", saw_news: "saw news about it" };
+  var said = mem.filter(function (m) { return memText[m]; }).map(function (m) { return memText[m]; });
+  if (said.length) { p.push("Before writing this, I " + said.join(", and ") + "."); }
+  else if (!mem.length) { p.push("Before writing this, I had not talked about it with others who were there, or seen video or news about it."); }
+  return p.join("\n\n");
+}
+function refreshStatement(force) {
+  var s = compileStatement(), box = $("stmt");
+  if (force || !box.value.trim() || box.value === lastStmt) { box.value = s; lastStmt = s; }
+}
+
 /* building the report */
 function q(s) { return "\"" + s.replace(/\\/g, "\\\\").replace(/"/g, "\\\"").replace(/\s*\n\s*/g, " ") + "\""; }
 function cell(s) { return s.replace(/\|/g, "\\|").replace(/\s*\n\s*/g, " "); }
 function block(s) { return s.split(/\r?\n/).map(function (l) { return /^\s*(#|---|```)/.test(l) ? "\\" + l.replace(/^\s+/, "") : l; }).join("\n"); }
-function answer(id) { var s = val(id); return s ? block(s) : "UNKNOWN"; }
-function optional(id) { var s = val(id); return s ? block(s) : "UNKNOWN (skipped)."; }
 function quote(s) { return block(s).split("\n").map(function (l) { return l ? "> " + l : ">"; }).join("\n"); }
-function line(label, text) { return text.indexOf("\n") >= 0 ? label + "\n" + text : label + " " + text; }
-
-function timelineText() {
-  if (val("timeline")) { return block(val("timeline")); }
-  var d = !$("inc_unknown").checked && isDate(val("inc_date")) ? val("inc_date") : "";
-  var t = humanTime(val("inc_time"));
-  if (!d && !t) { return "UNKNOWN"; }
-  return (d || "Date unknown") + (t ? ", at about " + t : "") + ": what I describe in section 1.";
-}
+function yamlList(arr, empty) { return "[" + (arr.length ? arr : [empty]).join(", ") + "]"; }
+function yamlWord(s) { return s ? q(s) : "UNKNOWN"; }
 
 function build() {
-  var full = radio("copy") !== "share";
-  var prec = full ? (radio("prec") === "exact" ? "exact" : "approximate") : radio("prec"), withheld = prec === "withheld";
+  var share = isShare(), sp = radio("sprec");
+  var prec = radio("prec");
+  if (share && sp === "locality") { prec = "locality"; }
+  if (share && sp === "withheld") { prec = "withheld"; }
+  var withheld = prec === "withheld";
   var lat = withheld ? "WITHHELD" : (val("lat") || "UNKNOWN");
   var lon = withheld ? "WITHHELD" : (val("lon") || "UNKNOWN");
-  var desc = withheld ? "withheld" : (val("loc_desc") || "UNKNOWN");
+  var town = [val("j_loc"), val("j_reg")].filter(Boolean).join(", ");
+  var desc = withheld ? "withheld" : (share && sp === "locality" ? (town || "UNKNOWN") : (val("loc_desc") || town || "UNKNOWN"));
   var inc = $("inc_unknown").checked ? "UNKNOWN" : val("inc_date");
   var going = radio("going");
   var end = going === "yes" ? "ongoing" : (going === "no" && isDate(val("end_date")) ? val("end_date") : "NONE");
-  var status = going === "yes" ? "ongoing" : (going === "no" ? "resolved" : "unknown");
   var rtype = radio("rtype");
   var ssb = rtype === "stop_signal" ? radio("ssb") : "NONE";
   var rec = val("rec_id") || "NONE";
   var pw = rec !== "NONE" && val("pow_id") ? val("pow_id") : "UNKNOWN";
   var ident = radio("ident"), inst = val("inst");
+  var mem = ticked("mem");
+  var acts = ticked("act"), harms = ticked("harm"), evs = ticked("evt2");
 
   var fm = [
     "report_id: " + reportId(),
@@ -626,87 +836,97 @@ function build() {
     "core_requirements: {version: " + CORE.version + ", date: " + CORE.date + "}",
     "bundle: NONE",
     "vocab_version: " + VOCAB,
-    "record_id: " + rec,
-    "power_id: " + pw,
+    "filed_date: " + today(),
+    "composed_by: web_form",
+    "statement_confirmed: " + ($("stmt_ok").checked ? "true" : "false"),
+    "truth_statement: " + ($("truth").checked ? "plain" : "none"),
+    "situation_kind: " + yamlList(kinds(), "scene"),
     "institution_name: " + q(inst),
     "incident_date: " + inc,
+    "incident_time: " + (/^\d{2}:\d{2}/.test(val("inc_time")) ? q(val("inc_time").slice(0, 5)) : "UNKNOWN"),
     "incident_end_date: " + end,
-    "filed_date: " + today(),
+    "jurisdiction: {locality: " + yamlWord(val("j_loc")) + ", region: " + yamlWord(val("j_reg")) + ", country: " + (val("j_cty") ? val("j_cty").toUpperCase() : "UNKNOWN") + "}",
     "location:",
     "  description: " + q(desc),
     "  latitude: " + lat,
     "  longitude: " + lon,
     "  precision: " + prec,
-    "stop_signal_basis: " + ssb,
+    "action_category: " + yamlList(acts, "other"),
+    "harm_type: " + yamlList(harms, "none_known"),
+    "affected_count: " + radio("count"),
+    "reporter_role: " + radio("role"),
+    "evidence_held: " + yamlList(evs, "none"),
+    "memory_influences: " + yamlList(mem, "none"),
     "identity_disclosure: " + ident,
     "verification_hash: " + (verificationHash || "NONE"),
-    "status: " + status
+    "stop_signal_basis: " + ssb,
+    "record_id: " + rec,
+    "power_id: " + pw
   ].join("\n");
 
-  var recLine = rec === "NONE" ? "NONE" : rec + (pw !== "UNKNOWN" ? ", power " + pw : "");
   var b = [];
-  if (full) { b.push("> **Private copy.** Names, places and contact details are kept as I gave them. Don't share this copy. Share the copy made for sharing."); }
-  b.push("> **What I saw and heard, and what public records show.** Written in good faith. It is an account, not a verdict.");
+  if (share) { b.push("> **Copy for sharing.** Details that identify private people are replaced in [brackets]. The full report is kept by its author."); }
   b.push("# Witness Report - " + inst + " - " + inc);
+  var whenTxt = (inc === "UNKNOWN" ? "date UNKNOWN" : inc) + (humanTime(val("inc_time")) ? ", about " + humanTime(val("inc_time")) : "");
+  b.push("**When:** " + whenTxt + " · **Where:** " + desc + " · **Statement of:** " + signer(share) + " · **Written:** " + today());
 
-  var own = full ? val("own") : (val("own_share") || val("own"));
-  var changed = !full && own !== val("own");
-  b.push("## 1. What happened *(in your own words)*\n\n" + quote(own) + "\n\n" +
-    "*I wrote this report with the web form." + (changed ? " In this copy, I replaced names and details that could identify people with roles in square brackets." : "") + "*");
+  var stmt = share ? (val("stmt_share") || val("stmt")) : val("stmt");
+  var c = $("confirm").checked ? "x" : " ";
+  var s1 = "## 1. Statement\n\n" + block(stmt) + "\n\n" +
+    ($("stmt_ok").checked ? "*This statement was put together from my answers by the web form. I read it and confirm it.*"
+      : "*This statement was put together from my answers by the web form. I have not yet confirmed it.*") + "\n\n" +
+    "- [" + c + "] Made in good faith.\n- [" + c + "] First-hand observation and public sources only.\n- [" + c + "] What is proven is kept apart from what I saw or believe.\n- [" + c + "] Nothing leaked or private." +
+    ($("truth").checked ? "\n\nThis statement is true to the best of my knowledge and belief." : "") +
+    "\n\n**Signed:** " + signer(share) + " · " + today();
+  b.push(s1);
 
   var rows = Array.prototype.slice.call(document.querySelectorAll("#ev_rows .ev")).map(function (box) {
     return [box.querySelector(".evc").value.trim(), box.querySelector(".evs").value.trim(), box.querySelector(".evt").value];
   }).filter(function (r) { return r[0]; });
-  var s2 = "## 2. Proof\n\n";
+  var s2 = "## 2. Evidence\n\n";
   s2 += rows.length ? "| Claim | Source | Type |\n|---|---|---|\n" +
     rows.map(function (r) { return "| " + cell(r[0]) + " | " + cell(r[1] || "UNKNOWN") + " | " + r[2] + " |"; }).join("\n")
-    : "Everything here is what I saw or heard myself, unless it says otherwise.";
+    : "Everything here is what I saw, heard or went through myself, unless it says otherwise.";
   s2 += "\n\n**What I have (not attached).**" + (val("inventory") ? "\n\n" + val("inventory").split(/\r?\n/).filter(function (l) { return l.trim(); }).map(function (l) { return "- " + block(l.replace(/^\s*[-*]\s*/, "")); }).join("\n") : " Nothing listed.");
   b.push(s2);
 
-  b.push("## 3. Who did it, and what they control\n\n" +
-    "- **Who:** " + inst + (withheld || !val("loc_desc") ? "" : ". It happened at " + val("loc_desc") + ".") + "\n" +
-    "- **What they did:** " + (val("power") || "UNKNOWN") + "\n" +
-    "- **Registration record:** " + recLine);
-  b.push("## 4. About you\n\n" +
-    "- **Name or handle:** " + (ident === "anonymous" && !(full && val("who_name")) ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
-    "- **Contact:** " + (ident === "anonymous" && !(full && val("who_contact")) ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
-    "- **How you are connected to them:** " + (val("who_rel") || "UNKNOWN") + "\n" +
-    "- **Verification phrase:** " + (verificationHash ? "yes" : "no"));
-  b.push("## 5. How it affected people\n\n" + answer("impact"));
-  b.push("## 6. Who was affected, and who else was there\n\n" +
-    "- **Affected:** " + answer("affected") + "\n" +
-    "- **Also there:** " + (val("seen") ? block(val("seen")) : "UNKNOWN"));
-  b.push("## 7. Was it reported before?\n\n" + answer("warnings"));
-  b.push("## 8. What feels wrong about it (optional)\n\n" + optional("opt_wrong"));
-  b.push("## 9. What they should have done (optional)\n\n" + optional("opt_duty"));
-  b.push("## 10. Does this happen to others? (optional)\n\n" + optional("opt_power") + (rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""));
-  b.push("## 11. Could it get worse, or last? (optional)\n\n" + optional("opt_harm"));
-  b.push("## 12. Timeline\n\n" + timelineText() + (val("how") ? "\n\n**How it was done or said:** " + block(val("how")) : ""));
+  var own = share ? (val("own_share") || val("own")) : val("own");
+  b.push("## 3. In my own words\n\n" + quote(own) + (share && own !== val("own") ? "\n\n*In this copy, I replaced details that could identify private people with descriptions in square brackets.*" : ""));
 
-  var s12 = "## 13. Asking for something to stop or change\n\n";
+  if (!share) {
+    b.push("## 4. About me\n\n" +
+      "- **Name or handle:** " + (ident === "anonymous" ? "anonymous" : (val("who_name") || "UNKNOWN")) + "\n" +
+      "- **Contact:** " + (ident === "anonymous" ? "NONE" : (val("who_contact") || "NONE")) + "\n" +
+      "- **How I am connected to them:** " + (val("who_rel") || "UNKNOWN") + "\n" +
+      "- **Verification phrase:** " + (verificationHash ? "yes" : "no"));
+  }
+
+  b.push("---\n\n# Record-keeping — not part of the statement\n\n*Everything below this line is for record-keeping. A reader can stop here. Nothing below changes the statement.*");
+  var opt = [["What feels wrong about it", "opt_wrong"], ["What they should have done", "opt_duty"], ["Does this happen to others?", "opt_power"], ["Could it get worse, or last?", "opt_harm"]]
+    .filter(function (o) { return val(o[1]); })
+    .map(function (o) { return "### " + o[0] + "\n\n" + block(val(o[1])) + (o[1] === "opt_power" && rec !== "NONE" && val("opt_part") ? " Bears on: " + val("opt_part") + "." : ""); });
+  if (opt.length) { b.push("## 5. Optional questions\n\n" + opt.join("\n\n")); }
+
+  var s6 = "## 6. Asking for something to stop or change\n\n";
   if (rtype === "stop_signal") {
-    s12 += "**Stop signal.**\n- **Basis:**\n" +
+    s6 += "**Stop signal.**\n- **Basis:**\n" +
       "  - [" + (ssb === "defined_condition" ? "x" : " ") + "] a **defined condition**: a published limit or stop condition was crossed.\n" +
       "  - [" + (ssb === "credible_pathway" ? "x" : " ") + "] a **credible pathway to serious harm**: a real risk of serious harm that no published limit covers.\n" +
-      "- **Which limit, or the facts that show the risk:** " + answer("ss_which") + "\n" +
-      "- **Now:** " + answer("ss_now");
+      "- **Which limit, or the facts that show the risk:** " + (val("ss_which") ? block(val("ss_which")) : "UNKNOWN") + "\n" +
+      "- **Now:** " + (val("ss_now") || "UNKNOWN");
   } else if (["challenge", "change_request", "review_petition"].indexOf(rtype) >= 0) {
-    var items = Array.prototype.slice.call(document.querySelectorAll("input.ch")).map(function (c) {
-      var label = c.value === "a Floor is at stake" ? "a Floor is at stake (which one?)" + (c.checked && val("floor_which") ? " " + val("floor_which") : "") : c.value;
-      return "  - [" + (c.checked ? "x" : " ") + "] " + label;
+    var items = Array.prototype.slice.call(document.querySelectorAll("input.ch")).map(function (cb) {
+      var label = cb.value === "a Floor is at stake" ? "a Floor is at stake (which one?)" + (cb.checked && val("floor_which") ? " " + val("floor_which") : "") : cb.value;
+      return "  - [" + (cb.checked ? "x" : " ") + "] " + label;
     }).join("\n");
-    s12 += "**Challenge, change request, or review petition.**\n- **What limit is exceeded, or what should change:**\n" + items + "\n" +
-      "- **What would fix it (optional):** " + optional("fix");
-    if (rtype === "review_petition") { s12 += "\n- **Joining an existing petition:** " + (val("petition_id") || "NONE"); }
+    s6 += "**Challenge, change request, or review petition.**\n- **What limit is exceeded, or what should change:**\n" + items + "\n" +
+      "- **What would fix it (optional):** " + (val("fix") ? block(val("fix")) : "UNKNOWN");
+    if (rtype === "review_petition") { s6 += "\n- **Joining an existing petition:** " + (val("petition_id") || "NONE"); }
   } else {
-    s12 += "Not applicable.";
+    s6 += "Not applicable.";
   }
-  b.push(s12);
-
-  var c = $("confirm").checked ? "x" : " ";
-  b.push("## 14. Honesty\n\n- [" + c + "] Made in good faith.\n- [" + c + "] Public sources and my own observation only.\n- [" + c + "] Roles, not names, in any copy I share.\n- [" + c + "] Facts kept separate from allegations.");
-  b.push("## 15. What happened next\n\n*Filled in later by whoever reviews the report.*\n\n" +
+  b.push(s6);
+  b.push("## 7. What happened next\n\n*Filled in later by whoever reviews the report.*\n\n" +
     "- Response from them, and its date:\n" +
     "- For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:\n" +
     "- Effect on the power (paused, stopped, narrowed, changed in another way, or not changed), its date and source:\n" +
@@ -717,24 +937,21 @@ function build() {
 }
 
 /* review */
-var TITLE_NAME = /\b(?:Officer|Sgt\.?|Sergeant|Lt\.?|Lieutenant|Det\.?|Detective|Deputy|Judge|Mayor|Dr\.|Mr\.?|Ms\.?|Mrs\.?|Commissioner|Chief|Sheriff|Captain|Capt\.)\s+([A-Z][a-zA-Z'-]+)/g;
-var ROLE_OK = /^(Office|Department|Division|Court|County|City|State|District|Executive|Officer|Deputy|Assistant|General|Justice|Judge|Public|Police|Fire|Medical|Clerk|Director|The|Of|And)$/;
-var lastOwn = "";
 function render() {
-  var share = radio("copy") === "share";
+  var share = isShare();
   $("sharewrap").hidden = !share;
-  if (!val("own_share") || $("own_share").value === lastOwn) { $("own_share").value = $("own").value; }
-  lastOwn = $("own").value;
-  var text = build(), notes = [], names = [], m, body = text.replace(/## 4\. About you[\s\S]*?(?=## 5\.)/, "");
-  $("preview").textContent = text;
-  TITLE_NAME.lastIndex = 0;
-  while ((m = TITLE_NAME.exec(body)) !== null) { if (!ROLE_OK.test(m[1])) { names.push(m[0]); } }
+  if (!val("stmt_share") || $("stmt_share").value === lastShareStmt) { $("stmt_share").value = $("stmt").value; }
+  lastShareStmt = $("stmt").value;
+  if (!val("own_share") || $("own_share").value === lastShareOwn) { $("own_share").value = $("own").value; }
+  lastShareOwn = $("own").value;
+  $("preview").textContent = build();
+  var notes = [];
   if (share) {
-    notes.push("Before sending this copy, read it as a stranger would. This page cannot find every name: check your own words above, and the other answers too. A name typed in another answer can be changed there with Back, and that changes both copies.");
-    if (names.length) { notes.push("Possible names in this copy: " + names.slice(0, 5).join(", ") + "."); }
+    notes.push("Before sending this copy, read it as a stranger would. This page cannot find every name or detail: check the statement and your own words above, and the evidence list too. A detail in another answer can be changed there with Back, and that changes both copies.");
   } else {
-    notes.push("This is the private copy, with everything as written. Its file name ends in PRIVATE. Save it first; then choose Copy to share for a version to send.");
+    notes.push("This is the full report, with names and details as written. Save it first. If you want a version to pass around that identifies no private person, choose A copy for sharing.");
   }
+  if (!$("stmt_ok").checked) { notes.push("You have not ticked that the statement is right. The report will say it is not yet confirmed. Go Back to read it and tick the box."); }
   if (inApp()) { notes.push("This page is open inside another app, where saving often does not work. If Save or send does nothing, use Copy the text and paste it into an email or a note."); }
   $("checks").innerHTML = "";
   notes.forEach(function (n) { var p = document.createElement("p"); p.className = "notice"; p.textContent = n; $("checks").appendChild(p); });
@@ -773,11 +990,15 @@ function copyText() {
 }
 
 /* wiring */
+boxes("acts", ACTS, "act");
+boxes("harms", HARMS, "harm");
+boxes("evs", EVS, "evt2");
+boxes("mems", MEMS, "mem");
 $("next").addEventListener("click", function () {
-  var name = steps[cur].getAttribute("data-name");
+  var name = visible()[cur].getAttribute("data-name");
   var err = checks[name] ? checks[name]() : "";
   if (err) { showError(err); return; }
-  if (cur < steps.length - 1) { show(cur + 1); }
+  if (cur < visible().length - 1) { show(cur + 1); }
 });
 $("back").addEventListener("click", function () { if (cur > 0) { show(cur - 1); } });
 $("ev_add").addEventListener("click", addEvidence);
@@ -785,13 +1006,17 @@ $("hash_btn").addEventListener("click", hashPhrase);
 $("phrase").addEventListener("input", function () { verificationHash = ""; $("hash_out").textContent = ""; });
 $("phrase_show").addEventListener("change", function () { $("phrase").type = this.checked ? "text" : "password"; });
 $("fp_file").addEventListener("change", fingerprint);
+$("stmt_reset").addEventListener("click", function () {
+  if (val("stmt") && $("stmt").value !== lastStmt && !window.confirm("Replace your edits with a fresh statement from your answers?")) { return; }
+  refreshStatement(true);
+});
 $("share").addEventListener("click", share);
-Array.prototype.forEach.call(document.querySelectorAll("input[name='copy']"), function (r) { r.addEventListener("change", function () { render(); said(""); }); });
+Array.prototype.forEach.call(document.querySelectorAll("input[name='copy'], input[name='sprec']"), function (r) { r.addEventListener("change", function () { render(); said(""); }); });
+$("stmt_share").addEventListener("input", function () { $("preview").textContent = build(); });
 $("own_share").addEventListener("input", function () { $("preview").textContent = build(); });
 $("dl").addEventListener("click", download);
 $("copy").addEventListener("click", copyText);
 $("print").addEventListener("click", function () { window.print(); });
-$("confirm").addEventListener("change", render);
 $("restart").addEventListener("click", function () {
   if (!saved && !window.confirm("Start again? This report has not been saved or sent.")) { return; }
   dirty = false;
@@ -803,6 +1028,7 @@ $("tag").addEventListener("input", function () {
   this.value = this.value.toUpperCase().replace(/[^A-Z0-9-]/g, "");
   this.setSelectionRange(p, p);
 });
+$("j_cty").addEventListener("input", function () { this.value = this.value.toUpperCase().replace(/[^A-Z]/g, ""); });
 document.addEventListener("input", function () { dirty = true; saved = false; hideError(); sync(); });
 document.addEventListener("change", sync);
 window.addEventListener("beforeunload", function (e) { if (dirty && !saved) { e.preventDefault(); e.returnValue = ""; } });

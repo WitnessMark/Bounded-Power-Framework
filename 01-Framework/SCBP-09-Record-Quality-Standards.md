@@ -64,6 +64,8 @@ Every figure â€” a count, a percentage, an amount of money, a date, a duration â
 
 Refer to people by role or title: "the Director", "the arresting officer". A person's name may appear in a source title or link only where it is needed to find the source, never in the text of the record.
 
+This rule is for registration records. A witness report is different: it is a record to help its author remember and to identify what happened, so it keeps names, badge and car numbers, and descriptions as the witness gives them. Its optional copy for sharing replaces the details of private people, and keeps the names of people acting in an official role.
+
 ### 4. Public sources and first-hand observation only
 
 Nothing private, leaked, or speculative.
@@ -279,8 +281,10 @@ It reports three levels:
 - Location coordinates are in range, and no coordinates are given when the location is withheld.
 - A stop signal states its basis (defined condition or credible pathway).
 - A registration record named in the report has the shape of a registration ID, the power is P1, P2 and so on, and no power is named without a record. Whether that record and power actually exist is not checked: in v1 no place collects records.
-- A witness report may keep its fields at the end, under "Technical details", so a person reads the report first. Fields on top are also accepted.
-- A witness's private copy, marked "Private copy.", keeps names on purpose. The checker warns that it is private instead of flagging each name, and expects its file name to end in `-PRIVATE`. A copy to share is checked for names as usual.
+- A witness report keeps its fields at the end, under "Technical details", so a person reads the report first. Fields on top are also accepted.
+- A witness report has a Statement section. When someone other than the witness wrote the statement, it also has "In my own words", the witness's account exactly as given.
+- The kind of situation, what was done, the harm, how many were affected, how the reporter knows, what evidence exists and what could have shaped the memory use the vocabulary's values. The time is "HH:MM" or UNKNOWN; the jurisdiction gives town, region and a two-letter country code. The retired `status` field is an error.
+- A witness report keeps names on purpose, so the name checks are not run on it. A copy for sharing, marked "Copy for sharing.", must leave out About me, and its file name should end in `-SHARE`. Whether it still identifies a private person is for a person to check.
 
 ---
 

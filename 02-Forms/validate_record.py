@@ -21,19 +21,23 @@ What it checks:
     version just before, and the change-history heading names that version
   - authority responses: response_to names a registration record_id and a
     version; the response_id carries that record's suffix
-  - witness reports: report type, dates, location, stop-signal basis, and
-    identity choice; verification_hash is NONE or a 64-character SHA-256 code
-    (never the secret phrase); record_id is NONE or shaped like a
-    registration ID, and power_id is UNKNOWN or P1, P2... (UNKNOWN when
-    record_id is NONE). The optional sections and the resolution are never
-    required. A witness report may keep its fields at the end, in a ```yaml
-    block under "## Technical details", so a person reads the report first;
-    the older layout, with the fields on top, is still accepted. A witness's
-    private copy (its first line is "**Private copy.**"; the older wordings
-    "**Full copy. Private.**" and "**Full copy: private.**" are also read)
-    keeps names on purpose: the name and
-    officeholder warnings give way to one warning to keep it private, and its
-    file name should end in -PRIVATE
+  - witness reports: report type, dates and time, place and jurisdiction,
+    the kind of situation, what was done, the harm, how many were affected,
+    how the reporter knows, what evidence exists, what could have shaped the
+    memory, who wrote the statement and whether the witness confirmed it,
+    the truth statement, stop-signal basis, and identity choice;
+    verification_hash is NONE or a 64-character SHA-256 code (never the
+    secret phrase); record_id is NONE or shaped like a registration ID, and
+    power_id is UNKNOWN or P1, P2... (UNKNOWN when record_id is NONE). The
+    report has a Statement section, and, when someone other than the witness
+    wrote the statement, an "In my own words" section. The optional
+    questions and "What happened next" are never required. The fields sit at
+    the end, in a ```yaml block under "## Technical details", so a person
+    reads the report first; fields on top are still accepted. A witness
+    report keeps names on purpose, so the name and officeholder checks are
+    not run on it. A copy for sharing (its first line is "**Copy for
+    sharing.**") must leave out "About me", and its file name should end
+    in -SHARE
   - links between files checked together: when a witness report and the
     registration it names are both on the command line, the named power
     must exist in that record; a report listed in a registration's B11 must
@@ -57,9 +61,10 @@ What it cannot check:
   - whether an earlier version or the answered record exists, or whether
     every change was disclosed
   - links to a record or report that is not among the files given
-  - whether people are named (it warns about titles followed by a
-    capitalized word, and flags capitalized name-like pairs near accusation
-    words, for human review only)
+  - whether people are named in a registration (it warns about titles
+    followed by a capitalized word, and flags capitalized name-like pairs
+    near accusation words, for human review only)
+  - whether a copy for sharing still identifies a private person
 
 Exit code 0 = no errors (warnings may remain); 1 = errors found.
 """
@@ -204,7 +209,8 @@ FIRST_HAND_ROW = re.compile(r"my own observation|my_observation", re.I)
 WITNESS_FIRST_HAND = re.compile(
     r"What happened(?! next)|About you|own words|Effect on people|People affected|Earlier warnings|"
     r"What seems wrong|Protective duty|What this shows|Potential harm|Timeline|^#{1,3}\s*\d+\.\s*The witness\s*$|"
-    r"How it affected|Who was affected|reported before|What feels wrong|should have done|happen to others|get worse",
+    r"How it affected|Who was affected|reported before|What feels wrong|should have done|happen to others|get worse|"
+    r"^#{1,3}\s*\d+\.\s*(Statement|Evidence|About me)\b",
     re.I)
 
 
@@ -249,6 +255,8 @@ def unsourced_numbers(body, r, as_error=True, offset=0, witness=False):
                 continue    # an evidence row whose source is a link: the link is its source
             if re.match(r"^[-*]\s*(Which institution, and where:|\*\*Institution:\*\*|\*\*Who:\*\*)", s):
                 continue    # a place (a street number, a unit) is not a quantity
+            if s.startswith(("**When:**", "**Signed:**")):
+                continue    # the header and signature lines: the witness's own dates, times and place
             s = ISO_DATE.sub(" ", s)
         for seg in segments(s, skip_cols):
             if SRC_TAG.search(seg) or not seg.strip():
@@ -601,14 +609,63 @@ def check_response(fm, body, vocab, r):
         r.warn("a change or adoption notice should describe the changes, with dates and sources (section 3)")
 
 
+WITNESS_LISTS = (("situation_kind", "situation_kind"), ("action_category", "action_category"),
+                 ("harm_type", "harm_type"), ("evidence_held", "evidence_type"),
+                 ("memory_influences", "memory_influence"))
+WITNESS_ONE_OF = (("affected_count", "affected_count"), ("reporter_role", "reporter_role"),
+                  ("truth_statement", "truth_statement"), ("composed_by", "composed_by"))
+# a value meaning "nothing" stands alone in its list
+ALONE = {"evidence_held": "none", "memory_influences": "none", "harm_type": "none_known"}
+TIME_RE = re.compile(r"^([01]\d|2[0-3]):[0-5]\d$")
+
+
 def check_witness(fm, body, vocab, r):
     check_versions(fm, r, "witness-report")
     for k in ("report_id", "report_type", "record_id", "power_id", "institution_name",
-              "incident_date", "filed_date", "location", "identity_disclosure", "status"):
+              "incident_date", "incident_time", "filed_date", "jurisdiction", "location",
+              "identity_disclosure", "situation_kind", "action_category", "harm_type",
+              "affected_count", "reporter_role", "evidence_held", "memory_influences",
+              "composed_by", "statement_confirmed", "truth_statement"):
         if k not in fm:
             r.err(f"missing field '{k}'")
+    if "status" in fm:
+        r.err("'status' was removed: whether it ended goes in incident_end_date, and the outcome "
+              "goes in 'What happened next'")
     in_vocab(fm.get("report_type"), "report_type", vocab, r)
     in_vocab(fm.get("identity_disclosure"), "identity_disclosure", vocab, r)
+    for field, key in WITNESS_LISTS:
+        if field not in fm:
+            continue
+        v = fm.get(field)
+        if isinstance(v, str):
+            v = [v]
+        if not isinstance(v, list) or not v:
+            r.err(f"'{field}' must be a list of one or more values from VOCAB.yml {key}, such as [{vocab.get(key, ['?'])[0]}]")
+            continue
+        for item in v:
+            in_vocab(item, key, vocab, r, field)
+        if field in ALONE and ALONE[field] in v and len(v) > 1:
+            r.err(f"'{field}': '{ALONE[field]}' cannot be listed with other values")
+    for field, key in WITNESS_ONE_OF:
+        if field in fm:
+            in_vocab(fm.get(field), key, vocab, r, field)
+    if "statement_confirmed" in fm and not isinstance(fm.get("statement_confirmed"), bool):
+        r.err("'statement_confirmed' must be true or false")
+    elif fm.get("statement_confirmed") is False:
+        r.warn("statement_confirmed is false: the witness has not yet read and confirmed the statement")
+    t = fm.get("incident_time", "UNKNOWN")
+    if isinstance(t, int) and not isinstance(t, bool):
+        r.err("incident_time must be in quotes, such as \"13:30\": without quotes it is read as a number")
+    elif not (t == "UNKNOWN" or (isinstance(t, str) and TIME_RE.match(t))):
+        r.err(f"incident_time must be \"HH:MM\" in 24-hour time, or UNKNOWN (got {t!r})")
+    j = fm.get("jurisdiction")
+    if "jurisdiction" in fm:
+        if not isinstance(j, dict) or not all(k in j for k in ("locality", "region", "country")):
+            r.err("jurisdiction must be {locality, region, country}")
+        else:
+            c = str(j.get("country"))
+            if c not in ("UNKNOWN", "WITHHELD") and not re.match(r"^[A-Z]{2}$", c):
+                r.err(f"jurisdiction.country must be a two-letter country code such as US, or UNKNOWN (got {c!r})")
     rec = str(fm.get("record_id", "NONE"))
     pw = str(fm.get("power_id", "UNKNOWN"))
     if rec != "NONE" and not re.match(r"^SCBP-REG-(NNNN|\d{4}|EXAMPLE)-[A-Z0-9-]+$", rec):
@@ -617,7 +674,6 @@ def check_witness(fm, body, vocab, r):
         r.err(f"power_id must be UNKNOWN or P1, P2, ... (got {pw!r})")
     if rec == "NONE" and pw.upper() != "UNKNOWN":
         r.err("power_id names a power but record_id is NONE: give the record, or set power_id to UNKNOWN")
-    in_vocab(fm.get("status"), "report_status", vocab, r, "status")
     if not re.match(r"^SCBP-WR-[A-Z0-9-]+-\d{4}-\d{2}-\d{2}(-[A-Z])?$", str(fm.get("report_id", ""))):
         r.err("report_id must look like SCBP-WR-SUFFIX-YYYY-MM-DD")
     check_date(fm.get("incident_date"), "incident_date", r, allow=("UNKNOWN",))
@@ -637,23 +693,33 @@ def check_witness(fm, body, vocab, r):
             r.err(f"location.{k} must be decimal degrees, UNKNOWN, or WITHHELD")
     if loc.get("precision") == "withheld" and (loc.get("latitude") not in ("WITHHELD", "UNKNOWN")):
         r.err("precision is withheld but coordinates are given")
-    # a full copy keeps names and places on purpose; a copy to share must not
-    full = bool(FULL_COPY_RE.search(body))
+    # the parts of the report for people
+    if not re.search(r"^#{1,3}\s*(\d+\.\s*)?Statement\b", body, re.M | re.I):
+        r.err("no '## 1. Statement' section: the statement comes first")
+    if fm.get("composed_by", "witness") != "witness" and not re.search(r"^#{1,3}\s*(\d+\.\s*)?In my own words\b", body, re.M | re.I):
+        r.err("someone other than the witness wrote the statement, so the report needs "
+              "'## 3. In my own words', with the witness's account exactly as given")
+    if FULL_COPY_RE.search(body):
+        r.warn("this file has a 'Private copy.' line from the earlier layout: a report now keeps names "
+               "as given, and an optional copy for sharing is made separately. Remove the line")
+    share = bool(SHARE_COPY_RE.search(body))
     base = os.path.splitext(os.path.basename(r.path))[0]
-    if full:
-        r.warn("private copy: it keeps names, places and contact details as given. Keep it private; "
-               "share the copy made for sharing")
-        if not base.endswith("-PRIVATE") and not base.startswith("TEST"):
-            r.warn(f"file name '{base}' should end in -PRIVATE, since this is a full copy")
-    elif base.endswith("-PRIVATE"):
-        r.warn(f"file name '{base}' ends in -PRIVATE but the file has no 'Private copy.' line")
-    # a town- or region-level place should not name the institution's own premises
-    inst = str(fm.get("institution_name") or "").strip()
-    desc = str(loc.get("description") or "")
-    if not full and loc.get("precision") in ("locality", "region") and len(inst) > 3 and inst.lower() in desc.lower():
-        r.warn(f"location.description names the institution although precision is {loc.get('precision')}: "
-               "check that the place is no more exact than the witness chose")
-    # an optional question that was skipped or not asked is UNKNOWN, not "Not applicable"
+    if share:
+        if re.search(r"^#{1,3}\s*(\d+\.\s*)?About me\b", body, re.M | re.I):
+            r.err("a copy for sharing leaves out 'About me'")
+        if not base.endswith("-SHARE") and not base.startswith("TEST"):
+            r.warn(f"file name '{base}' should end in -SHARE, since this is a copy for sharing")
+        # a town- or region-level place should not name the institution's own premises
+        inst = str(fm.get("institution_name") or "").strip()
+        desc = str(loc.get("description") or "")
+        if loc.get("precision") in ("locality", "region") and len(inst) > 3 and inst.lower() in desc.lower():
+            r.warn(f"location.description names the institution although precision is {loc.get('precision')}: "
+                   "check that the place is no more exact than the witness chose")
+        r.review("copy for sharing: read it as a stranger would. The checker cannot tell whether a private "
+                 "person can still be identified")
+    elif base.endswith("-SHARE"):
+        r.warn(f"file name '{base}' ends in -SHARE but the file has no 'Copy for sharing.' line")
+    # an optional question that was skipped or not asked is left out (or UNKNOWN), not "Not applicable"
     for q in re.finditer(r"^(2[fghi])\.[^\n]*?(?:\*\*|:)\s*(?:\n\s*)?not applicable\.?\s*$", body, re.M | re.I):
         r.warn(f"{q.group(1)} says 'Not applicable': if the witness skipped it or was not asked, write UNKNOWN")
     for sec in re.finditer(r"^#{1,3}\s*(\d+\.[^\n]*\(optional\)[^\n]*)\n+\s*not applicable\.?\s*(?=\n#|\n*\Z)", body, re.M | re.I):
@@ -673,7 +739,9 @@ def check_witness(fm, body, vocab, r):
               "put only the code here, never the secret phrase")
 
 
+# the earlier layout's private-copy line, now retired
 FULL_COPY_RE = re.compile(r"\*\*(?:Private copy|Full copy(?:: private|\. Private))\.\*\*")
+SHARE_COPY_RE = re.compile(r"\*\*Copy for sharing\.\*\*")
 WR_ID = re.compile(r"SCBP-WR-[A-Z0-9-]+-\d{4}-\d{2}-\d{2}(?:-[A-Z])?")
 
 
@@ -803,11 +871,11 @@ def main(argv):
         is_witness = "report_id" in fm
         unsourced_numbers(body, r, as_error=not is_witness, offset=offset, witness=is_witness)
         unsourced_cases(body, r, as_error=not is_witness, offset=offset)
-        # names are expected in a witness's private full copy; the full-copy warning covers them
-        if not (is_witness and bool(FULL_COPY_RE.search(body))):
+        # a witness report keeps names on purpose: it is a record for memory and identification
+        if not is_witness:
             office_conduct(body, r, offset=offset)
             name_heuristic(body, r, offset=offset)
-            title_names(body, r, offset=offset, witness=is_witness)
+            title_names(body, r, offset=offset)
         for i, line in enumerate(body.splitlines(), 1 + offset):
             if PLACEHOLDER_RE.search(line) and "```" not in line:
                 r.warn(f"line {i}: unfilled placeholder: {line.strip()[:80]}")

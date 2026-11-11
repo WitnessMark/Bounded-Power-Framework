@@ -1,7 +1,7 @@
 # Shared vocabulary for BPF forms, bundle, and validator.
 # One list per field. Forms, bundle, and validator must all use these exact values.
 vocab_version: v1
-vocab_date: 2026-11-05
+vocab_date: 2026-11-11
 
 record_type: [observed, authorization, example]   # example = generic worked example; figures tagged [EX] are illustrative
 prepared_by: [person, ai_assisted, authority]
@@ -64,8 +64,30 @@ source_verified: [yes, tool_text, unverified]   # yes = a person read the origin
 report_type: [incident, stop_signal, challenge, change_request, review_petition]
 stop_signal_basis: [defined_condition, credible_pathway, NONE]
 identity_disclosure: [identified, pseudonymous, anonymous]
-report_status: [ongoing, resolved, unknown]
 location_precision: [exact, approximate, locality, region, withheld]
+# What kind of situation the report describes; a report can be more than one
+# scene = something the witness saw happen; process = something done through decisions, letters or calls;
+# condition = something ongoing the witness has noticed over time
+situation_kind: [scene, process, condition]
+# What the institution did (a report can list more than one)
+action_category: [use_of_force, arrest_or_detention, stop_or_search, threat_or_intimidation,
+  surveillance_or_data_collection, eviction_or_removal, utility_shutoff, fine_fee_or_seizure,
+  benefit_or_service_denied, decision_without_explanation, retaliation, discrimination,
+  failure_to_act, records_error, environmental_harm, other]
+# What it did to people (a report can list more than one)
+harm_type: [physical_injury, death, loss_of_liberty, financial, housing, health, employment,
+  privacy, emotional_distress, property, environmental, none_known]
+affected_count: [one, 2_10, 11_100, over_100, unknown]
+# How the person reporting knows: it happened to them, they saw or heard it happen, they learned of it
+# first-hand afterwards (documents, the aftermath), they were told by others, or they report for someone else
+reporter_role: [affected_person, eyewitness, learned_after, told_by_others, on_behalf_of]
+evidence_type: [video, photo, audio, document, message, medical_record, physical, none]
+# Anything before the report was written that could have changed the memory
+memory_influence: [none, talked_with_witnesses, saw_video, saw_news, unknown]
+# The declaration above the signature. plain = "true to the best of my knowledge and belief"
+truth_statement: [none, plain]
+# Who wrote the statement from the witness's account
+composed_by: [witness, ai_interview, web_form, helper]
 # Authority responses
 # adoption_notice = the institution formally declares it has adopted the Core Requirements
 # change_notice = the institution reports a change to its powers, safeguards, procedures, or limits,

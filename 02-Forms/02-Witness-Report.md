@@ -1,14 +1,16 @@
 # Witness Report Form
 
-*Form v1 · 2026-11-05 · Published for independent review · Not adopted · For use with Core Requirements v1 · Vocabulary: VOCAB.yml v1*
+*Form v1 · 2026-11-11 · Published for independent review · Not adopted · For use with Core Requirements v1 · Vocabulary: VOCAB.yml v1*
 
 ## What this is
 
 If an institution did something, failed to do something, or threatened to do something that seems wrong to you, you can write it down here, as a **Witness Report**.
 
-A witness report is a dated, written record of what an institution did, failed to do, or threatened to do. Use it for any of these:
+A witness report is a dated, written record of what an institution did, failed to do, or threatened to do. It is first a record for you: it keeps what you remember, and the details that identify what happened and who was involved, before they fade.
 
-> **v1 has no place to file this.** Saving the form creates a dated file on your device, nothing more. Nobody receives it, publishes it, or answers it unless you choose to send it to someone. Most people should start with the plain [Witness Report Guide](../00-Reading/1-Something-Happened/Witness-Report-Guide.md) or the [AI witness interview](../00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md); this page is the technical form.
+> **v1 has no place to file this.** Saving the form creates a dated file on your device, nothing more. Nobody receives it, publishes it, or answers it unless you choose to send it to someone. Most people should start with the plain [Witness Report Guide](../00-Reading/1-Something-Happened/Witness-Report-Guide.md), the [web form](https://witnessmark.org/witness-report/) or the [AI witness interview](../00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md); this page is the technical form.
+
+Use it for any of these:
 
 | Report type | Use it when… | Core rule |
 |---|---|---|
@@ -18,133 +20,167 @@ A witness report is a dated, written record of what an institution did, failed t
 | `change_request` | You want a limit, safeguard, or procedure changed, even before anyone is harmed | 2.C.2 |
 | `review_petition` | You are joining or starting a request by affected people to review, narrow, or end a power early. Has an effect only on an institution that has adopted the Core Requirements; none has yet | 3.E.5 |
 
-A report is a dated record that **you keep**. v1 has no place to file reports; you decide whether to share it, and with whom. If the institution has adopted the Core Requirements, a stop signal sent through its own stop-signal route starts the pause-then-check process (3.C.3). For any other institution, the report is a record and nothing more.
+A report is a dated record that **you keep**. If the institution has adopted the Core Requirements, a stop signal sent through its own stop-signal route starts the pause-then-check process (3.C.3). For any other institution, the report is a record and nothing more.
 
 **You don't need to be a lawyer, an expert, or a formal party.** You don't need proof, a special format, or anyone's permission (2.C.2). Write what you know. Leave the rest as **UNKNOWN**.
 
 **Under the Core Requirements, no penalty may attach to giving a stop signal or reporting** (3.C.6), and retaliation is itself a violation that you can report with this same form. That protection binds only institutions that have adopted the Core Requirements, and as of v1 none has. Against any other institution, a report brings visibility, not shelter. Your legal protections come from the law where you live, not from this framework.
 
+## Four rules
+
+1. **Made in good faith.**
+2. **First-hand observation and public sources only.** What you saw, heard or went through yourself, and what public records show.
+3. **Keep what's proven apart from what you saw or believe.** Adjudicated facts (a conviction, a settlement, a final order) are stated with their source. Everything else is your observation or an allegation.
+4. **Nothing leaked or private.** No material you had no right to hold.
+
+**Names and details are kept.** The report is a record to help you remember and to identify what happened: names, badge and ID numbers, unit and car numbers, licence plates, descriptions of people, places, phone numbers, and case and reference numbers. Write them down as you know them, and say how sure you are.
+
+**This report names people. Sharing or publishing it can expose you to retaliation or a legal claim.** Think about who receives it. If you want a version to pass around that identifies no private person, make a [copy for sharing](#a-copy-for-sharing-optional).
+
 ## Choosing how identified you are
 
 - **Identified** (name plus contact): carries the most weight, and keeps legal options open. It can expose you to retaliation.
-- **Pseudonymous** (a stable handle, no legal name): recommended for most people. You can be followed up with, and your reports can be linked over time.
+- **Pseudonymous** (a stable handle, no legal name): you can be followed up with, and your reports can be linked over time.
 - **Anonymous**: the most protection. It carries less weight and can't be followed up.
 
 **Optional verification phrase** (stored as `verification_hash`). Make up a long secret phrase. Use at least five random words. Don't use your name, birthday, address, or anything about you. Calculate its SHA-256 hash and put only the hash in `verification_hash`. Keep the phrase private. If you choose to reveal it later, someone can check that it matches the recorded hash. This can help link you to the report, but does not independently prove who originally wrote it.
 
 Any free "SHA-256 generator" can calculate the hash. Type the phrase exactly, with no space or Enter at the end, and note which tool you used.
 
-## Three rules that protect you and everyone else
+## What the statement covers
 
-1. **Public sources and your own observation only.** Nothing private, leaked, or speculative.
-2. **Roles, not names, in any copy you share.** "The arresting officer", "the caseworker", not a person's name. An office that only one person holds (the Sheriff, the Mayor, the County Executive) identifies that person, so conduct is attributed to the office or the institution ("the Sheriff's Office", "the county"), not to the officeholder. Your own copy can keep names (see "Two copies" below).
-3. **Keep what's proven apart from what you saw or believe.** Adjudicated facts (a conviction, a settlement, a final order) are stated with their source. Everything else is your observation or an allegation.
+The statement is written from your account. **Tell it first, your own way**; the questions come after, and only for what your account did not cover.
 
-## Two copies
+**Every report**
 
-A report is first a record for its author, so nothing remembered is lost. It can be kept in two copies.
+- **When:** the day, roughly what time, and whether it is still going on.
+- **Where:** as exactly as you can.
+- **Which organization or office.**
+- **How you know:** it happened to you, you saw or heard it, you learned of it first-hand afterwards (a letter, the aftermath), someone told you, or you are reporting for someone else.
+- **What happened, in order.**
+- **Who did it:** a name, a badge or ID number, a job title, a unit or car number, what they looked like.
+- **Who it was done to:** what they looked like, or what you know about them.
+- **Who else saw or heard it,** and whether you know how to reach them.
+- **What happened after:** how it ended; whether anyone was hurt, taken away, or left without something.
+- **What it did to people:** money, health, housing, work, safety, fear.
+- **Evidence:** video, photos, papers, messages, and where each is kept.
+- **Whether it was reported anywhere,** and any case or reference number.
+- **How sure you are** about each name, number and description.
+- **Anything that could have changed your memory:** whether you talked with other witnesses, or saw video or news about it, before writing.
 
-- **A private copy, for the author.** Names, the exact place, unit numbers, phone numbers and web addresses, as remembered. Each person is named by role first, with the name after it in square brackets: "the manager at the front desk [name]". The first line of the report is the "Private copy" line below. The file name ends in `-PRIVATE.md`.
+**Then, depending on the kind of situation** (`situation_kind`; a report can be more than one):
 
-  `> **Private copy.** Names, places and contact details are kept as I gave them. Don't share this copy. Share the copy made for sharing.`
+- **A scene** (something you saw happen: a stop, a raid, a confrontation): where you were and how far away; whether you could see clearly and hear what was said; the light; anything in the way; how long you watched and when you left; how many of them and how many others; vehicles (kind, colour, plate, car number); words said, as close to exact as you can; and what you did (recorded, spoke up, stepped in, left).
+- **A process** (something done to you through decisions, letters or calls: an eviction, a benefit denied, a fine, a firing): each contact in order (the date, how, with whom, what was said or decided); case, account or reference numbers; the papers and messages you have; the decision and any reason given; whether you were told how to challenge it and by when; deadlines, and whether they were met.
+- **A condition** (something ongoing you have noticed: contaminated water, mould, a camera network, a policy being applied): when you first noticed it; each time you noticed it since, and what you saw, smelled, measured or went through; any tests, by whom, and the result; who else is affected and roughly how many; whether anyone was warned; and whether it is getting better, worse, or staying the same.
 
-- **A copy to share.** The same report without the bracketed names, and without anything else that points to a private person: the author's own name and contact (unless the author chooses to be identified), private addresses and phone numbers, a child's school, a made-up name that gives away a place. In the witness's own words (section 1), each one is replaced with its role in square brackets, such as `[the manager]`, and a line under the quote says so. The place is given only as precisely as is safe (see below). The "Private copy" line is left out. The file name has no `-PRIVATE`.
-
-A lawyer, a legal aid service or an oversight body may need the full details; that is the author's call. The private copy is never pasted into a new AI chat to strip it: that gives another company everything in it.
-
-## Location, and keeping yourself safe
-
-In a copy to share, the location is given only as precisely as is **safe for the author**. Coordinates help reports about the same place be grouped. If an exact location could identify the author, the copy gives only the town or region, or the location is `withheld`.
+**How the statement is written.** First person, past tense, in time order, one fact to a sentence: "I was riding my bike down John R when I saw…". Only what you said, in your words for things: no legal terms you did not use. What you were unsure of stays unsure: "about 1:30", "what looked like a flashlight". What is not known is left out of the statement; the technical fields record it as UNKNOWN. If someone else wrote it from your account (a helper, the AI interview, the web form), you read it and correct it before you sign it.
 
 ## How to save it
 
-Save the copy to share as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`, and the private copy as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}-PRIVATE.md`. SUFFIX is a short uppercase tag for the institution, with an optional place tag, such as `CITYPD-XX`. The date is the incident date, or the date of writing if the incident date is UNKNOWN. Add `-A`, `-B` for more than one report on the same day. Run the checker (`validate_record.py`) if you can. If not, skip it, or ask the AI to go through its "before you hand it over" checks. The report is yours: you decide whether to share it, and with whom.
+Save the report as `SCBP-WR-{SUFFIX}-{YYYY-MM-DD}.md`. SUFFIX is a short uppercase tag for the institution, with an optional place tag, such as `CITYPD-XX`. The date is the incident date, or the date of writing if the incident date is UNKNOWN. Add `-A`, `-B` for more than one report on the same day. Run the checker (`validate_record.py`) if you can. If not, skip it, or ask the AI to go through its "before you hand it over" checks. The report is yours: you decide whether to share it, and with whom.
+
+## A copy for sharing (optional)
+
+If you want a version to pass around, a second copy can be made that identifies no private person. It is never made automatically.
+
+- **About me** (section 4) is left out.
+- In the statement and in your own words, the names and details of **private people** are replaced with a description in square brackets: you, bystanders, the person it was done to, private addresses, licence plates of private vehicles, private phone numbers, account numbers. For example `[a bystander]`, `[the man in handcuffs]`.
+- **People acting in an official role keep their names, badge numbers and unit or car numbers.** What an officer or official does on duty is public conduct.
+- The place is given only as precisely as you choose: exact, the general area, the town, or withheld.
+- The line `> **Copy for sharing.** Details that identify private people are replaced in [brackets]. The full report is kept by its author.` goes first, and a line under the quote in section 3 says what was replaced.
+- The file name ends in `-SHARE`. `report_id` stays the same.
+
+You see the list of replacements before the copy is made. Read it once more as a stranger would before sending it: no tool catches everything. The full report is never pasted into a new AI chat to make the copy: that gives another company everything in it.
 
 ---
 
 ## Report template
 
-**How it is laid out.** The report comes first, for people. The technical fields come last, under "Technical details", in a fixed format a computer reads. Keep each field name there as it is; the comment line under each field explains it and lists the allowed answers.
+**How it is laid out.** The report comes first, for people: the statement, the evidence, your own words, and who you are. Below a line come the parts for record-keeping: the optional questions, what you are asking for, what happened next, and the technical fields, in a fixed format a computer reads. Keep each field name there as it is; the comment line under each field explains it and lists the allowed answers.
 
-**How it is written.** Everyday words, short sentences, one fact to a sentence. It is your report, so it says "I": "I called the office on 2026-10-15." Other people are named by their role. Each section starts with a prompt in italics; replace it with your answer, or with UNKNOWN.
-
-**The optional sections** (8 to 11) can be skipped. Each is UNKNOWN if skipped.
-- **8, what feels wrong about it,** is your concern in your own words. No rule or law needs to be named.
-- **9, what they should have done,** asks what you saw or know. It does not ask you to decide whether a rule was broken.
-- **10, does this happen to others,** asks whether what happened says something about how this works for everyone. If you know of a registration record for whoever did it, it can also name the part of the record this bears on. You do not need one.
-- **11, could it get worse or last,** is a warning, not a finding or a score. It does not change the stop-signal rules. An independent checking body still looks at the evidence.
-
-Section 15 is filled in later by whoever reviews the report. Leave it blank.
+Each section starts with a prompt in italics; replace it with your answer. In the statement, leave out what is not known. In the record-keeping part, an optional question you skip is left out entirely.
 
 ````
-> **What I saw and heard, and what public records show.** Written in good faith. It is an account, not a verdict.
-
 # Witness Report - [Institution] - [Incident date]
 
-## 1. What happened *(in your own words)*
+**When:** [Incident date], about [time] · **Where:** [place] · **Statement of:** [name or handle] · **Written:** [date written]
 
-*Tell it your way. It is kept exactly as you write it.*
+## 1. Statement
 
-> "…"
+*In the first person, in time order, from your account. Start with when, where, who you are and what you saw: "On November 11, 2026, at about 1:30 p.m., at the intersection of… I, [name], saw…". Then what happened, in order; who did it and who it was done to, with any names, numbers and descriptions, and how sure you are; where you were and what you could see and hear; who else was there; what happened after, and when you left; what it did to people; whether it was reported anywhere; and whether anything could have changed your memory.*
 
-## 2. Proof
+*For a process or a condition, add a dated list after the prose:*
 
-*Each thing you are saying, where it comes from, and what kind of claim it is. Types: `adjudicated_or_admitted_fact` (a court judgment, a final order, an admission); `settled_without_admission` (a settlement where they admitted nothing); `institution_statement` (their own published rule, policy, notice or announcement: what they say they do, not proof that they did it); `my_observation` (I saw or heard it myself); `allegation_or_estimate` (everything else).*
+**Contacts, in order.** *(a process)* / **Observations, in order.** *(a condition)*
+
+- **YYYY-MM-DD.** *How (in person, letter, phone, email, online, a notice), with whom, what was said or decided, any reference number.*
+
+*This statement was written from my account by [the AI interview / the web form / a helper]. I read it and confirm it.* (or) *I wrote this statement myself.*
+
+- [ ] Made in good faith.
+- [ ] First-hand observation and public sources only.
+- [ ] What is proven is kept apart from what I saw or believe.
+- [ ] Nothing leaked or private.
+
+This statement is true to the best of my knowledge and belief.
+
+**Signed:** [name or handle] · [date]
+
+## 2. Evidence
+
+*Each thing you are saying that comes from somewhere other than your own eyes and ears, where it comes from, and what kind of claim it is. Types: `adjudicated_or_admitted_fact` (a court judgment, a final order, an admission); `settled_without_admission` (a settlement where they admitted nothing); `institution_statement` (their own published rule, policy, notice or announcement: what they say they do, not proof that they did it); `my_observation` (I saw or heard it myself); `allegation_or_estimate` (everything else).*
 
 | Claim | Source | Type |
 |---|---|---|
 | | | |
 
-**What I have (not attached).** *Each item, and where you keep it: "letter dated…", "photos on my phone", "case number…".*
+**What I have (not attached).** *Each item, and where you keep it: "video on my phone", "letter dated…", "case number…". The files stay with you.*
 
-## 3. Who did it, and what they control
+## 3. In my own words
 
-- **Who:** *the name people know them by, and where: a company, agency, school, landlord, employer, official.*
-- **What they did:** *in plain words: evicted, fined, cut off, arrested, flagged, watched, denied a benefit.*
-- **Registration record:** [record_id and power_id, or NONE]
+*Exactly as you told it or wrote it. Not corrected or edited.*
 
-## 4. About you
+> "…"
+
+## 4. About me
+
+*Left out of a copy for sharing.*
 
 - **Name or handle:**
 - **Contact:**
-- **How you are connected to them:**
+- **How I am connected to them:**
 - **Verification phrase:** yes / no
 
-## 5. How it affected people
+---
 
-*What it did to you or to others: money, health, housing, work, safety, fear.*
+# Record-keeping — not part of the statement
 
-## 6. Who was affected, and who else was there
+*Everything below this line is for record-keeping. A reader can stop here. Nothing below changes the statement.*
 
-*Who was affected, and roughly how many. Whether any of them never chose to deal with whoever did it. Who else saw or heard it, by role.*
+## 5. Optional questions
 
-## 7. Was it reported before?
+*Answer any that fit. Leave out any you skip.*
 
-*Whether you or anyone else raised it with them, or with anyone else, before or after. How, when, and what came of it. Where any letter, complaint, inspection or report can be found.*
+### What feels wrong about it
 
-## 8. What feels wrong about it (optional)
+*Your concern, in your own words. No rule or law needs to be named.*
 
-*Your concern, in your own words.*
-
-## 9. What they should have done (optional)
+### What they should have done
 
 *Something they were supposed to do to protect people and did not do, did late, or did only for some.*
 
-## 10. Does this happen to others? (optional)
+### Does this happen to others?
 
 *Whether this shows how it works for everyone: a protection or deadline that did not work, no way to challenge it or no one explaining how, a limit that was crossed, something they do that is written down nowhere. With a registration record: the part it bears on, a stop path (B5, by number), a requirement row (B4), or a Floor (B6).*
 
-## 11. Could it get worse, or last? (optional)
+### Could it get worse, or last?
 
-*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so.*
+*A real risk of harm that spreads, builds up, lasts, or cannot be undone, including harm to land, water, air or living things. What could be affected, for how long, and what you saw that makes you think so. A warning, not a finding or a score.*
 
-## 12. Timeline
+## 6. Asking for something to stop or change
 
-*What happened, in order, with dates and times where you know them. How each thing was done or said: in person, by letter, by phone, by email, online, by a notice. For a call: the number, the date and time, and any reference number. For a website: its address and the date you saw it.*
-
-## 13. Asking for something to stop or change
-
-*Only for a stop signal, a challenge, a change request or a review petition. For anything else, write "Not applicable."*
+*Only for a stop signal, a challenge, a change request or a review petition. For an incident, write "Not applicable."*
 
 **Stop signal.**
 - **Basis:**
@@ -167,16 +203,9 @@ Section 15 is filled in later by whoever reviews the report. Leave it blank.
 - **What would fix it (optional):**
 - **Joining an existing petition:** its ID, or NONE.
 
-## 14. Honesty
+## 7. What happened next
 
-- [ ] Made in good faith.
-- [ ] Public sources and my own observation only.
-- [ ] Roles, not names, in any copy I share.
-- [ ] Facts kept separate from allegations.
-
-## 15. What happened next
-
-*Filled in later by whoever reviews the report.*
+*Filled in later by whoever reviews the report. Leave it blank.*
 
 - Response from them, and its date:
 - For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:
@@ -195,7 +224,7 @@ report_id: SCBP-WR-{SUFFIX}-{YYYY-MM-DD}
 # Name of this report: SCBP-WR-, a short tag for the institution in CAPITALS, then the date it happened.
 report_type: incident
 # What kind of report is this? incident | stop_signal | challenge | change_request | review_petition
-form: {name: witness-report, version: v1, date: 2026-11-05}
+form: {name: witness-report, version: v1, date: 2026-11-11}
 # The form version used. Leave as written.
 core_requirements: {version: v1, date: 2026-11-05}
 # The Core Requirements version this report refers to. Leave as written.
@@ -203,34 +232,59 @@ bundle: NONE
 # Made with the AI interview? NONE if not. If so, the interview file's version and date: {version: x.y.z, date: YYYY-MM-DD}
 vocab_version: v1
 # The VOCAB.yml version whose values this report uses. Leave as written.
-record_id: NONE
-# Do you know of a registration record for this institution? Its ID (SCBP-REG-...), or NONE. You don't need one.
-power_id: UNKNOWN
-# Which power in that record? P1, P2..., or UNKNOWN.
+filed_date: YYYY-MM-DD
+# The date you wrote this report.
+composed_by: witness
+# Who wrote the statement from your account? witness | ai_interview | web_form | helper
+statement_confirmed: true
+# Did you read the statement and confirm it? true | false
+truth_statement: plain
+# The line above your signature. plain ("true to the best of my knowledge and belief") | none
+situation_kind: [scene]
+# What kind of situation? One or more of: scene | process | condition
 institution_name: ""
 # Which institution? The name people know it by.
 incident_date: YYYY-MM-DD
 # When did it happen, or start? A date, or UNKNOWN.
+incident_time: UNKNOWN
+# Roughly what time? "HH:MM" in 24-hour time, in quotes, such as "13:30". Or UNKNOWN.
 incident_end_date: NONE
 # Has it ended? NONE (no end date) | YYYY-MM-DD (the date it ended) | ongoing
-filed_date: YYYY-MM-DD
-# The date you wrote this report.
+jurisdiction: {locality: UNKNOWN, region: UNKNOWN, country: UNKNOWN}
+# Town or city, state or province, and two-letter country code (US, CA, GB...). Kept even when the place is withheld.
 location:
   description: ""
-  # Where did it happen? For example "intake area, [COUNTY] jail, [CITY], [STATE]".
+  # Where did it happen? For example "the intersection of John R and Kirby streets, Detroit, MI".
   latitude: UNKNOWN
   # Map coordinates only if taken from a map app: decimal degrees | UNKNOWN | WITHHELD
   longitude: UNKNOWN
-  precision: locality
+  precision: exact
   # How exact is the place? exact | approximate | locality (town or city) | region | withheld
-stop_signal_basis: NONE
-# Stop signals only. Was a published limit crossed (defined_condition), or is there a real risk of serious harm that no limit covers (credible_pathway)? NONE for every other report.
+action_category: [other]
+# What did they do? One or more of: use_of_force | arrest_or_detention | stop_or_search | threat_or_intimidation |
+# surveillance_or_data_collection | eviction_or_removal | utility_shutoff | fine_fee_or_seizure | benefit_or_service_denied |
+# decision_without_explanation | retaliation | discrimination | failure_to_act | records_error | environmental_harm | other
+harm_type: [none_known]
+# What did it do to people? One or more of: physical_injury | death | loss_of_liberty | financial | housing | health |
+# employment | privacy | emotional_distress | property | environmental | none_known
+affected_count: unknown
+# Roughly how many people were affected? one | 2_10 | 11_100 | over_100 | unknown
+reporter_role: eyewitness
+# How do you know? affected_person | eyewitness | learned_after | told_by_others | on_behalf_of
+evidence_held: [none]
+# What exists? One or more of: video | photo | audio | document | message | medical_record | physical | none
+memory_influences: [none]
+# Before writing, did anything else shape your memory? One or more of: none | talked_with_witnesses | saw_video | saw_news | unknown
 identity_disclosure: pseudonymous
 # How identified do you want to be? identified | pseudonymous | anonymous
 verification_hash: NONE
 # Optional. The SHA-256 code of your secret phrase, never the phrase itself. Or NONE.
-status: ongoing
-# Is it still going on? ongoing | resolved | unknown (UNKNOWN is also accepted)
+stop_signal_basis: NONE
+# Stop signals only. Was a published limit crossed (defined_condition), or is there a real risk of serious harm that no limit covers (credible_pathway)? NONE for every other report.
+record_id: NONE
+# A registration record for this institution, if you know of one (SCBP-REG-...). Otherwise NONE; you don't need one.
+power_id: UNKNOWN
+# Which power in that record? P1, P2..., or UNKNOWN.
 ```
 ````
 
@@ -246,7 +300,8 @@ status: ongoing
 
 **If a place to send reports exists in future** (one is being considered; no host has been chosen and nothing is live), it would work like this:
 
-- Reports you choose to send could be grouped with others about the same power or place, and counted toward review (3.E.5, 7.7).
+- A registration record and power would be linked to the report on receipt, if the author did not give them, with a note of who made the link and when.
+- Reports about the same event, the same power or the same place could be grouped and counted toward review (3.E.5, 7.7). Published counts would round the time to the hour and the place to the town, so that a pseudonymous author cannot be picked out.
 - An institution that has adopted the Core Requirements would be expected to answer publicly within its published response window, and a missing answer would itself be recorded.
 
 **Stop signals to an adopting institution**, sent through its own stop-signal route, follow 3.C.3: a pause, then an independent check of one question, "did the trigger fact occur?" A signal that only repeats facts already checked and found unfounded is recorded and counted, but does not pause the power again.

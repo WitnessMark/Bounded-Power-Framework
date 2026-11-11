@@ -119,7 +119,7 @@ People subject to a power can require that it be brought for **early review, nar
 - **Outcome:** early review may narrow, shorten, or end a power. It may never lengthen its term.
 - **No pause by itself.** A petition does not pause the power. Stop signals do that.
 
-To join an existing petition, give its ID in the form (section 13).
+To join an existing petition, give its ID in the form (section 6).
 
 A successful review petition also takes away a power's minor status (3.A.4).
 
@@ -132,28 +132,29 @@ A successful review petition also takes away a power's minor status (3.A.4).
 Use the **Witness Report form, v1**. Most people should start with the plain [Witness Report Guide](../00-Reading/1-Something-Happened/Witness-Report-Guide.md) or the [AI witness interview](../00-Reading/1-Something-Happened/AI-Witness-Interview-Bundle.md). It explains each field in plain words. What matters most:
 
 - **Write what you know. Leave the rest as UNKNOWN.** You do not need to be a lawyer, an expert, or a formal party (2.C.2).
-- **Public sources and your own observation only.** Nothing private, leaked, or speculative.
-- **Roles, not names, in any copy you share.** "The caseworker", not a person's name. Your own private copy can keep names and places, so nothing is forgotten; the guide explains the two copies.
+- **A statement, with your own words beside it.** The report opens with a signed statement of what happened, in time order. If someone else writes it from your account (a helper, the AI interview, the web form), you read and confirm it, and your own words are kept beside it, exactly as given.
+- **Public sources and your own observation only.** Nothing leaked, private, or speculative.
+- **Names and details are kept.** A report is a record to help you remember and to identify what happened: names, badge numbers, car numbers, descriptions, places. Sharing a report that names people can expose you to retaliation or a legal claim, so a separate copy for sharing, which identifies no private person, can be made if you want one. People acting in an official role keep their names in it.
 - **Keep facts and allegations apart.** The evidence table asks you to mark each claim as an adjudicated or admitted fact, something settled without admission, your own observation, or an allegation or estimate.
 - **A registration is not required.** If no registration record exists, use `record_id: NONE`. That no record exists is itself worth knowing.
-- **Location** helps reports about the same place be grouped. Give it only as precisely as is safe for you, or choose `withheld`.
+- **Location** helps reports about the same place be grouped. In a copy for sharing, give it only as precisely as is safe for you, or choose `withheld`.
 
 ### Connecting a report to the power (optional)
 
 A registration record shows how a power is built: its limits, its protections, and what can stop it. A witness report shows what the power did to a person. Each makes the other easier to read.
 
-The form's optional section 10, "Does this happen to others?", asks what the incident shows about the power in general: a protection or exemption that did not work, a way to challenge it that was not there, a limit that was crossed, or something the institution does that is not written down. If the reporter knows of a registration record, they can name it, the power, and the part the report bears on: a stop path (B5), a requirement row (B4), or a Floor.
+The form's optional question "Does this happen to others?" asks what the incident shows about the power in general: a protection or exemption that did not work, a way to challenge it that was not there, a limit that was crossed, or something the institution does that is not written down. If the reporter knows of a registration record, they can name it, the power, and the part the report bears on: a stop path (B5), a requirement row (B4), or a Floor.
 
 In v1 nothing is collected, so the connection lives in the report itself. It lets anyone the reporter chooses to share it with, such as a lawyer, an oversight body, or a journalist, see what the incident says about how the power works, not only what happened once. If a place to send reports exists in future, the same answers would let reports about one power be read together (7.5, 7.7).
 
-No one needs a record, or needs to answer section 10, to make a report.
+No one needs a record, or needs to answer that question, to make a report.
 
 ### Choosing how identified you are
 
 | Level | What you give | Trade-off |
 |---|---|---|
 | Identified | Name and contact | Most weight, and keeps legal options open. Can expose you to retaliation |
-| Pseudonymous | A stable handle | Recommended for most people. You can be followed up, and your reports linked over time |
+| Pseudonymous | A stable handle | You can be followed up, and your reports linked over time |
 | Anonymous | Nothing | Most protection. Less weight, and no follow-up |
 
 An optional **verification phrase** (stored as `verification_hash`) can help link you to a report later without exposing yourself now. It does not independently prove who wrote the report. The form explains how, including how to choose a phrase that can't be guessed.
