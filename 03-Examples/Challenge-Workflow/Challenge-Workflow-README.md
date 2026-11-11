@@ -29,17 +29,17 @@ A regular user of the public computers notices that pages about local news and c
 
 ### Step by step
 
-1. **The person files a witness report of type `challenge`.** They give the place first, then what happened in their own words. They tick "acting outside its scope or limits" and name the record and power (SCBP-REG-EXAMPLE-TOWN-LIBRARY, P3). They file under a handle, not their name. No proof, special wording, or permission is needed (2.C.2).
+1. **The person files a witness report of type `challenge`.** A helper writes their account up as a first-person statement (section 1), which they read, confirm and sign; their own words are kept unchanged in section 3. Under "Asking for something to stop or change" (section 6) they tick "acting outside its scope or limits" and name the record and power (SCBP-REG-EXAMPLE-TOWN-LIBRARY, P3). They file under a handle, not their name. No proof, special wording, or permission is needed (2.C.2).
 2. **The report enters the library's adopted review process.** In this fictional scenario, the library has adopted the Core Requirements and established a reporting and review arrangement. The report is received through that arrangement, linked to the library's P3 authorization record, and considered with other relevant reports under the applicable review rules (3.E.5, 7.7). Filing a report does not mean that BPF itself operates a central registry, accepts submissions, or conducts the independent review. Those functions must be provided by the institution's actual adopted arrangements and the independent bodies authorized to perform them.
 3. **The library must not decide its own scope.** Whether "Social and Forums" falls inside the authorization is a question about the library's own limits. The library may not settle it by its own reading; it goes to an independent body and into the public interpretation log (Interpretation; 7.3). Meanwhile the narrower reading applies (1.5).
 4. **The independent check (illustrative).** The library's independent reviewer compares the filter settings with the authorization. It confirms that a vendor software update switched on two categories that were not authorized. The vendor is part of the power, so the update is the library's responsibility (4.5).
 5. **Growth is stopped.** A new restriction category is a change of scope, and growth without new authorization is stopped (3.B.1). Only the two added categories are switched off; the authorized filtering continues, because a stop reaches only the operation implicated (3.C.5).
-6. **The library responds on the record.** It answers publicly within its published response window, and its answer is entered in section 15 of the report. It logs the failure in its failure record (7.4) and adds a check of vendor updates to its routine.
+6. **The library responds on the record.** It answers publicly within its published response window, and its answer is entered in section 7 of the report, "What happened next". It logs the failure in its failure record (7.4) and adds a check of vendor updates to its routine.
 7. **Later: renewal.** The event is evidence at P3's renewal. Drift that was found and corrected is part of the drift review; drift found and not corrected would bar renewal (3.E.2). See the [Renewal Workflow](../Renewal-Workflow/Renewal-Review-EXAMPLE.md).
 
-### What section 15 of the report would say afterwards (illustrative)
+### What section 7 of the report, "What happened next", would say afterwards (illustrative)
 
-- *Response from the institution, and its date:* the library confirmed a vendor update had switched on two unauthorized categories, and switched them off.
+- *Response from them, and its date:* the library confirmed a vendor update had switched on two unauthorized categories, and switched them off.
 - *Outcome:* growth stopped under 3.B.1; failure recorded (7.4); vendor-update check added.
 
 ### Two variations
@@ -63,4 +63,4 @@ Read the three worked responses, then the water utility's version 2, to see this
 
 ## Checking a report
 
-The checker (`../../02-Forms/validate_record.py`) reads witness reports as well as records. On a first-hand report it warns about numbers and dates without a source tag. That is expected: a witness's own observation is its own source, recorded in the Evidence table as `my_observation`. The warnings are a prompt to check, not errors to "fix" by editing the witness's words.
+The checker (`../../02-Forms/validate_record.py`) reads witness reports as well as records. A witness's own observation is its own source, so numbers and dates in the statement, in the witness's own words, and in Evidence rows marked `my_observation` are not flagged. Elsewhere in a report, a figure without a source tag is only a warning: a prompt to check, never a reason to edit the witness's words.

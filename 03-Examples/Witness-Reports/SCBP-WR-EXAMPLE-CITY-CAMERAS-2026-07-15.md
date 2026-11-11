@@ -4,13 +4,38 @@
 
 # Witness Report - City of [CITY] - 2026-07-15
 
-## 1. What happened *(in your own words)*
+**When:** around 2026-07-15 to now · **Where:** a residential neighbourhood in [CITY], [STATE]; exact streets withheld · **Statement of:** lamppost-watch · **Written:** 2026-11-05
 
-> "In July crews put up new cameras on the light poles all through our neighborhood, I counted about forty on my walk. Nobody sent a letter or had a meeting first. The city website says the cameras are for traffic, but the sign on the pole says they read license plates and the footage is shared with police. We asked at council and they said the program was approved years ago and the new ones are just an upgrade. So a bunch of us neighbors want somebody outside the city to look at whether this should be allowed at all, and how long they keep it, and who gets to see it."
+## 1. Statement
 
-*Sections 2 to 13 are organized by the AI interviewer from the witness's answers. The witness checked them.*
+Around July 15, 2026, in a residential neighbourhood of [CITY], [STATE], I, lamppost-watch, saw City of [CITY] crews put up new cameras on the light poles all through my neighbourhood. I live in the neighbourhood. I am one of the people starting a petition about the cameras.
 
-## 2. Proof
+As far as I know, nobody sent a letter or held a meeting before the cameras went up.
+
+**Observations, in order.**
+
+- **Around 2026-07-15.** City crews began installing new cameras on light poles in the neighbourhood. I counted "about forty" on a walk.
+- **July 2026 (day not known).** I read the city website page about the cameras. It describes them as traffic cameras. I read the signs on the poles. They say the cameras read licence plates and share footage with police.
+- **2026-08-19.** I and other neighbours spoke during public comment at a city council meeting. A council member said the program had been approved years ago and the new cameras were an upgrade. The council did not schedule a review.
+- **September and October 2026.** The neighbours collected signatures asking for an independent review. 63 neighbours have signed so far.
+- **Date not known.** I sent a public-records request for the city's camera retention and sharing rules. By 2026-11-05 I had no answer.
+
+Neighbours feel watched coming and going from their homes, places of worship, and a health clinic in the area. Some neighbours told me they now drive a longer way round. I do not know whether recordings have been used against anyone.
+
+Everyone who lives in, works in, or passes through the neighbourhood is affected. No one chose to be recorded. The cameras are on public streets that people must use to get home.
+
+*This statement was written from my account by the AI interview. I read it and confirm it.*
+
+- [x] Made in good faith.
+- [x] First-hand observation and public sources only.
+- [x] What is proven is kept apart from what I saw or believe.
+- [x] Nothing leaked or private.
+
+This statement is true to the best of my knowledge and belief.
+
+**Signed:** lamppost-watch · 2026-11-05
+
+## 2. Evidence
 
 | Claim | Source | Type |
 |---|---|---|
@@ -20,57 +45,40 @@
 | A council member said the program was approved years ago and the new cameras were an upgrade | My own observation at the meeting; also in the meeting video on the city website | my_observation |
 | The public-records request has had no answer | My own observation | my_observation |
 
-**What I have (not attached).** The council meeting minutes and video for 2026-08-19, on the city website. The witness's public-records request and its confirmation email, in the witness's email. The signed petition pages, kept by a neighbour who is organizing it. The witness's own count of cameras, in a phone note. No photos are attached.
+**What I have (not attached).**
 
-## 3. Who did it, and what they control
+- The council meeting minutes and video for 2026-08-19, on the city website.
+- The witness's public-records request and its confirmation email, in the witness's email.
+- The signed petition pages, kept by a neighbour who is organizing it.
+- The witness's own count of cameras, in a phone note.
+- No photos are attached.
 
-- **Who:** City of [CITY], [STATE], which runs a network of street cameras.
-- **What they did:** watching and recording people on public streets with city cameras, and keeping the recordings.
-- **Registration record:** NONE
+## 3. In my own words
 
-## 4. About you
+> "In July crews put up new cameras on the light poles all through our neighborhood, I counted about forty on my walk. Nobody sent a letter or had a meeting first. The city website says the cameras are for traffic, but the sign on the pole says they read license plates and the footage is shared with police. We asked at council and they said the program was approved years ago and the new ones are just an upgrade. So a bunch of us neighbors want somebody outside the city to look at whether this should be allowed at all, and how long they keep it, and who gets to see it."
+
+## 4. About me
+
+*Left out of a copy for sharing.*
 
 - **Name or handle:** lamppost-watch
 - **Contact:** [A SEPARATE EMAIL ADDRESS THE WITNESS USES FOR THIS HANDLE]
-- **How you are connected to them:** resident of the neighbourhood; one of the people starting the petition
+- **How I am connected to them:** I live in the neighbourhood, and I am one of the people starting the petition.
 - **Verification phrase:** no
 
-## 5. How it affected people
+---
 
-The witness says neighbours feel watched coming and going from their homes, places of worship, and a health clinic in the area. Some neighbours told the witness they now drive a longer way round. Whether recordings have been used against anyone: UNKNOWN.
+# Record-keeping — not part of the statement
 
-## 6. Who was affected, and who else was there
+*Everything below this line is for record-keeping. A reader can stop here. Nothing below changes the statement.*
 
-Everyone who lives in, works in, or passes through the neighbourhood. The witness says 63 neighbours have signed the petition so far. No one chose to be recorded; the cameras are on public streets that people must use to get home.
+## 5. Optional questions
 
-## 7. Was it reported before?
-
-No notice or meeting before installation, as far as the witness knows. After installation, neighbours raised it at the city council meeting on 2026-08-19. The council did not schedule a review. The meeting minutes and video are on the city website. The witness also sent a public-records request for the city's camera retention and sharing rules; no answer by 2026-11-05.
-
-## 8. What feels wrong about it (optional)
+### What feels wrong about it
 
 "They decided this once a long time ago and now they can just keep adding more and more cameras and nobody gets asked."
 
-## 9. What they should have done (optional)
-
-UNKNOWN. The witness did not know what the city was required to do before installing the cameras.
-
-## 10. Does this happen to others? (optional)
-
-UNKNOWN
-
-## 11. Could it get worse, or last? (optional)
-
-The witness skipped this question. UNKNOWN.
-
-## 12. Timeline
-
-- Around 2026-07-15: city crews began installing new cameras on light poles in the neighbourhood. The witness counted "about forty" on a walk.
-- July 2026 (exact day UNKNOWN): the witness read the city website page, which describes the cameras as traffic cameras, and the signs on the poles, which say the cameras read licence plates and share footage with police.
-- 2026-08-19: the witness and other neighbours spoke during public comment at a city council meeting. A council member said the program had been approved years ago and the new cameras were an upgrade.
-- September and October 2026: the neighbours collected signatures asking for an independent review.
-
-## 13. Asking for something to stop or change
+## 6. Asking for something to stop or change
 
 **Challenge, change request, or review petition.**
 
@@ -85,21 +93,12 @@ The witness skipped this question. UNKNOWN.
   - [ ] unequal treatment
   - [x] a Floor is at stake (which one?) Human Rights: privacy.
   - [ ] other
-
 - **What would fix it (optional):** An independent body, not the city council that approved the program, reviews whether the camera network should continue, be narrowed, or end. Until then, the neighbours ask the city to publish where every camera is, what each one records, how long recordings are kept, and who can see them.
-
 - **Joining an existing petition:** NONE. The neighbours are starting this petition.
 
-## 14. Honesty
+## 7. What happened next
 
-- [x] Made in good faith.
-- [x] Public sources and my own observation only.
-- [x] Roles, not names, in any copy I share.
-- [x] Facts kept separate from allegations.
-
-## 15. What happened next
-
-*Filled in later by whoever reviews the report.*
+*Filled in later by whoever reviews the report. Leave it blank.*
 
 - Response from them, and its date:
 - For a stop signal, the result of the independent check (did the trigger fact occur? yes / no / not checked), and its date:
@@ -117,23 +116,34 @@ The witness skipped this question. UNKNOWN.
 report_id: SCBP-WR-EXAMPLE-CITY-CAMERAS-2026-07-15
 report_type: review_petition
 example: true
-form: {name: witness-report, version: v1, date: 2026-11-05}
+form: {name: witness-report, version: v1, date: 2026-11-11}
 core_requirements: {version: v1, date: 2026-11-05}
-bundle: {version: v1, date: 2026-11-05}
+bundle: {version: v1, date: 2026-11-11}
 vocab_version: v1
-record_id: NONE
-power_id: UNKNOWN
+filed_date: 2026-11-05
+composed_by: ai_interview
+statement_confirmed: true
+truth_statement: plain
+situation_kind: [condition]
 institution_name: "City of [CITY]"
 incident_date: 2026-07-15
+incident_time: UNKNOWN
 incident_end_date: ongoing
-filed_date: 2026-11-05
+jurisdiction: {locality: "[CITY]", region: "[STATE]", country: UNKNOWN}
 location:
   description: "a residential neighbourhood in [CITY], [STATE]; exact streets withheld"
   latitude: WITHHELD
   longitude: WITHHELD
   precision: withheld
-stop_signal_basis: NONE
+action_category: [surveillance_or_data_collection]
+harm_type: [privacy]
+affected_count: 11_100
+reporter_role: affected_person
+evidence_held: [document, message]
+memory_influences: [talked_with_witnesses]
 identity_disclosure: pseudonymous
 verification_hash: NONE
-status: ongoing
+stop_signal_basis: NONE
+record_id: NONE
+power_id: UNKNOWN
 ```
