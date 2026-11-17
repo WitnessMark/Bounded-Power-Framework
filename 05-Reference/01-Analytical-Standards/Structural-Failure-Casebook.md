@@ -184,6 +184,33 @@ Rule 7.4 requires each authority to keep a record of known structural failure mo
 
 ---
 
+## 9. Credible warnings without effective intervention
+
+**Pattern:** credible evidence of harm or a material warning reaches an authority or its reviewers, but does not lead to a timely independent check, protective adjustment, or stop. The failure may arise from institutional incentives, procedural delay, or sincerely shared expert assumptions; deliberate concealment is not required.
+
+**Illustration:** outside researchers report a plausible long-term hazard. The operator discloses its studies and engages qualified experts, but reviewers repeatedly treat the operator's preferred assumptions as the default. Each review asks for more certainty while exposure continues unchanged, and no independent stop decision is reached.
+
+**Signs:**
+- repeated warnings are recorded without a documented independent assessment or decision;
+- contrary evidence is dismissed by reference to prevailing practice rather than reasons that can be examined;
+- requests for further study repeatedly defer protective action while the exposure continues;
+- reviewers share the operator's assumptions or information sources, even without a direct financial dependency;
+- complaints or stop signals circulate internally without reaching someone able to interrupt the power;
+- the same warning reappears in successive reviews without an accountable resolution.
+
+**Structural failure:** information becomes available, but the system has no reliable way to turn credible warning into independent examination and, where warranted, a timely reduction or interruption of power. Scientific disagreement is not itself a violation; the failure is allowing unresolved risk to become an indefinite permission to continue unchanged.
+
+**Rules that prevent it:**
+- increasing uncertainty about harm contracts power rather than enlarging or preserving it by default (1.5);
+- independently obtained or verified harm evidence receives priority, and discounting material independent evidence requires public reasons; harm thresholds cannot depend on the authority's own classifications or processes (3.A.5);
+- independent evaluation and evidence integrity constrain what can justify authorization, renewal, or compliance (5.1, 5.2);
+- stop paths must be usable and independently held, and credible stop signals can require an independent check and pause under the applicable trigger rules (3.A.7, 3.C.1, 3.C.3);
+- correction begins without waiting for an admission or allocation of blame; delay in correction cannot become an expansion of power (3.D.3, 3.D.4).
+
+**Boundary:** this pattern is guidance for identifying a failure mode, not a finding about a named institution or an additional stop trigger. The Core Requirements and Operations Manual govern whether a particular signal requires a pause or stop. For authorities that have not adopted the framework, an outside review can document and publish the pattern but cannot enforce BPF stop procedures by itself.
+
+---
+
 ## Common threads
 
 Across these patterns:
@@ -191,6 +218,7 @@ Across these patterns:
 - complexity hides growth (1.7);
 - dependencies pile up;
 - visibility falls over time (3.B.9);
-- permanence comes to feel normal.
+- permanence comes to feel normal;
+- warnings can become routine without producing independent intervention.
 
 Bounded power depends on catching these early, by routine, not in a crisis. When boundaries are visible, powers can be reversed, and anyone can challenge them, most of these failures never need to become conflicts.
