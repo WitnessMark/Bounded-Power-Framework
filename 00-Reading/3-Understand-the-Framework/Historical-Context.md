@@ -37,6 +37,24 @@ After tetraethyl lead was added to gasoline, the research on whether everyday ex
 
 In both cases the harm was not hidden for want of evidence. The independent evidence existed. It was outweighed by evidence from the party with the most to lose. The Core Requirements answer this directly: where evidence of harm is disputed, independently obtained evidence takes priority, and any decision to discount it must give its reasons on the public record (3.A.5). Evidence that is internally dependent or selectively disclosed is invalid for authorization, renewal or compliance (5.2), and only bodies independent of the authority count as external validation (Definitions).
 
+## When warnings fail to produce intervention
+
+A harmful decision is not always the whole failure. In several cases in the [underlying datasets](#the-underlying-data), warnings or contrary evidence emerged while the activity continued. The recurring problem was the distance between **knowing enough to question a practice** and **having an effective way to change or stop it**.
+
+A possible sequence is:
+
+1. An authority adopts a practice or makes a decision that exposes others to harm.
+2. Affected people, workers, or independent investigators identify warning signs or contrary evidence.
+3. Those warnings are discounted, narrowed, delayed, or handled within the same institution whose conduct is questioned. The dismissal need not be dishonest: shared assumptions, professional consensus, or procedural inertia can have the same effect.
+4. Independent checking or an accessible stop path fails to produce timely intervention.
+5. Exposure continues, harm accumulates, and later repair becomes harder or impossible.
+
+The leaded-gasoline and tobacco cases illustrate disputes over evidence; the Tuskegee study illustrates prolonged harm despite the availability of treatment; and Flint illustrates the consequences of failing to respond effectively to warnings. These examples do not all follow the same sequence, and the datasets are illustrative rather than a statistical sample. A warning may also be mistaken; the point is not that every warning proves harm, but that credible warnings must be independently examinable and capable of prompting timely protective action.
+
+The Core Requirements address different links in this chain rather than relying on one expert or one review: uncertainty contracts power (1.5); disputed harm evidence must receive independent consideration and public reasons for discounting it (3.A.5); evidence used to justify authority must meet integrity and independent-evaluation requirements (5.1, 5.2); usable stop paths and stop signals must be available (3.A.7, 3.C.1, 3.C.3); and correction must not wait for blame to be assigned (3.D.3). The [Structural Failure Casebook](../../05-Reference/01-Analytical-Standards/Structural-Failure-Casebook.md) describes the corresponding operational warning signs.
+
+This is an explanation of the framework's design, not a claim that any existing, non-adopting institution is already bound by its stop procedures. Outside assessments can document and disclose failures; they do not themselves compel a stop.
+
 ## When the failure is finally visible
 
 A separate question follows: when a failure becomes visible, does any consequence reach the people who ran it? The record is uneven. After the savings-and-loan crisis and the frauds of the early 2000s, some individuals were convicted and imprisoned. After the 2008 financial crisis and in many later corporate cases, large institutions paid penalties while few or no senior decision-makers were imprisoned.
