@@ -13,7 +13,7 @@ e93ebcf608c86f425d6f54db2d0b02e3ed58e89ed1abfad7da494ac9e38a627e  00-Reading/2-E
 833056f64b14c76fdc4185472a24c3f682e5dafb86c8d6218a8ba600cff82570  00-Reading/2-Examine-an-Institution/Inquiry-Guide.md
 c1ea0ec4586f03a007741bb5f3eb0476c300377094c3744f0c892a04f3a13df4  00-Reading/3-Understand-the-Framework/BPF-Reasoning.md
 451bbe4aaa8a47f270340f9dc0a291f48905068ccd86ffa22d4cedf14b0af3d5  00-Reading/3-Understand-the-Framework/FAQ.md
-51837b63e12d4312f8ec4cc9872e3c31436ec0bd7f0cd333a99ac1484f5490a1  00-Reading/3-Understand-the-Framework/Historical-Context.md
+8a0cffb287db5a8baf12e959c3efb480d6105c5f97500208c98b0e805f9f105f  00-Reading/3-Understand-the-Framework/Historical-Context.md
 912011cc2b5b4c2f0ed5f21ec84ed92fcfcc53e5ca80fb3059fba593a4b866d0  00-Reading/3-Understand-the-Framework/What-This-Is-and-Is-Not.md
 81b58cf0758512d318d6916f0f9f1f359d0724de164b4b1fb976e0fd08d2ec4d  01-Framework/README.md
 33f0e6034d22ccd480bfe4714e8b337a1c1cf3e7937872ad9c5df2895427194b  01-Framework/SCBP-01-Orientation.md
